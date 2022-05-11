@@ -4897,7 +4897,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 /* The subnavigation menu */
 .subnav {
   float: right;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 /* Subnav button */
