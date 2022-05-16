@@ -1,0 +1,31 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Aircloud</title>
+<nav>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['user_name'] }}</span>
+      <li><a href="/auth/logout">Log Out</a>
+    {% else %}
+      <li><a href="/auth/register">Register</a>
+      <li><a href="/auth/login">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+<body class="is-preload">
+  <div id="wrapper" class="fade-in">
+    <!-- Intro -->
+    <div id="intro">
+      {% block header %}{% endblock %}
+  </div>
+</div>
+</body>
+<section>
+
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div>{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
