@@ -1,15 +1,203 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In/Sign Up</title>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="../static/css/formStyle.css">
+    <link rel="icon" type="image/icon" href="../static/images/logo.ico" />
+    <!-- Font Awesome 5 CDN link to add social icons in html5 registration form -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+ 
+        <!-- jQuery CDN link -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>        
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <dive class="formWraper">
+ 
+            <!-- Left section of responsive registration form -->
+ 
+            <div class="formDiv" id="signUp">
+                <h2>Welcome Back!</h2>
+                <!--<p class="text"> Sign Up with Social Media</p>-->
+ 
+                <!-- Font Awesome Icons -->
+                <div class="socialBtn">
+                    <a href="../templates/index.html"><div class="instagram icon"><img src="../static/images/logo.png" alt="logo" class="air-cloud" /></div></a>
+                </div>
+                <p class="text"> Have an account already?</p>
+                <!--Horizontal Line-->
+                <!--
+                <hr>
+                <div class="orDiv">Have an account already?</div>-->
+ 
+                <p class="text">Sign In with name and password</p>
+                <form method="post">
+                    <div class="formGroup">
+                        <i class="far fa-user"></i>
+                        <input name="username" placeholder="Name" id="username" required>
+                    </div>
+                    <div class="formGroup">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" id="password" required>
+                    </div>
+                    <input class="btn" type="submit" value="Log In">
+                </form>
 
-{% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
-{% endblock %}
-
-{% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
-  </form>
-{% endblock %}
+ 
+                
+ 
+                <!--
+                <div class="checkBox">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <span class="text">I Agree with Term & Conditions.</span>
+                </div>-->
+                
+             <div class="hideBtn loginBtn-mobile textStyle">
+                 <p> Have an account already?
+                     <span class="hoverColor">Login</span>
+                 </p>
+             </div>
+            </div>
+ 
+ 
+            <!---------- Let's add code for Signin form -------->
+            <div class="signIn" id="signIn">
+                <h2 class="signInText">Sign In</h2>
+                <p class="text"> Sign In with Social Media</p>
+ 
+                <!-- Font Awesome Icons for Sign In form -->
+               <div>
+                   <button type="submit" class="iconeBtn">
+                       <span class="facebook ">
+                        <i class=" icone2 fab fa-facebook-f"></i> Facebook
+                       </span>
+                   </button>
+               </div>
+               <div>
+                <button type="submit" class="iconeBtn">
+                    <span class="twitter">
+                     <i class=" icone2 fab fa-twitter"></i> Twitter
+                    </span>
+                </button>
+            </div>
+ 
+            <div>
+                <button type="submit" class="iconeBtn">
+                    <span class="google">
+                     <i class=" icone2 fab fa-google"></i> Google 
+                    </span>
+                </button>
+            </div>
+ 
+                <!--Horizontal Line-->
+                <hr class="line2">
+                <div class="or2">Or</div>
+ 
+                <p class="text">SignIn with email address</p>
+ 
+ 
+                <div class="formGroup">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+ 
+                <div class="formGroup">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+ 
+                <div class="checkBox">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <span class="text">I agree with term & conditions.</span>
+                </div>
+                <button class="btn">LOG IN</button>
+ 
+                <!-- Create Account button, for mobile only -->
+                <div class="hideBtn signUpBtn-mobile textStyle">
+                    <p>Don't have an account?
+                        <span class="hoverColor">Create Account</span>
+                    </p>
+                </div>
+                <!-- Password reset button for mobile only -->
+                <div class="hideBtn forgotPassword textStyle">
+                    <p>Forgot password?
+                        <span class="hoverColor">Reset</span>
+                    </p>
+                </div>
+ 
+            </div>
+ 
+ 
+            <!-- Password Reset Form -->
+            <div class="passwordReset" id="passwordReset">
+                <h2>Password Reset</h2>
+                <p class="text"> To retrieve your password, please enter you account's email address.</p>
+ 
+ 
+                <div class="formGroup">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+ 
+                <button class="btn">SUBMIT NOW</button>
+                <!-- login button, for mobile only -->
+                <div class="hideBtn loginBtn-mobile textStyle">
+                    <p> Remembered your password?
+                        <span class="hoverColor">Login</span>
+                    </p>
+                </div>
+ 
+            </div>
+ 
+ 
+            <!-- Right section of responsive registration form -->
+            <div class="welcomeDiv">
+                <h2>Welcome New User!</h2>
+                <p class="text">Be part of us for our analysis, projects and more updates.</p>
+                <!-- Adding SignIn toggle button -->
+                <div class="toggleBtn loginBtn">
+                    <p class="textAboveBtn">Don't have an account yet?</p>
+                    <form method="post">
+                    <div class="formGroup2">
+                        <i class="far fa-user"></i>
+                        <input name="username" id="username" required placeholder="Name">
+                    </div>                    
+                        <div class="formGroup2p">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" id="password" required placeholder="Password">
+                        </div>
+                        <input class="btn2" type="submit" value="Register">
+                    </form>
+                </div>
+                
+                <!-- Adding Create account toggle button -->
+                <div class="toggleBtn signUpBtn">
+                    <p class="textAboveBtn">Don't have an account?</p>
+                    <button type="submit" class="btn2">Create Account</button>
+                </div>
+                <!-- Adding password reset button -->
+                <div class="passwordResetBtn">
+                    <p class="textAboveBtn">Forgot your password?</p>
+                    <button type="submit" class="btn2">Reset Password</button>
+                </div>
+ 
+            </div>
+ 
+        </dive>
+    </div>
+ 
+    <!-- Linking jQuery file with HTML -->
+    <script src="..static/js/jqueryfile.js"></script>
+ 
+</body>
+ 
+</html>
