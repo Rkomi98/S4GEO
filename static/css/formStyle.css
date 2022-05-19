@@ -1,0 +1,300 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background-image: url(../images/backgoundresized.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+.formWraper{
+    display: flex;
+    width: 55%;
+    height: 520px;
+    border-radius: 10px;
+    box-shadow:0px 0px 20px black;
+}
+ 
+/* code for left sectin of form */
+.formDiv, .signIn, .passwordReset{
+    width: 50%;
+    padding: 8%;
+    background-color: lavender;
+    text-align: center;
+    border-radius: 10px 0px 0px 10px;
+}
+.formDiv h2 {
+    color: rgb(72, 109, 178);
+    margin-top: -5px;
+}
+ 
+/* code for right sectin of the registration form */
+.welcomeDiv{
+    width: 50%;
+    padding: 10px;
+    /* Adding overlay color gradient */
+    background-image: linear-gradient( to bottom, rgba(131, 188, 198, 0.6), rgba(48, 74, 98, 0.8)), url(image1.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    border-radius: 0px 10px 10px 0px;
+}  
+.welcomeDiv h2 {
+   position: relative;
+   top:-32px;
+    margin-top: 80px;
+    font-weight: 800;
+}
+ 
+ /* ---- code for Font Awsome social icons */
+.socialBtn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-color:lavender;
+    margin: 5px;
+    line-height: 30px;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+     
+}
+ .air-cloud{
+     width: 30px;
+     height: 30px;
+     position: relative;
+     top: 3px;
+
+ }
+.text{
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+}
+.orDiv, .or2{
+    width: 12%;
+    margin: 0 auto;
+    background-color: lavender;
+    position: relative;
+    top: -18px;
+    justify-content: center;
+}
+ 
+/* code for form input fields */
+.formGroup{
+    width: 100%;
+    position: relative;
+}
+.formGroup input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-style: none;
+    padding-left: 30px !important;
+}
+
+.formGroup2{
+    position: relative;
+    left: 50px;
+    top: -45px;
+    width: 70%;
+    
+}
+.formGroup2 input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-style: none;
+    padding-left: 20px !important;
+}
+.formGroup2 i {
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    color: rgb(12, 136, 246);
+    font-size: smaller;
+    margin: 10px !important;
+}
+.formGroup2p{
+    position: relative;
+    left: 50px;
+    top: -97px;
+    width: 70%;
+    position: relative;
+}
+.formGroup2p input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-style: none;
+    padding-left: 20px !important;
+}
+.formGroup2p i {
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    color: rgb(12, 136, 246);
+    font-size: smaller;
+    margin: 10px !important;
+}
+ 
+/* Code for Icones inside html form input */
+.formGroup i {
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    color: rgb(12, 136, 246);
+    font-size: smaller;
+    margin: 10px !important;
+}
+ 
+input::placeholder {
+    position: relative;
+    left: 10px;
+}
+input:focus{
+    border-color: red;
+}
+.checkBox{
+    width: 100%;
+    margin-top: 2px;
+}
+ 
+.btn{
+    width: 70%;
+    padding: 15px;
+    background-color: rgba(16, 150, 247, 0.5);
+    margin-top: 15px;
+    color: rgb(249, 248, 251);
+    border-radius: 20px;
+    border-style: none;
+    font-weight: 600;
+}
+.btn2{
+    position: relative;
+    top: 30px;
+    width: 70%;
+    padding: 12px;
+    background-color: rgba(48, 74, 98, 0.8);
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+    color: rgb(247, 247, 249);
+    border-radius: 24px;
+    border-style: none;
+    border: 2px solid rgb(247, 243, 243);
+}
+ 
+/* CSS mouse hover efects */
+.btn:hover, .btn2:hover, .icon:hover, .iconeBtn:hover{
+    background-color: rgb(161, 188, 245);
+    color: rgb(68, 116, 238);
+}
+ 
+/* making HTML registration form responsive to mobile devices */
+@media screen and (max-width: 1000px){
+    .formWraper{
+        width: 80%;
+    }
+}
+/* For mobile devices only */
+@media screen and (max-width: 640px){
+    .formDiv, .formWraper, .signIn, .passwordReset{
+        width: 85%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .welcomeDiv{
+        display: none;
+    }
+    .formGroup input {
+        width: 75%;
+    }
+    .formGroup i {
+        position: absolute;
+        left: 30px !important;
+    }
+    .hideBtn{
+        display: block !important;
+    }
+     
+}
+ 
+/* Sign In Form code */
+.signInText{
+    margin-top: -10px;
+    font-size: 27px;
+    color: rgb(250, 251, 253);
+    font-weight: 700;
+}
+.textStyle{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: -6px;
+}
+.hoverColor:hover{
+    color: blue;
+    cursor: pointer;
+}
+ 
+/* hiding elements initially */
+.hideBtn, .signIn, .passwordReset, .signUpBtn, .passwordResetBtn{
+    display: none;
+}
+/* background color change */
+.signIn{
+    background-color: #c8ca4e;
+}
+.or2{
+    background-color: #c8ca4e;
+    position:relative;
+    top: 1px;
+}
+.line2{
+    border: none;
+    height: 1px;
+    width: 70%;
+    background-color: grey;
+    margin-bottom: -10px;
+}
+.iconeBtn{
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(11, 7, 248);
+    border-style: none;
+    color: honeydew;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+.icone2{
+    margin-right: 2px;
+}
+.passwordReset{
+    background-color: #3e94c6;
+}
+.passwordReset h2 {
+    margin-top: 110px;
+}
+ 
+.textAboveBtn{
+    position: relative;
+    top: 62px;
+    font-size: 13px;
+    margin-bottom: -5px;
+    margin-top: 50px;
+}

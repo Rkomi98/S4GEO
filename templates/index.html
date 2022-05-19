@@ -9,6 +9,8 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="icon" type="image/icon" href="../static/images/logo.ico" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <title>Air Cloud</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -17,18 +19,7 @@
     <link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
-    <script>
-      $(document).ready(function(){
-        ('#show').hover(
-  function () {
-    $('#dropdown').show();
-  }, 
-  function () {
-    $('#dropdown').hide();
-  }
-);
-});
-    </script>
+
 </head>
 
 <body class="is-preload">
@@ -52,32 +43,11 @@
         </div>
       </div>
       <div class="l3">Map Gallery</div>
-      <div class="l4"><a href="generic">More Info</a>
-    </div>
-      <div class="login">
-      {% if g.user %}
-          Welcome {{ g.user[1] }}!
-          <ul>
-          <li><a href="/logout">Log Out</a></li>
-          </ul>
-        {% else %}
-          <ul>      
-            <li><a href="/register">Register</a>
-            <li><a href="/login">Log In</a>
-        {% endif %}
-          </ul>
-      </div>
+      <div class="l4"><a href="../templates/generic.html">More Info</a></div>
+    <div class="login"><a class="logina"href="../templates/login.html">Log In</a></div>
     </div>
   </div>
-
-  <!-- I comment the dropdown because up to now doesn't work
-  <div id="dropdown1"><ul>
-    <img src="images/close.png" id="hide" alt="">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
-  </div>-->
+  
   
   <!-- Wrapper -->
   <div id="wrapper" class="fade-in">
@@ -102,7 +72,7 @@
     
     <!-- Header -->
     <header id="header">
-      <a href="index.html" class="logo">About</a>
+      <a href="../templates/index.html" class="logo">About</a>
     </header>
 
     <!-- Nav -->
