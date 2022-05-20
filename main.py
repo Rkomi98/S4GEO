@@ -164,6 +164,10 @@ def generic():
 
     return render_template('generic.html', posts=posts)
 
+@app.route('/elements')
+def elements():
+    return render_template('elements.html')
+
 @app.route('/create', methods=('GET', 'POST'))
 def create():
     if load_logged_in_user():
