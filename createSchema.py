@@ -39,7 +39,7 @@ sqlCommands = (
     'INSERT INTO blog_user (user_name, user_password) VALUES (%s, %s) RETURNING user_id',
     'INSERT INTO post (title, body, author_id) VALUES (%s, %s, %s)'
 )
-conn = connect("dbname=S4G user=postgres password=Gram2021")
+conn = connect("dbname=S4G user=postgres password=nikolina123")
 cur = conn.cursor()
 for command in cleanup:
     cur.execute(command)
