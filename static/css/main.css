@@ -273,7 +273,38 @@ p {
   text-align: justify;
   margin: 0 0 2rem 0;
 }
-
+.p2{
+  text-align: justify;
+  top: -10%;
+  place-content: left;
+  margin-top: 1rem ; 
+}
+.parg1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 105%;
+  border-bottom: 0;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  margin-top: 3em;
+}
+.parg2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 105%;
+  border-bottom: 0;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  margin-top: 3em;
+}
+.emphasis {
+  font-style: italic;
+  color: #5db5c5;
+  text-decoration: underline;
+  border-bottom:none;
+  background-color: none;
+  
+}
 h1,
 h2,
 h3,
@@ -307,6 +338,7 @@ h1 {
   font-size: 4rem;
   line-height: 1.1;
   margin: 0 0 2rem 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h2 {
@@ -3660,6 +3692,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   position: relative;
   text-align: center;
   z-index: 2;
+  border-color: white;
 }
 
 #header input,
@@ -3763,7 +3796,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
   -ms-transition: -ms-transform 1s ease, opacity 1s ease;
   transition: transform 1s ease, opacity 1s ease;
-  background: rgba(255, 255, 255, 0.175);
+  background: rgba(255, 253, 253, 0.175);
   height: 4rem;
   line-height: 4rem;
   margin: -4rem auto 0 auto;
@@ -3842,17 +3875,17 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -moz-flex-grow: 1;
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
-  flex-grow: 2;
+  flex-grow: 4;
   -moz-flex-shrink: 1;
   display: flex;
-  column-gap: 10px;
+  column-gap: 30px;
   -webkit-flex-shrink: 1;
   justify-content: center;
   -ms-flex-shrink: 1;
   flex-shrink: 1;
   flex: 0 0 100%;
   margin-right: 80px;
-  border: 5px rgb(135, 216, 223) solid;
+  border: none;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.075em;
@@ -3876,6 +3909,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 0.8rem;
   outline: none;
   padding: 0 2rem;
+  font-size: medium;
 }
 
 #nav ul.links li a:hover {
@@ -4845,7 +4879,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #header1 {
   font-family: "Gothic A1", sans-serif !important;
   background-color: black;
-  height: 6%;
+  height: 20%;
   width: 100%;
   z-index: 111;
   display: flex;
@@ -4860,10 +4894,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   position: relative;
   background-color: rgb(0, 0, 0);
   width: 18%;
-  height: 160%;
-  margin: 26px;
+  height: 300%;
+  margin: 16px;
 }
-
 
 .links2 {
   position: relative;
@@ -4953,20 +4986,42 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 .l1 {
   justify-content: center;
-  margin-left: 50%;
+  margin-left: 40%;
   justify-content: space-between;
 }
 .l2 {
+  position: relative;
+  left: 65%;
   justify-content: center;
   margin-left: 1%;
   justify-content: space-between;
 }
 .l3 {
+  
   justify-content: center;
   justify-content: space-between;
   margin-left: 1%;
 }
 .l4 {
+  position: relative;
+  left: 32%;
+  justify-content: center;
+  justify-content: space-between;
+  margin-left: 1%;
+}
+.l11 {
+  justify-content: center;
+  margin-left: 60%;
+  justify-content: space-between;
+}
+.l21 {
+  left: 45%;
+  justify-content: center;
+  margin-left: 1%;
+  justify-content: space-between;
+}
+.l41 {
+  left: 32%;
   justify-content: center;
   justify-content: space-between;
   margin-left: 1%;
