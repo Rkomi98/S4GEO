@@ -72,7 +72,8 @@ def register():
 
         flash(error)
 
-    return render_template('auth/login.html')
+    return render_template('auth/register.html')
+
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
