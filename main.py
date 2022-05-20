@@ -67,10 +67,12 @@ def register():
             cur.close()
             conn.commit()
             return redirect(url_for('login'))
+        else:
+            error = "Please register"
 
         flash(error)
 
-    return render_template('auth/register.html')
+    return render_template('auth/login.html')
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
