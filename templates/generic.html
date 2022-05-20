@@ -6,28 +6,67 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>More Information</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/css/main.css" />
+		<link rel="icon" type="image/icon" href="../static/images/logo.ico" />
 		<noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
+		<div id="header1">
+			<div class="logo1">
+			  <img src="../static/images/AirCloud.png" alt="logo" class="air-cloud" />
+			</div>
+			<div class="fill"></div>
+			<div class="links2">
+			  <!--
+			  <div>Data</div>
+				<div>Data</div>
+			  <div>Data</div>-->
+			  <div class="l11"><a href="/index">Home</a></div>
+			  <div class="l21"><a href="/create">Project</a></div>
+			  <!--
+			  <div class="dropdown">
+				<a class="dropbtn">Project</a>
+				<div class="dropdown-content">
+				  <a href="#">Link 1</a>
+				  <a href="#">Link 2</a>
+				  <a href="#">Link 3</a>
+				</div>
+			  </div>
+			  -->
+			  <!--<div class="l3">Map Gallery</div>-->
+			  <div class="l41"><a href="/generic">More Info</a></div>
+			<div class="login">
+			{% if g.user %}
+				  Welcome {{ g.user[1] }}!
+				  <ul>
+				  <li><a href="/logout">Log Out</a></li>
+				  </ul>
+				{% else %}
+				<!--<li><a href="/register">Register</a>-->
+					<a class="logina"href="login">Log In</a>
+				{% endif %}
+			
+			</div>
+			</div>
+		  </div>
+		  
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
-						<a href="../templates/index.html" class="logo">Massively</a>
+						<!--<a href="../templates/index.html" class="logo">Massively</a>-->
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="../templates/index.html">This is Massively</a></li>
-							<li class="active"><a href="/generic">Generic Page</a></li>
-							<li><a href="/generic">Elements Reference</a></li>
+							<li class="active"><a href="/generic">General Idea</a></li>
+							<li><a href="../templates/index.html">Data</a></li>
+							<li><a href="/generic">About Us</a></li>
 						</ul>
 						<ul class="icons">
 							<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -43,22 +82,24 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<span class="date">June 16, 2022</span>
+									<h1>Why building an<br />
+									Air Cloud ?!</h1>
+									<div class="parg1"><p class="p2">In this present scenario, where our planet is being risked by Global Warming, 
+									most environment analysis lead us nowhere else but to air pollution problems.
+									Even though many air pollutants have been reduced, these past few years, 
+									they remain in high concentrations, making air quality problems persist. This matter doesn’t concern only the environment but consequently the entire global population.</p>
+									<p class="p2">According to <a href="https://www.who.int/" target="_blank"><span class="emphasis">WHO</span></a> : “Air pollution is now considered to be the world’s largest environmental health threat, accounting for 7 million deaths around the world every year. Air pollution causes and exacerbates several diseases, ranging from asthma to cancer, pulmonary illnesses, and heart disease.”</p>
+									<p class="parg2">
+									<p class="p2">Concentrating more in the European region, statistics according to <a href="https://www.eea.europa.eu/" target="_blank"><span class="emphasis">EEA</span></a> say that: “Around 90 % of city dwellers in Europe are exposed to pollutants at concentrations higher than the air quality levels deemed harmful to health.” Furthermore, facts put us in front of large parts of the European population, which doesn’t live in what it is considered a “healthy environment”.</p>
+									<p class="p2">Keeping the eyes on these facts, more and more people are trying to contribute with different modelling and monitoring activities. Different organizations are collaborating and collecting financial resources for being able to take real action on this matter, that is extending faster day by day.</p>
+									<p class="p2">These and more news we read and hear every day, are the reason why we decided to build an “Air Cloud”. We are trying to provide to all municipalities, agencies, experts, independent researchers and even students, an Open-Resource for their own analysis and projects, on air pollutants. Consequently, this will lead in making more strategies that with lower the burden of diseases and other catastrophic events attributed to air pollution. </p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
 							</section>
-
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<!--<footer id="footer">
 						<section>
 							<form method="post" action="#">
 								<div class="fields">
@@ -104,7 +145,7 @@
 								</ul>
 							</section>
 						</section>
-					</footer>
+					</footer>-->
 
 				<!-- Copyright -->
 					<div id="copyright">
