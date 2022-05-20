@@ -187,7 +187,7 @@ def create():
                 conn.commit()
                 return redirect(url_for('index'))
         else :
-            return render_template('blog/create.html')
+            return render_template('blog/index.html')
     else :
         error = 'Only loggedin users can insert posts!'
         flash(error)
