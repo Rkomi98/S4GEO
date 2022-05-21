@@ -114,7 +114,9 @@ body {
   line-height: 1;
 }
 
-ol,
+ol{
+  margin: 0 2 2rem 0;
+}
 ul {
   list-style: none;
 }
@@ -2989,7 +2991,6 @@ ol li {
 ul {
   list-style: disc;
   margin: 0 0 2rem 0;
-  padding-left: 1rem;
 }
 
 ul li {
@@ -5041,7 +5042,17 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   justify-content: center;
   margin-right: 3%;
 }
-
+.logout{
+  background-color: white;
+  color: black !important;
+  border-radius: 18px;
+  border-color: white;
+  width: 9%;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  margin-right: 3%;
+}
 .animation {
   position: relative;
   height: 50vh !important;
