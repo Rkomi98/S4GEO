@@ -5048,7 +5048,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   width: 40vw !important;
   width: auto;
   transform: translateX(50%);
-  right: 175px;
+  right: 115px;
 }
 .image1 {
   position: absolute;

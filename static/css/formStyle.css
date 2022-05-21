@@ -15,23 +15,26 @@ body{
 }
 .formWraper{
     display: flex;
-    width: 55%;
+    width: 40%;
     height: 520px;
-    border-radius: 10px;
-    box-shadow:0px 0px 20px black;
+    border-radius: 20px;
+    box-shadow:0px 0px 40px black;
+    background-color: lavender;
 }
  
 /* code for left sectin of form */
 .formDiv, .signIn, .passwordReset{
-    width: 50%;
-    padding: 8%;
+    width: 60%;
+    padding: 30%;
     background-color: lavender;
     text-align: center;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 10px 10px;
+    text-emphasis-position: center;
 }
 .formDiv h2 {
     color: rgb(72, 109, 178);
-    margin-top: -5px;
+    margin-top: -110px;
+
 }
  
 /* code for right sectin of the registration form */
@@ -45,13 +48,32 @@ body{
     color: white;
     border-radius: 0px 10px 10px 0px;
 }  
+.welcomeDiv2{
+    width: 110%;
+    padding: 10px;
+    /* Adding overlay color gradient */
+    background-image: linear-gradient( to bottom, rgba(131, 188, 198, 0.6), rgba(48, 74, 98, 0.8)), url(image1.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+}  
+.cont2{
+    position: inherit;
+    left: 40%;
+}
 .welcomeDiv h2 {
    position: relative;
    top:-32px;
+   margin-top: 80px;
+   font-weight: 800;
+}
+.welcomeDiv2 h2 {
+    position: relative;
+    top:-32px;
     margin-top: 80px;
     font-weight: 800;
-}
- 
+ }
  /* ---- code for Font Awsome social icons */
 .socialBtn{
     display: flex;
@@ -64,6 +86,7 @@ body{
     left: 10px;
     width: 45px;
     height: 45px;
+    z-index: 100;
     border-radius: 30px;
     background-color:lavender;
     margin: 5px;
@@ -87,6 +110,12 @@ body{
     font-size: 14px;
     font-weight: 500;
 }
+.text11{
+    position: relative;
+    bottom: 5%;
+    font-size: 14px;
+    font-weight: 500;
+}
 .orDiv, .or2{
     width: 12%;
     margin: 0 auto;
@@ -100,6 +129,7 @@ body{
 .formGroup{
     width: 100%;
     position: relative;
+    
 }
 .formGroup input {
     width: 90%;
@@ -111,13 +141,13 @@ body{
 
 .formGroup2{
     position: relative;
-    left: 50px;
-    top: -45px;
-    width: 70%;
+    left: 25%;
+    top: -5px;
+    width: 50%;
     
 }
 .formGroup2 input {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 5px;
     border-style: none;
@@ -133,13 +163,12 @@ body{
 }
 .formGroup2p{
     position: relative;
-    left: 50px;
-    top: -37px;
-    width: 70%;
-    position: relative;
+    left: 25%;
+    top: -1px;
+    width: 50%;
 }
 .formGroup2p input {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 5px;
     border-style: none;
@@ -188,19 +217,35 @@ input:focus{
 }
 .btn2{
     position: relative;
-    top: 30px;
+    bottom: 6%;
     width: 70%;
-    padding: 12px;
+    height: 27%;
+    padding: 15px;
     background-color: rgba(48, 74, 98, 0.8);
     font-size: 13px;
-    font-weight: 700;
-    margin-top: 12px;
+    font-weight: 600;
+    margin-top: 15px;
     color: rgb(247, 247, 249);
-    border-radius: 24px;
+    border-radius: 20px;
     border-style: none;
     border: 2px solid rgb(247, 243, 243);
 }
- 
+.btn22{
+    position: relative;
+    top: 35px;
+    width: 45%;
+    height: 27%;
+    padding: 15px;
+    background-color: rgba(48, 74, 98, 0.8);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: rgb(247, 247, 249);
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid rgb(247, 243, 243);
+}
+
 /* CSS mouse hover efects */
 .btn:hover, .btn2:hover, .icon:hover, .iconeBtn:hover{
     background-color: rgb(161, 188, 245);
@@ -293,7 +338,7 @@ input:focus{
  
 .textAboveBtn{
     position: relative;
-    top: 62px;
+    bottom: 12%;
     font-size: 13px;
     margin-bottom: -5px;
     margin-top: 50px;
