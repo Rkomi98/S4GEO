@@ -20,7 +20,7 @@ app = Flask(__name__, template_folder="templates")
 @app.route('/index')
 def index():
     user = {'username': 'Miguel'}
-    conn = connect("dbname=S4G user=postgres password=nikolina123")
+    conn = connect("dbname=S4G user=postgres password=Gram2021")
     cur = conn.cursor()
     cur.execute("""SELECT blog_user.user_name,
                 post.title, 

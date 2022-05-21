@@ -219,8 +219,8 @@ input:focus{
     position: relative;
     bottom: 6%;
     width: 70%;
-    height: 27%;
-    padding: 15px;
+    height: 30%;
+    padding: 3.8%;
     background-color: rgba(48, 74, 98, 0.8);
     font-size: 13px;
     font-weight: 600;
