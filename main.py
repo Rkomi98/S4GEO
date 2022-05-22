@@ -15,27 +15,124 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.exceptions import abort
 
 from psycopg2 import (
-        connect
+    connect
 )
-
+import requests
+import json
+import pandas as pd
+import geopandas as gpd
+from jinja2 import Environment, FileSystemLoader
+env = Environment(loader=FileSystemLoader('.'))
 
 # Create the application instance
 app = Flask(__name__, template_folder="templates")
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
+
 def get_dbConn():
     if 'dbConn' not in g:
         myFile = open('dbConfig.txt')
         connStr = myFile.readline()
         g.dbConn = connect(connStr)
-    
+
     return g.dbConn
+
 
 def close_dbConn():
     if 'dbConn' in g:
         g.dbComm.close()
         g.pop('dbConn')
+
+
+def get_json_API(city):
+    link = "https://api.waqi.info/feed/" + city + \
+        "/?token=6b937a38a89b944787d29b8afca33fe1cf375bd1"
+    response = requests.get(link)
+
+    if str(response) != "<Response [200]>":
+        txt = "Invalid city name. No data found for: " + city
+        raise Exception(txt)
+
+    raw_data = response.text
+    data = json.loads(raw_data)
+    return data
+
+
+def get_forecast_data(city):
+    data = get_json_API(city)
+
+    # from JSON to Pandas DataFrame: creating the forecast table
+
+    # extracting all the factors seperately:
+    data_df_forecast_o3 = pd.json_normalize(
+        data['data']['forecast']['daily']['o3'])
+    data_df_forecast_pm10 = pd.json_normalize(
+        data['data']['forecast']['daily']['pm10'])
+    data_df_forecast_pm25 = pd.json_normalize(
+        data['data']['forecast']['daily']['pm25'])
+    data_df_forecast_uvi = pd.json_normalize(
+        data['data']['forecast']['daily']['uvi'])
+
+    # preparing each of them to be merged later:
+    data_df_forecast_o3 = data_df_forecast_o3.rename(
+        columns={'avg': 'avg_o3', 'max': 'max_o3', 'min': 'min_o3'})
+    data_df_forecast_o3.insert(0, 'day', data_df_forecast_o3.pop('day'))
+
+    data_df_forecast_pm10 = data_df_forecast_pm10.rename(
+        columns={'avg': 'avg_pm10', 'max': 'max_pm10', 'min': 'min_pm10'})
+    data_df_forecast_pm10.insert(0, 'day', data_df_forecast_pm10.pop('day'))
+
+    data_df_forecast_pm25 = data_df_forecast_pm25.rename(
+        columns={'avg': 'avg_pm25', 'max': 'max_pm25', 'min': 'min_pm25'})
+    data_df_forecast_pm25.insert(0, 'day', data_df_forecast_pm25.pop('day'))
+
+    data_df_forecast_uvi = data_df_forecast_uvi.rename(
+        columns={'avg': 'avg_uvi', 'max': 'max_uvi', 'min': 'min_uvi'})
+    data_df_forecast_uvi.insert(0, 'day', data_df_forecast_uvi.pop('day'))
+
+    # merging all the factors in one prediction table:
+    o3_pm10 = pd.merge(data_df_forecast_o3,
+                       data_df_forecast_pm10, how="outer", on=["day"])
+    o3_pm10_pm25 = pd.merge(
+        o3_pm10, data_df_forecast_pm25, how="outer", on=["day"])
+    final_forecast_table = pd.merge(
+        o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
+
+    final_forecast_table_html = final_forecast_table.to_html()
+
+    return final_forecast_table_html
+
+
+def get_realtime_data(city):
+    data = get_json_API(city)
+
+    # from JSON to Pandas DataFrame: creating the real time data table
+    data_df_day = pd.json_normalize(data['data'])
+
+    # dropping the unnecessary columns:
+    data_df_day = data_df_day.drop(columns=['idx', 'attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
+                                            'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync'])
+
+    # renaming the columns we will be using for clarity:
+    data_df_day = data_df_day.rename(columns={'aqi': 'air quality', 'city.name': 'city', 'iaqi.co.v': 'carbon monoxyde',
+                                              'iaqi.h.v': 'relative humidity', 'iaqi.no2.v': 'nitrogen dioxide',
+                                              'iaqi.o3.v': 'ozone', 'iaqi.p.v': 'atmospheric pressure', 'iaqi.pm10.v': 'PM10',
+                                              'iaqi.pm25.v': 'PM2.5', 'iaqi.so2.v': 'sulphur dioxide', 'iaqi.t.v': 'temperature',
+                                              'iaqi.w.v': 'wind', 'time.s': 'date and time', 'time.tz': 'time zone'})
+
+    # creating two columns for geographical coordinates instead of one for easier access:
+    data_df_day['lat'] = data_df_day['city.geo'][0][0]
+    data_df_day['lon'] = data_df_day['city.geo'][0][1]
+    data_df_day = data_df_day.drop(columns=['city.geo'])
+
+    final_realtime_table = gpd.GeoDataFrame(
+        data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
+
+    final_realtime_table_html = final_realtime_table.to_html()
+
+    return final_realtime_table_html
+
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -48,11 +145,11 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        else :
+        else:
             conn = get_dbConn()
             cur = conn.cursor()
             cur.execute(
-            'SELECT user_id FROM blog_user WHERE user_name = %s', (username,))
+                'SELECT user_id FROM blog_user WHERE user_name = %s', (username,))
             if cur.fetchone() is not None:
                 error = 'User {} is already registered.'.format(username)
                 cur.close()
@@ -104,6 +201,7 @@ def login():
 
     return render_template('auth/login.html')
 
+
 @app.route('/logout')
 def logout():
     session.clear()
@@ -126,7 +224,7 @@ def load_logged_in_user():
         conn.commit()
     if g.user is None:
         return False
-    else: 
+    else:
         return True
 
 
@@ -137,10 +235,10 @@ def index():
     conn = get_dbConn()
     cur = conn.cursor()
     cur.execute(
-            """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
+        """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
                FROM blog_user, post WHERE  
                     blog_user.user_id = post.author_id"""
-                    )
+    )
     posts = cur.fetchall()
     cur.close()
     conn.commit()
@@ -148,15 +246,16 @@ def index():
 
     return render_template('index.html', posts=posts)
 
+
 @app.route('/generic')
 def generic():
     conn = get_dbConn()
     cur = conn.cursor()
     cur.execute(
-            """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
+        """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
                FROM blog_user, post WHERE  
                     blog_user.user_id = post.author_id"""
-                    )
+    )
     posts = cur.fetchall()
     cur.close()
     conn.commit()
@@ -164,10 +263,45 @@ def generic():
 
     return render_template('generic.html', posts=posts)
 
+
 @app.route('/elements')
 def elements():
     return render_template('elements.html')
 
+
+@app.route('/createProject', methods=['GET', 'POST'])
+def createProject():
+
+    if request.method == 'POST':
+        template = env.get_template("templates/createProject.html")
+
+        if request.form['dtype'] == 'F':
+            template_vars = {"table1": get_forecast_data(request.form['city']),
+                             "table2": ""}
+            html_out = template.render(template_vars)
+
+        elif request.form['dtype'] == 'RT':
+            template_vars = {"table1": get_realtime_data(request.form['city']),
+                             "table2": ""}
+            html_out = template.render(template_vars)
+
+        elif request.form['dtype'] == 'B':
+            template_vars = {"table1": get_realtime_data(request.form['city']),
+                             "table2": get_forecast_data(request.form['city'])}
+            html_out = template.render(template_vars)
+
+        else:
+            template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
+                             "table2": ""}
+            html_out = template.render(template_vars)
+
+        return html_out
+        # return render_template('createProject.html', tables=get_data(request.form['query']))
+
+    return render_template('createProject.html')
+
+
+"""
 @app.route('/create', methods=('GET', 'POST'))
 def create():
     if load_logged_in_user():
@@ -196,7 +330,9 @@ def create():
         error = 'Only loggedin users can insert posts!'
         flash(error)
         return redirect(url_for('login'))
-   
+ """
+
+
 def get_post(id):
     conn = get_dbConn()
     cur = conn.cursor()
@@ -216,44 +352,47 @@ def get_post(id):
 
     return post
 
+
 @app.route('/<int:id>/update', methods=('GET', 'POST'))
 def update(id):
     if load_logged_in_user():
         post = get_post(id)
-        if request.method == 'POST' :
+        if request.method == 'POST':
             title = request.form['title']
             body = request.form['body']
             error = None
-            
-            if not title :
+
+            if not title:
                 error = 'Title is required!'
-            if error is not None :
+            if error is not None:
                 flash(error)
                 return redirect(url_for('index'))
-            else : 
+            else:
                 conn = get_dbConn()
                 cur = conn.cursor()
                 cur.execute('UPDATE post SET title = %s, body = %s'
-                               'WHERE post_id = %s', 
-                               (title, body, id)
-                               )
+                            'WHERE post_id = %s',
+                            (title, body, id)
+                            )
                 cur.close()
                 conn.commit()
                 return redirect(url_for('index'))
-        else :
+        else:
             return render_template('blog/update.html', post=post)
-    else :
+    else:
         error = 'Only loggedin users can insert posts!'
         flash(error)
         return redirect(url_for('login'))
 
+
 @app.route('/<int:id>/delete', methods=('POST',))
 def delete(id):
-    conn = get_dbConn()                
+    conn = get_dbConn()
     cur = conn.cursor()
     cur.execute('DELETE FROM post WHERE post_id = %s', (id,))
     conn.commit()
-    return redirect(url_for('index'))                               
+    return redirect(url_for('index'))
+
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
