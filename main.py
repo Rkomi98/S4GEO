@@ -19,6 +19,7 @@ from psycopg2 import (
 )
 import requests
 import json
+from sqlalchemy import create_engine
 import pandas as pd
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
@@ -115,7 +116,7 @@ def get_realtime_data(city):
                                             'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync'])
 
     # renaming the columns we will be using for clarity:
-    data_df_day = data_df_day.rename(columns={'aqi': 'air quality', 'city.name': 'city', 'iaqi.co.v': 'carbon monoxyde',
+    data_df_day = data_df_day.rename(columns={'city.name': 'city', 'aqi': 'air quality','iaqi.co.v': 'carbon monoxyde',
                                               'iaqi.h.v': 'relative humidity', 'iaqi.no2.v': 'nitrogen dioxide',
                                               'iaqi.o3.v': 'ozone', 'iaqi.p.v': 'atmospheric pressure', 'iaqi.pm10.v': 'PM10',
                                               'iaqi.pm25.v': 'PM2.5', 'iaqi.so2.v': 'sulphur dioxide', 'iaqi.t.v': 'temperature',
@@ -132,6 +133,46 @@ def get_realtime_data(city):
     final_realtime_table_html = final_realtime_table.to_html()
 
     return final_realtime_table_html
+
+def get_data_toDB(city):
+    data = get_json_API(city)
+
+    # from JSON to Pandas DataFrame: creating the real time data table
+    data_df_day = pd.json_normalize(data['data'])
+
+    # dropping the unnecessary columns:
+    data_df_day = data_df_day.drop(columns=['idx', 'attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
+                                            'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync'])
+
+    # renaming the columns we will be using for clarity:
+    data_df_day = data_df_day.rename(columns={'city.name': 'city',
+                                              'aqi': 'air_quality',
+                                              'iaqi.co.v': 'carbon_monoxyde',
+                                              'iaqi.h.v': 'relative_humidity',
+                                              'iaqi.no2.v': 'nitrogen_dioxide',
+                                              'iaqi.o3.v': 'ozone', 
+                                              'iaqi.p.v': 'atmospheric_pressure', 
+                                              'iaqi.pm10.v': 'PM10',
+                                              'iaqi.pm25.v': 'PM25', 
+                                              'iaqi.so2.v': 'sulphur_dioxide',
+                                              'iaqi.t.v': 'temperature',
+                                              'iaqi.w.v': 'wind', 
+                                              'time.s': 'date_and_time', 
+                                              'time.tz': 'time zone'
+                                              })
+
+    # creating two columns for geographical coordinates instead of one for easier access:
+    data_df_day['lat'] = data_df_day['city.geo'][0][0]
+    data_df_day['lon'] = data_df_day['city.geo'][0][1]
+    data_df_day = data_df_day.drop(columns=['city.geo'])
+    data_df_day = data_df_day.drop('time zone', 1)
+    final_realtime_table = gpd.GeoDataFrame(
+        data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
+    return final_realtime_table
+
+def sendDFtoDB(db):
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
 
 
 @app.route('/register', methods=('GET', 'POST'))
@@ -271,34 +312,70 @@ def elements():
 
 @app.route('/createProject', methods=['GET', 'POST'])
 def createProject():
-
-    if request.method == 'POST':
-        template = env.get_template("templates/createProject.html")
-
-        if request.form['dtype'] == 'F':
-            template_vars = {"table1": get_forecast_data(request.form['city']),
-                             "table2": ""}
-            html_out = template.render(template_vars)
-
-        elif request.form['dtype'] == 'RT':
-            template_vars = {"table1": get_realtime_data(request.form['city']),
-                             "table2": ""}
-            html_out = template.render(template_vars)
-
-        elif request.form['dtype'] == 'B':
-            template_vars = {"table1": get_realtime_data(request.form['city']),
-                             "table2": get_forecast_data(request.form['city'])}
-            html_out = template.render(template_vars)
-
-        else:
-            template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
-                             "table2": ""}
-            html_out = template.render(template_vars)
-
-        return html_out
-        # return render_template('createProject.html', tables=get_data(request.form['query']))
-
-    return render_template('createProject.html')
+    if load_logged_in_user():        
+        if request.method == 'POST':
+            template = env.get_template("templates/createProject.html")
+    
+            if request.form['dtype'] == 'F':
+                template_vars = {"table1": get_forecast_data(request.form['city']),
+                                 "table2": ""}
+                html_out = template.render(template_vars)
+    
+            elif request.form['dtype'] == 'RT':
+                template_vars = {"table1": get_realtime_data(request.form['city']),
+                                 "table2": ""}
+                
+                C = get_data_toDB(request.form['city'])                
+                """
+                conn = get_dbConn()
+                cur = conn.cursor()
+                time = pd.to_datetime(C.date_and_time)
+                cur.execute('INSERT INTO city (author_id, name_city, air_quality, carbon_monoxyde, relative_humidity, nitrogen_dioxide, ozone,atmospheric_pressure,pm10,pm25,so2,temperature,wind,time_zone,latitude,longitude,geometry) VALUES(%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', 
+                            (g.user[0],
+                             C.city[0],
+                             float(C.air_quality[0]),
+                             C.carbon_monoxyde[0], 
+                             C.relative_humidity[0],
+                             C.nitrogen_dioxide[0],
+                             C.ozone[0], 
+                             C.atmospheric_pressure[0],
+                             float(C.PM10[0]),
+                             float(C.PM25[0]),
+                             C.sulphur_dioxide[0],
+                             C.temperature[0],
+                             float(C.wind[0]),
+                             str(time[0]),
+                             C.lat[0],
+                             C.lon[0],
+                             C.geometry)
+                            )
+                #df.to_sql('bike', engine, if_exists = 'replace', index=False) #I can put some queries here
+                cur.close()
+                conn.commit()
+                
+                #return redirect(url_for('index'))
+                """
+                sendDFtoDB(C)
+                html_out = template.render(template_vars)
+    
+            elif request.form['dtype'] == 'B':
+                template_vars = {"table1": get_realtime_data(request.form['city']),
+                                 "table2": get_forecast_data(request.form['city'])}
+                html_out = template.render(template_vars)
+    
+            else:
+                template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
+                                 "table2": ""}
+                html_out = template.render(template_vars)
+    
+            return html_out
+            # return render_template('createProject.html', tables=get_data(request.form['query']))
+    
+        return render_template('createProject.html')
+    else :
+        error = 'Only loggedin users can insert posts!'
+        flash(error)
+        return redirect(url_for('login'))
 
 
 """

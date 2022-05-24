@@ -9,10 +9,11 @@ Created on Sun Mar 24 23:54:08 2019
 from psycopg2 import (
     connect
 )
-
+# It has to be deleted at the end of the application.
 cleanup = (
     'DROP TABLE IF EXISTS blog_user CASCADE',
-    'DROP TABLE IF EXISTS post'
+    'DROP TABLE IF EXISTS post',
+    'DROP TABLE IF EXISTS city'
 )
 
 commands = (
@@ -36,6 +37,8 @@ commands = (
         """,
         """
         CREATE TABLE city (
+            city_id SERIAL PRIMARY KEY,
+            author_id INTEGER NOT NULL,
             name_city VARCHAR,
         	air_quality INTEGER ,
             carbon_monoxyde REAL, 
@@ -48,19 +51,21 @@ commands = (
             so2 REAL,
             temperature REAL,
             wind REAL,
-            time_zone TIME WITH TIME ZONE,
+            time_zone VARCHAR(350),
             latitude REAL,
             longitude REAL,
-            geometry VARCHAR(350)
+            geometry geometry,
+            FOREIGN KEY (author_id)
+                REFERENCES blog_user (user_id)
             )
         """)
-
+#TIME WITH TIME ZONE
 sqlCommands = (
     'INSERT INTO blog_user (user_name, user_password) VALUES (%s, %s) RETURNING user_id',
     'INSERT INTO post (title, body, author_id) VALUES (%s, %s, %s)',
-    'INSERT INTO city (name_city, air_quality, carbon_monoxyde, relative_humidity, nitrogen_dioxide, ozone,atmospheric_pressure,pm10,pm25,so2,temperature,wind,time_zone,latitude,longitude,geometry) VALUES(%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+    'INSERT INTO city (name_city, air_quality, carbon_monoxyde, relative_humidity, nitrogen_dioxide, ozone,atmospheric_pressure,pm10,pm25,so2,temperature,wind,time_zone,latitude,longitude,geometry,author_id) VALUES(%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
 )
-conn = connect("dbname=S4G user=postgres password=nikolina123")
+conn = connect("dbname=S4G user=postgres password=Gram2021")
 cur = conn.cursor()
 for command in cleanup:
     cur.execute(command)
@@ -86,7 +91,8 @@ cur.execute(sqlCommands[2], ('Paris',
                              '2022-05-23 10:00:00+02:00',
                              48.856614,
                              2.352222,
-                             'POINT (2.35222 48.85661)')
+                             'POINT (2.35222 48.85661)', 
+                             userId)
             )
 cur.execute('SELECT * FROM city')
 print(cur.fetchall())
