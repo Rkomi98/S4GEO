@@ -107,31 +107,31 @@ def get_forecast_data(city):
 
 def get_realtime_data(city):
     data = get_json_API(city)
-
-    # from JSON to Pandas DataFrame: creating the real time data table
+    
+    #from JSON to Pandas DataFrame: creating the real time data table
     data_df_day = pd.json_normalize(data['data'])
-
-    # dropping the unnecessary columns:
-    data_df_day = data_df_day.drop(columns=['idx', 'attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
-                                            'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync'])
-
-    # renaming the columns we will be using for clarity:
-    data_df_day = data_df_day.rename(columns={'city.name': 'city', 'aqi': 'air quality','iaqi.co.v': 'carbon monoxyde',
-                                              'iaqi.h.v': 'relative humidity', 'iaqi.no2.v': 'nitrogen dioxide',
-                                              'iaqi.o3.v': 'ozone', 'iaqi.p.v': 'atmospheric pressure', 'iaqi.pm10.v': 'PM10',
-                                              'iaqi.pm25.v': 'PM2.5', 'iaqi.so2.v': 'sulphur dioxide', 'iaqi.t.v': 'temperature',
-                                              'iaqi.w.v': 'wind', 'time.s': 'date and time', 'time.tz': 'time zone'})
-
-    # creating two columns for geographical coordinates instead of one for easier access:
+    data_df_day["date"] = data_df_day["time.s"] + data_df_day["time.tz"]
+    #dropping the unnecessary columns:
+    data_df_day = data_df_day.drop(columns=['idx','attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
+                             'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync', 
+                             'time.s', 'time.tz'])
+    
+    #renaming the columns we will be using for clarity:
+    data_df_day = data_df_day.rename(columns={'aqi': 'air quality', 'city.name': 'city', 'iaqi.co.v': 'carbon monoxyde', 
+                                              'iaqi.h.v':'relative humidity', 'iaqi.no2.v':'nitrogen dioxide', 
+                                              'iaqi.o3.v': 'ozone', 'iaqi.p.v':'atmospheric pressure', 'iaqi.pm10.v':'PM10', 
+                                              'iaqi.pm25.v':'PM2.5','iaqi.so2.v':'sulphur dioxide', 'iaqi.t.v':'temperature',
+                                              'iaqi.w.v':'wind'})
+    
+    #creating two columns for geographical coordinates instead of one for easier access:
     data_df_day['lat'] = data_df_day['city.geo'][0][0]
     data_df_day['lon'] = data_df_day['city.geo'][0][1]
     data_df_day = data_df_day.drop(columns=['city.geo'])
-
-    final_realtime_table = gpd.GeoDataFrame(
-        data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
-
+    
+    final_realtime_table = gpd.GeoDataFrame(data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
+    
     final_realtime_table_html = final_realtime_table.to_html()
-
+    
     return final_realtime_table_html
 
 def get_data_toDB(city):
@@ -139,6 +139,7 @@ def get_data_toDB(city):
 
     # from JSON to Pandas DataFrame: creating the real time data table
     data_df_day = pd.json_normalize(data['data'])
+    data_df_day["date"] = data_df_day["time.s"] + data_df_day["time.tz"]
 
     # dropping the unnecessary columns:
     data_df_day = data_df_day.drop(columns=['idx', 'attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',

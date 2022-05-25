@@ -89,12 +89,19 @@
 									<h1>NEW PROJECT</h1>
 									<form method="post" action="#">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="city" id="city" value="" placeholder="City" required/>
+											<div class="col-12">
+												<select name="city" id="city" required>
+													<option value="" disabled selected>City</option>
+													<option value="skopje">Skopje</option>
+													<option value="krakow">Kraków</option>
+													<option value="belgrad">Belgrad</option>
+													<option value="paris">Paris</option>
+													<option value="london">London</option>
+												</select>
 											</div>
 											<div class="col-12">
 												<select name="dtype" id="dtype" required>
-													<option value="">- Data Type -</option>
+													<option value="" disabled selected>Data Type</option>
 													<option value="RT">Real Time</option>
 													<option value="F">Forecast</option>
 													<option value="B">Both</option>
