@@ -38,18 +38,17 @@
 			  -->
 			  <!--<div class="l3">Map Gallery</div>-->
 			  <div class="l41"><a href="/generic">More Info</a></div>
-			<div class="login">
-			{% if g.user %}
-				  Welcome {{ g.user[1] }}!
-				  <ul>
-				  <li><a href="/logout">Log Out</a></li>
-				  </ul>
-				{% else %}
-				<!--<li><a href="/register">Register</a>-->
-					<a class="logina"href="login">Log In</a>
-				{% endif %}
-			
-			</div>
+			<div class="logout">
+            {% if g.user %}
+                  <!--Welcome {{ g.user[1] }}!-->
+                  <ul>
+                  <li><a class = "logout" href="/logout">Log Out</a></li>
+                  </ul>
+                {% else %}
+                <!--<li><a href="/register">Register</a>-->
+                    <a class="logina"href="login">Log In</a>
+                {% endif %} 
+            </div>
 			</div>
 		  </div>
 		  
