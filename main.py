@@ -18,7 +18,6 @@ from psycopg2 import (
         connect
 )
 
-
 # Create the application instance
 app = Flask(__name__, template_folder="templates")
 # Set the secret key to some random bytes. Keep this really secret!
@@ -26,7 +25,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 def get_dbConn():
     if 'dbConn' not in g:
-        myFile = open('dbConfig.txt')
+        myFile = open("/home/vhenrique/sthe/S4GEO/dbConfig.txt")
         connStr = myFile.readline()
         g.dbConn = connect(connStr)
     
