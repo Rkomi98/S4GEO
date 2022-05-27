@@ -483,3 +483,54 @@ def delete(id):
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)
+
+@app.route('/comment/<int:data_id>')
+def comment(data_id):
+    data_id = data_id
+
+    conn = get_dbConn()
+    cur = conn.cursor()  # create a cursor
+    cur.execute(
+        'SELECT * FROM TComment WHERE data_id = %s', (data_id,)
+    )
+
+    tComment = cur.fetchall()
+    cur.close()
+    conn.commit()
+
+    return render_template('comment.html', page_title=data_id, tComment=tComment, data_id=data_id)
+
+
+@app.route('/addComment/<int:data_id>', methods=['GET', 'POST'])
+def addComment(data_id):
+    data_id = data_id
+    author_id = session['user_id']
+    body = request.form.get('comment_body')
+
+    conn = get_dbConn()
+    cur = conn.cursor()  # create a cursor
+    cur.execute(
+        'INSERT INTO TComment (author_id, data_id, body) VALUES (%s, %s, %s)', (
+            author_id, data_id, body)
+    )
+
+    cur.close()
+    conn.commit()
+
+    return redirect(url_for('comment', data_id=data_id))
+
+
+@app.route('/deleteComment/<int:comment_id>/<int:data_id>')
+def deleteComment(comment_id, data_id):
+    comment_id = comment_id
+    data_id = data_id
+
+    conn = get_dbConn()
+    cur = conn.cursor()  # create a cursor
+    cur.execute(
+        'delete FROM TComment WHERE comment_id = %s', (comment_id,)
+    )
+    cur.close()
+    conn.commit()
+
+    return redirect(url_for('comment', data_id=data_id))
