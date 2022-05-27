@@ -50,9 +50,7 @@
     <div class="logout">
     {% if g.user %}
           <!--Welcome {{ g.user[1] }}!-->
-          <ul>
-          <li><a class = "logout" href="/logout">Log Out</a></li>
-          </ul>
+          <a class = "logout" href="/logout">Log Out</a>
         {% else %}
         <!--<li><a href="/register">Register</a>-->
             <a class="logina"href="login">Log In</a>
