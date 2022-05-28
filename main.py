@@ -333,10 +333,7 @@ def generic():
     return render_template('generic.html', posts=posts)
 
 
-@app.route('/elements')
-#def elements():
-#    return render_template('elements.html')
-
+@app.route('/elements', methods=['GET', 'POST'])
 def elements():
     template = env.get_template("templates/elements.html")
     stations = gpd.GeoDataFrame()
@@ -369,9 +366,8 @@ def elements():
                                              icon=folium.Icon(color="%s" % type_color,icon="crosshairs", prefix ='fa')).add_to(map))
                                     
         k = k+1
-    template_vars = {"map": map}
-    html_out = template.render(template_vars)
-    return html_out
+    map.save('templates/Map/elements.html')
+    return render_template('elements.html')
 
 
 
