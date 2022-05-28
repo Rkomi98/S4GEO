@@ -23,6 +23,13 @@ from sqlalchemy import create_engine
 import pandas as pd
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
+import contextily as ctx
+import numpy as np
+import matplotlib.pyplot as plt
+from shapely.geometry import Point, Polygon
+import folium
+
+
 env = Environment(loader=FileSystemLoader('.'))
 
 # Create the application instance
@@ -182,6 +189,19 @@ def update_data_on_DB(db):
     DataNew = Data.append(db)
     return(DataNew)
 
+# Function to retrieve station coordinates and names in the more info section
+def translate_data(response):
+    raw_data = response.text
+    data = json.loads(raw_data)
+    df_stations = pd.json_normalize(data['data'])
+    gdf = gpd.GeoDataFrame(df_stations["station.name"],
+                           geometry=gpd.points_from_xy(df_stations.lat, df_stations.lon))
+    G = gdf.set_crs('epsg:4326')
+    G.rename(columns={'station.name': 'Station_Name'}, inplace=True, errors='raise')
+    coordinate_list = [(x,y) for x,y in zip(G.geometry.x , G.geometry.y)]
+    return coordinate_list, G.Station_Name
+    
+
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -314,8 +334,45 @@ def generic():
 
 
 @app.route('/elements')
+#def elements():
+#    return render_template('elements.html')
+
 def elements():
-    return render_template('elements.html')
+    template = env.get_template("templates/elements.html")
+    stations = gpd.GeoDataFrame()
+    stations['geometry'] = None
+    response_paris = requests.get(
+    'https://api.waqi.info/v2/map/bounds?latlng=48.906116,2.225504,48.813514,2.466307&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
+    response_skopje = requests.get('https://api.waqi.info/v2/map/bounds?latlng=42.057215,21.343864,41.946194,21.523439&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
+    response_Belgrad = requests.get('https://api.waqi.info/v2/map/bounds?latlng=44.762,20.358,44.853,20.621&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
+    response_Krakow = requests.get('https://api.waqi.info/v2/map/bounds?latlng=50.018,19.79,50.185,20.189&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
+    response_London = requests.get('https://api.waqi.info/v2/map/bounds?latlng=51.722,-0.482,51.498,0.303&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
+    Paris, PG = translate_data(response_paris)
+    Skopje, SG = translate_data(response_skopje)
+    Belgrad, BG = translate_data(response_Belgrad)
+    Krakow, KG = translate_data(response_Krakow)
+    London, LG = translate_data(response_London)
+    map = folium.Map(location = [45.5170365,13.3888599], tiles='OpenStreetMap' , zoom_start = 5) 
+    cities = [Paris,Skopje,Belgrad,Krakow,London]
+    station = [PG, SG, BG, KG, LG]
+    color = ["blue","orange","red","green","purple"]
+    k=0
+    for city in cities:
+        for i  in range(len(city)):
+            #assign a color marker for the type of volcano, Strato being the most common
+            type_color = color[k]
+            # Place the markers with the popup labels and data
+            map= map.add_child(folium.Marker(location= city[i],popup=
+                                             str(station[k][i]) + '<br>'
+                                             + str(city[i]),
+                                             tooltip='<strong>Click here to see coordinates</strong>',
+                                             icon=folium.Icon(color="%s" % type_color,icon="crosshairs", prefix ='fa')).add_to(map))
+                                    
+        k = k+1
+    template_vars = {"map": map}
+    html_out = template.render(template_vars)
+    return html_out
+
 
 
 @app.route('/createProject', methods=['GET', 'POST'])
