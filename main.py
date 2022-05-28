@@ -366,10 +366,12 @@ def elements():
                                              icon=folium.Icon(color="%s" % type_color,icon="crosshairs", prefix ='fa')).add_to(map))
                                     
         k = k+1
-    map.save('templates/Map/elements.html')
+    map.save('templates/Map/Map.html')
     return render_template('elements.html')
 
-
+@app.route('/Map')
+def Map():
+    return render_template('Map/Map.html')
 
 @app.route('/createProject', methods=['GET', 'POST'])
 def createProject():

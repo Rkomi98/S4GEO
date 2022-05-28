@@ -42,16 +42,15 @@
 			  -->
 			<!--<div class="l3">Map Gallery</div>-->
 			<div class="l41"><a href="/generic">More Info</a></div>
-			<div class="login">
-				{% if g.user %}
-				Welcome {{ g.user[1] }}!
-				<a class = "logout" href="/logout">Log Out</a>
-				{% else %}
-				<!--<li><a href="/register">Register</a>-->
-				<a class="logina" href="login">Log In</a>
-				{% endif %}
-				
-			</div>			
+			<div class="logout">
+            {% if g.user %}
+                  <!--Welcome {{ g.user[1] }}!-->
+                 <a class = "logout" href="/logout">Log Out</a>
+                {% else %}
+                <!--<li><a href="/register">Register</a>-->
+                    <a class="logina"href="login">Log In</a>
+                {% endif %} 
+            </div>
 		</div>
 	</div>
 	<!-- Wrapper -->
@@ -97,11 +96,14 @@
     							moment, which are:</p>
     						<ol class= "stationlist">
     							<li>Skopje (6 stations)</li>
-    							<li>Krakow (6 stations)</li>
-    							<li>Belgrade (27 stations)</li>
-    							<li>London (42 stations)</li>
-    							<li>Paris (12 stations).</li>
+    							<li>Krakow (4 stations)</li>
+    							<li>Belgrade (20 stations)</li>
+    							<li>London (21 stations)</li>
+    							<li>Paris (10 stations).</li>	
     						</ol> 
+    						<div class="viewmap">
+    						<a href="/Map" target="_blank"><button class="btn3">Open Map</button></a>
+    						</div>
     						<p class="p2"> As further information, we must mention that the air
 								quality is estimated in real time by sensors. We have included data about the following
 								pollutants: </p>
@@ -144,7 +146,7 @@
 											vehicles or machinery that burn fossil fuels.</li>
 									</ul>
 									<div class="parg1">
-                					asxdcfgvbhjndfg
+                					
             						</div>
     				</div>
 				</header>

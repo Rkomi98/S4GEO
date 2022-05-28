@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_08bb9d6644d355f417fc49efce20263c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_08bb9d6644d355f417fc49efce20263c" ></div>
+        
+</body>
+<script>    
+    
+            var map_08bb9d6644d355f417fc49efce20263c = L.map(
+                "map_08bb9d6644d355f417fc49efce20263c",
+                {
+                    center: [45.5170365, 13.3888599],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9b9ce449f8cff08aa7af4334daeb01de = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var marker_00e470b1ce54850ca29775dc71cdf403 = L.marker(
+                [48.8917, 2.34563],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_9c310bc7d7b162863f4f51198ac0d4bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_00e470b1ce54850ca29775dc71cdf403.setIcon(icon_9c310bc7d7b162863f4f51198ac0d4bb);
+        
+    
+        var popup_070ea9585e1524e8a9f9b7a23b7f1ee4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5aa3a3697ac0d7e9ac1189b170a1b142 = $(`<div id="html_5aa3a3697ac0d7e9ac1189b170a1b142" style="width: 100.0%; height: 100.0%;">Paris 18eme, Paris<br>(48.8917, 2.34563)</div>`)[0];
+            popup_070ea9585e1524e8a9f9b7a23b7f1ee4.setContent(html_5aa3a3697ac0d7e9ac1189b170a1b142);
+        
+
+        marker_00e470b1ce54850ca29775dc71cdf403.bindPopup(popup_070ea9585e1524e8a9f9b7a23b7f1ee4)
+        ;
+
+        
+    
+    
+            marker_00e470b1ce54850ca29775dc71cdf403.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d6d2a4fcb715e00cfc2f2e53cb927eb = L.marker(
+                [48.8733, 2.32957],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_6f4dcc3ec3c0399f8f7e0f4c780fdc98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5d6d2a4fcb715e00cfc2f2e53cb927eb.setIcon(icon_6f4dcc3ec3c0399f8f7e0f4c780fdc98);
+        
+    
+        var popup_4b76c7b42edd30839987834453c74385 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2bfffc4d4ea4b671517b3f4d54c705ae = $(`<div id="html_2bfffc4d4ea4b671517b3f4d54c705ae" style="width: 100.0%; height: 100.0%;">Boulevard Haussmann, Paris<br>(48.8733, 2.32957)</div>`)[0];
+            popup_4b76c7b42edd30839987834453c74385.setContent(html_2bfffc4d4ea4b671517b3f4d54c705ae);
+        
+
+        marker_5d6d2a4fcb715e00cfc2f2e53cb927eb.bindPopup(popup_4b76c7b42edd30839987834453c74385)
+        ;
+
+        
+    
+    
+            marker_5d6d2a4fcb715e00cfc2f2e53cb927eb.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e54fa298cc0476a846bcd06030c1d5a4 = L.marker(
+                [48.8277, 2.3267],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_3adac219b44d7c58f3283b47c4eb18b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e54fa298cc0476a846bcd06030c1d5a4.setIcon(icon_3adac219b44d7c58f3283b47c4eb18b4);
+        
+    
+        var popup_1573a15183e5e3b67d9fb837c2518e47 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ba6fae501bc9a4ee30898b057b155e3e = $(`<div id="html_ba6fae501bc9a4ee30898b057b155e3e" style="width: 100.0%; height: 100.0%;">Place Victor Basch, Paris<br>(48.8277, 2.3267)</div>`)[0];
+            popup_1573a15183e5e3b67d9fb837c2518e47.setContent(html_ba6fae501bc9a4ee30898b057b155e3e);
+        
+
+        marker_e54fa298cc0476a846bcd06030c1d5a4.bindPopup(popup_1573a15183e5e3b67d9fb837c2518e47)
+        ;
+
+        
+    
+    
+            marker_e54fa298cc0476a846bcd06030c1d5a4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f1fc697228768dad7774b92657f2019 = L.marker(
+                [48.8303, 2.26972],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_31566b122d48e75d0006710574e1c70c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5f1fc697228768dad7774b92657f2019.setIcon(icon_31566b122d48e75d0006710574e1c70c);
+        
+    
+        var popup_bb73987ad504f4c7b055dc3dc5413559 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_238576aa7e1b7726f80e6361ca254eea = $(`<div id="html_238576aa7e1b7726f80e6361ca254eea" style="width: 100.0%; height: 100.0%;">Paris Stade Lenglen, Paris<br>(48.8303, 2.26972)</div>`)[0];
+            popup_bb73987ad504f4c7b055dc3dc5413559.setContent(html_238576aa7e1b7726f80e6361ca254eea);
+        
+
+        marker_5f1fc697228768dad7774b92657f2019.bindPopup(popup_bb73987ad504f4c7b055dc3dc5413559)
+        ;
+
+        
+    
+    
+            marker_5f1fc697228768dad7774b92657f2019.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e342da86ed5ec856d2a6ed01d20348fb = L.marker(
+                [48.8621, 2.34462],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_998f72a5b0686906aef519a9f0f32788 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e342da86ed5ec856d2a6ed01d20348fb.setIcon(icon_998f72a5b0686906aef519a9f0f32788);
+        
+    
+        var popup_7583885ae342b46002b07cc4bf3d31f4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b09227410c6dd4ad3c24718ce5e5d0fd = $(`<div id="html_b09227410c6dd4ad3c24718ce5e5d0fd" style="width: 100.0%; height: 100.0%;">Paris 1er Les Halles, Paris<br>(48.8621, 2.34462)</div>`)[0];
+            popup_7583885ae342b46002b07cc4bf3d31f4.setContent(html_b09227410c6dd4ad3c24718ce5e5d0fd);
+        
+
+        marker_e342da86ed5ec856d2a6ed01d20348fb.bindPopup(popup_7583885ae342b46002b07cc4bf3d31f4)
+        ;
+
+        
+    
+    
+            marker_e342da86ed5ec856d2a6ed01d20348fb.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af1caec172027439bdc5838e629831ed = L.marker(
+                [48.856614, 2.3522219],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_870a21c18318266c9248486f3505b22c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_af1caec172027439bdc5838e629831ed.setIcon(icon_870a21c18318266c9248486f3505b22c);
+        
+    
+        var popup_2f68e5d1eb7dbc8d7b4e9c2dd050dbf5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eea01bd6d120bc8eb7a2cdc034067820 = $(`<div id="html_eea01bd6d120bc8eb7a2cdc034067820" style="width: 100.0%; height: 100.0%;">Paris<br>(48.856614, 2.3522219)</div>`)[0];
+            popup_2f68e5d1eb7dbc8d7b4e9c2dd050dbf5.setContent(html_eea01bd6d120bc8eb7a2cdc034067820);
+        
+
+        marker_af1caec172027439bdc5838e629831ed.bindPopup(popup_2f68e5d1eb7dbc8d7b4e9c2dd050dbf5)
+        ;
+
+        
+    
+    
+            marker_af1caec172027439bdc5838e629831ed.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc466cab031b56dfa10e69ae2bdf511c = L.marker(
+                [48.8686, 2.31166],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_a349ac12d237dfcdef6591841e4b01c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_fc466cab031b56dfa10e69ae2bdf511c.setIcon(icon_a349ac12d237dfcdef6591841e4b01c4);
+        
+    
+        var popup_043ecc823228b5e9a4bf2ee6b43efbb0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_10b8de56e36cb1b5209fb37a6b35c5b5 = $(`<div id="html_10b8de56e36cb1b5209fb37a6b35c5b5" style="width: 100.0%; height: 100.0%;">Avenue Des Champs Elysees, Paris<br>(48.8686, 2.31166)</div>`)[0];
+            popup_043ecc823228b5e9a4bf2ee6b43efbb0.setContent(html_10b8de56e36cb1b5209fb37a6b35c5b5);
+        
+
+        marker_fc466cab031b56dfa10e69ae2bdf511c.bindPopup(popup_043ecc823228b5e9a4bf2ee6b43efbb0)
+        ;
+
+        
+    
+    
+            marker_fc466cab031b56dfa10e69ae2bdf511c.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e98a11fa71bc260dac5a9c13ab100d2 = L.marker(
+                [48.8704, 2.33241],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_c6f947e2799042bce644201cdbc4d6d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1e98a11fa71bc260dac5a9c13ab100d2.setIcon(icon_c6f947e2799042bce644201cdbc4d6d5);
+        
+    
+        var popup_8a6dce38bd06bd38701a31175260c330 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2b6f78556a68e97c09fd2dec27d8f0fb = $(`<div id="html_2b6f78556a68e97c09fd2dec27d8f0fb" style="width: 100.0%; height: 100.0%;">Place De Lopera, Paris<br>(48.8704, 2.33241)</div>`)[0];
+            popup_8a6dce38bd06bd38701a31175260c330.setContent(html_2b6f78556a68e97c09fd2dec27d8f0fb);
+        
+
+        marker_1e98a11fa71bc260dac5a9c13ab100d2.bindPopup(popup_8a6dce38bd06bd38701a31175260c330)
+        ;
+
+        
+    
+    
+            marker_1e98a11fa71bc260dac5a9c13ab100d2.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ff2c74af7d63a066ea84ae45a595fbe6 = L.marker(
+                [48.9024, 2.45261],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_87ef167909bc165e26c0bf4036a85e8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ff2c74af7d63a066ea84ae45a595fbe6.setIcon(icon_87ef167909bc165e26c0bf4036a85e8c);
+        
+    
+        var popup_409c8f926210a37d20d49a38423ff2bc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f108b9e8197e6e145accde2d1cc440d5 = $(`<div id="html_f108b9e8197e6e145accde2d1cc440d5" style="width: 100.0%; height: 100.0%;">Bobigny, Paris<br>(48.9024, 2.45261)</div>`)[0];
+            popup_409c8f926210a37d20d49a38423ff2bc.setContent(html_f108b9e8197e6e145accde2d1cc440d5);
+        
+
+        marker_ff2c74af7d63a066ea84ae45a595fbe6.bindPopup(popup_409c8f926210a37d20d49a38423ff2bc)
+        ;
+
+        
+    
+    
+            marker_ff2c74af7d63a066ea84ae45a595fbe6.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd9ba79621b99e4ed86f095d947c49a2 = L.marker(
+                [48.9022, 2.3907],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_b8ca92ccac9f34c615aca108397055f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_fd9ba79621b99e4ed86f095d947c49a2.setIcon(icon_b8ca92ccac9f34c615aca108397055f4);
+        
+    
+        var popup_ba2ce1b59c4f808910f412a6615a315d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b0b9d47cf24c83e600ccb34c693cfe8d = $(`<div id="html_b0b9d47cf24c83e600ccb34c693cfe8d" style="width: 100.0%; height: 100.0%;">Route Nationale 2 - Pantin, Paris<br>(48.9022, 2.3907)</div>`)[0];
+            popup_ba2ce1b59c4f808910f412a6615a315d.setContent(html_b0b9d47cf24c83e600ccb34c693cfe8d);
+        
+
+        marker_fd9ba79621b99e4ed86f095d947c49a2.bindPopup(popup_ba2ce1b59c4f808910f412a6615a315d)
+        ;
+
+        
+    
+    
+            marker_fd9ba79621b99e4ed86f095d947c49a2.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6670302426e93d76a2c38e6d802fa9ed = L.marker(
+                [48.8386, 2.41278],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_9067d2d39f9884f1fcc48d84df996f96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6670302426e93d76a2c38e6d802fa9ed.setIcon(icon_9067d2d39f9884f1fcc48d84df996f96);
+        
+    
+        var popup_ca986dec08ee2c416d447954691ed4c1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ea0347d8406f712f71c7d4c8b1cc08b = $(`<div id="html_9ea0347d8406f712f71c7d4c8b1cc08b" style="width: 100.0%; height: 100.0%;">Boulevard Peripherique Est, Paris<br>(48.8386, 2.41278)</div>`)[0];
+            popup_ca986dec08ee2c416d447954691ed4c1.setContent(html_9ea0347d8406f712f71c7d4c8b1cc08b);
+        
+
+        marker_6670302426e93d76a2c38e6d802fa9ed.bindPopup(popup_ca986dec08ee2c416d447954691ed4c1)
+        ;
+
+        
+    
+    
+            marker_6670302426e93d76a2c38e6d802fa9ed.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a5b7813459ae5ca73b4d3be938e756f = L.marker(
+                [48.897, 2.347],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_1f9c97c312b5d8398e0b879261a98bd6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4a5b7813459ae5ca73b4d3be938e756f.setIcon(icon_1f9c97c312b5d8398e0b879261a98bd6);
+        
+    
+        var popup_155df480dbebc64e97dc8e11a582c92a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b1ca765df56412c29316153cfd9e346 = $(`<div id="html_1b1ca765df56412c29316153cfd9e346" style="width: 100.0%; height: 100.0%;">Rue du Mont Cenis<br>(48.897, 2.347)</div>`)[0];
+            popup_155df480dbebc64e97dc8e11a582c92a.setContent(html_1b1ca765df56412c29316153cfd9e346);
+        
+
+        marker_4a5b7813459ae5ca73b4d3be938e756f.bindPopup(popup_155df480dbebc64e97dc8e11a582c92a)
+        ;
+
+        
+    
+    
+            marker_4a5b7813459ae5ca73b4d3be938e756f.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e2979098d0370c7bcb9c4c8b4e7532c4 = L.marker(
+                [42.00666664, 21.38694446],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_7a76c3c165afb661c70c95a29d1d69af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_e2979098d0370c7bcb9c4c8b4e7532c4.setIcon(icon_7a76c3c165afb661c70c95a29d1d69af);
+        
+    
+        var popup_96e2a41a237635be8e712d7332149073 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0f1ed29c38436fc30b760d97e558c098 = $(`<div id="html_0f1ed29c38436fc30b760d97e558c098" style="width: 100.0%; height: 100.0%;">Karposh, Skopje, Macedonia (Карпош)<br>(42.00666664, 21.38694446)</div>`)[0];
+            popup_96e2a41a237635be8e712d7332149073.setContent(html_0f1ed29c38436fc30b760d97e558c098);
+        
+
+        marker_e2979098d0370c7bcb9c4c8b4e7532c4.bindPopup(popup_96e2a41a237635be8e712d7332149073)
+        ;
+
+        
+    
+    
+            marker_e2979098d0370c7bcb9c4c8b4e7532c4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_57ccb4ebb17720b47db8b241ce888a4b = L.marker(
+                [41.9992, 21.4408],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_159fb34968bc4860f369b32b8b9f452b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_57ccb4ebb17720b47db8b241ce888a4b.setIcon(icon_159fb34968bc4860f369b32b8b9f452b);
+        
+    
+        var popup_26874f085c7f16a741afe479e9cbb459 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3aeb67f3391c8978584b75c6d1686915 = $(`<div id="html_3aeb67f3391c8978584b75c6d1686915" style="width: 100.0%; height: 100.0%;">Rektorat, Skopje, Macedonia (Ректорат)<br>(41.9992, 21.4408)</div>`)[0];
+            popup_26874f085c7f16a741afe479e9cbb459.setContent(html_3aeb67f3391c8978584b75c6d1686915);
+        
+
+        marker_57ccb4ebb17720b47db8b241ce888a4b.bindPopup(popup_26874f085c7f16a741afe479e9cbb459)
+        ;
+
+        
+    
+    
+            marker_57ccb4ebb17720b47db8b241ce888a4b.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_170a36823ce22f7a9b99fc400e67e512 = L.marker(
+                [42.004904, 21.36479],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_988573e0d439618e5f72bb5fd3c4bd99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_170a36823ce22f7a9b99fc400e67e512.setIcon(icon_988573e0d439618e5f72bb5fd3c4bd99);
+        
+    
+        var popup_23b50b5618842ace58196d444eacb433 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_225bb4e71563b6d684c54d19b2aaf68f = $(`<div id="html_225bb4e71563b6d684c54d19b2aaf68f" style="width: 100.0%; height: 100.0%;">MobileGP, Macedonia (Мобилна станица - Ѓ. Петров)<br>(42.004904, 21.36479)</div>`)[0];
+            popup_23b50b5618842ace58196d444eacb433.setContent(html_225bb4e71563b6d684c54d19b2aaf68f);
+        
+
+        marker_170a36823ce22f7a9b99fc400e67e512.bindPopup(popup_23b50b5618842ace58196d444eacb433)
+        ;
+
+        
+    
+    
+            marker_170a36823ce22f7a9b99fc400e67e512.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_79d43b919466bbf81068eabcb911a1a6 = L.marker(
+                [42.0036, 21.4636],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_e2a80ece7da9912881f33a2a16fdc83b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_79d43b919466bbf81068eabcb911a1a6.setIcon(icon_e2a80ece7da9912881f33a2a16fdc83b);
+        
+    
+        var popup_e4484a327b6bd65bf27bee8382eff747 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_87d2747ac08b814ee09281dec4852f98 = $(`<div id="html_87d2747ac08b814ee09281dec4852f98" style="width: 100.0%; height: 100.0%;">Gazi Baba, Skopje, Macedonia (Гази Баба)<br>(42.0036, 21.4636)</div>`)[0];
+            popup_e4484a327b6bd65bf27bee8382eff747.setContent(html_87d2747ac08b814ee09281dec4852f98);
+        
+
+        marker_79d43b919466bbf81068eabcb911a1a6.bindPopup(popup_e4484a327b6bd65bf27bee8382eff747)
+        ;
+
+        
+    
+    
+            marker_79d43b919466bbf81068eabcb911a1a6.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_03e4d9647caf973867d7d5da6181bbce = L.marker(
+                [41.9783, 21.47],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_4145370e12f7dc9d7851af8a6c4ae1f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_03e4d9647caf973867d7d5da6181bbce.setIcon(icon_4145370e12f7dc9d7851af8a6c4ae1f7);
+        
+    
+        var popup_bec11be422e5935aecdce316927785c8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e6a0759349975bc9c0f09df4c02ac4a8 = $(`<div id="html_e6a0759349975bc9c0f09df4c02ac4a8" style="width: 100.0%; height: 100.0%;">Lisice, Macedonia (Лисиче)<br>(41.9783, 21.47)</div>`)[0];
+            popup_bec11be422e5935aecdce316927785c8.setContent(html_e6a0759349975bc9c0f09df4c02ac4a8);
+        
+
+        marker_03e4d9647caf973867d7d5da6181bbce.bindPopup(popup_bec11be422e5935aecdce316927785c8)
+        ;
+
+        
+    
+    
+            marker_03e4d9647caf973867d7d5da6181bbce.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b6653537472f39af8fe8a0f5d571d1ff = L.marker(
+                [41.99249998, 21.42361109],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_38ccc32335c5555957e3356cb397605a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_b6653537472f39af8fe8a0f5d571d1ff.setIcon(icon_38ccc32335c5555957e3356cb397605a);
+        
+    
+        var popup_a3fa50b35cfc95ba2bae6cf7ea0e5d2d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2bdddb2845f600a7317d5da16b804fa7 = $(`<div id="html_2bdddb2845f600a7317d5da16b804fa7" style="width: 100.0%; height: 100.0%;">Centar, Skopje, Macedonia (Центар)<br>(41.99249998, 21.42361109)</div>`)[0];
+            popup_a3fa50b35cfc95ba2bae6cf7ea0e5d2d.setContent(html_2bdddb2845f600a7317d5da16b804fa7);
+        
+
+        marker_b6653537472f39af8fe8a0f5d571d1ff.bindPopup(popup_a3fa50b35cfc95ba2bae6cf7ea0e5d2d)
+        ;
+
+        
+    
+    
+            marker_b6653537472f39af8fe8a0f5d571d1ff.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a332c74c07f5c103966e5d0f7d7927b9 = L.marker(
+                [44.786458333333, 20.52173611111],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_8d670e187aa573be6b4fe181180e0359 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a332c74c07f5c103966e5d0f7d7927b9.setIcon(icon_8d670e187aa573be6b4fe181180e0359);
+        
+    
+        var popup_1abe26df5fe6942923fac758bd16398b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4e767aa5b1d8a2aa66aae1a73bb63c27 = $(`<div id="html_4e767aa5b1d8a2aa66aae1a73bb63c27" style="width: 100.0%; height: 100.0%;">Zeleno Brdo, Beograd, Serbia<br>(44.786458333333, 20.52173611111)</div>`)[0];
+            popup_1abe26df5fe6942923fac758bd16398b.setContent(html_4e767aa5b1d8a2aa66aae1a73bb63c27);
+        
+
+        marker_a332c74c07f5c103966e5d0f7d7927b9.bindPopup(popup_1abe26df5fe6942923fac758bd16398b)
+        ;
+
+        
+    
+    
+            marker_a332c74c07f5c103966e5d0f7d7927b9.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b13c0d89f27717c86a7c70e8bdd3de85 = L.marker(
+                [44.803111111111, 20.400027777778],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_e2038660d1909f081864524ce7ccbec1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_b13c0d89f27717c86a7c70e8bdd3de85.setIcon(icon_e2038660d1909f081864524ce7ccbec1);
+        
+    
+        var popup_536d649777c8df3af32a47dd86b9678c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fff705f1617b81d67676d9d757d20293 = $(`<div id="html_fff705f1617b81d67676d9d757d20293" style="width: 100.0%; height: 100.0%;">Novi Beograd, Beograd, Serbia<br>(44.803111111111, 20.400027777778)</div>`)[0];
+            popup_536d649777c8df3af32a47dd86b9678c.setContent(html_fff705f1617b81d67676d9d757d20293);
+        
+
+        marker_b13c0d89f27717c86a7c70e8bdd3de85.bindPopup(popup_536d649777c8df3af32a47dd86b9678c)
+        ;
+
+        
+    
+    
+            marker_b13c0d89f27717c86a7c70e8bdd3de85.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20095485a82b889683d7a30742e489a5 = L.marker(
+                [44.796, 20.532],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_5a836fc7a98dceea12b4f1926306ae5d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_20095485a82b889683d7a30742e489a5.setIcon(icon_5a836fc7a98dceea12b4f1926306ae5d);
+        
+    
+        var popup_ff5008a5f620e502099203c1f9a96b84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_22cfcc8230fc5947e12f9f770deba673 = $(`<div id="html_22cfcc8230fc5947e12f9f770deba673" style="width: 100.0%; height: 100.0%;">Заграђе<br>(44.796, 20.532)</div>`)[0];
+            popup_ff5008a5f620e502099203c1f9a96b84.setContent(html_22cfcc8230fc5947e12f9f770deba673);
+        
+
+        marker_20095485a82b889683d7a30742e489a5.bindPopup(popup_ff5008a5f620e502099203c1f9a96b84)
+        ;
+
+        
+    
+    
+            marker_20095485a82b889683d7a30742e489a5.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bff7e2b092c0edaa6c4cafb3f2b0205e = L.marker(
+                [44.816, 20.538],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_a430afcb99d55cd3cb470b07971fa2ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bff7e2b092c0edaa6c4cafb3f2b0205e.setIcon(icon_a430afcb99d55cd3cb470b07971fa2ef);
+        
+    
+        var popup_62c037134c3cf532ae1e8d3a1e5468cd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_53650a215d5a7e3635c508463b68bc9b = $(`<div id="html_53650a215d5a7e3635c508463b68bc9b" style="width: 100.0%; height: 100.0%;">Слободана Јовановића<br>(44.816, 20.538)</div>`)[0];
+            popup_62c037134c3cf532ae1e8d3a1e5468cd.setContent(html_53650a215d5a7e3635c508463b68bc9b);
+        
+
+        marker_bff7e2b092c0edaa6c4cafb3f2b0205e.bindPopup(popup_62c037134c3cf532ae1e8d3a1e5468cd)
+        ;
+
+        
+    
+    
+            marker_bff7e2b092c0edaa6c4cafb3f2b0205e.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b75963f10880c2773891c3284a9176bd = L.marker(
+                [44.78, 20.408],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_6b20096f028d1e58dfb2723fa03c7c69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_b75963f10880c2773891c3284a9176bd.setIcon(icon_6b20096f028d1e58dfb2723fa03c7c69);
+        
+    
+        var popup_4d07b0a05b9755b6f2b9c52a298b6bc8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a4f58d0987dc4cefc78f28f95df6e3d5 = $(`<div id="html_a4f58d0987dc4cefc78f28f95df6e3d5" style="width: 100.0%; height: 100.0%;">Obalskih radnika<br>(44.78, 20.408)</div>`)[0];
+            popup_4d07b0a05b9755b6f2b9c52a298b6bc8.setContent(html_a4f58d0987dc4cefc78f28f95df6e3d5);
+        
+
+        marker_b75963f10880c2773891c3284a9176bd.bindPopup(popup_4d07b0a05b9755b6f2b9c52a298b6bc8)
+        ;
+
+        
+    
+    
+            marker_b75963f10880c2773891c3284a9176bd.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52d4d68f743533268b2edec733430de4 = L.marker(
+                [44.798, 20.382],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_fb422e379a5096cfc9aef610902af354 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_52d4d68f743533268b2edec733430de4.setIcon(icon_fb422e379a5096cfc9aef610902af354);
+        
+    
+        var popup_4c6ebef2b0406fb62566a064c8dfa068 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6b5a368f0181951fbf71c4cd2a9f67b4 = $(`<div id="html_6b5a368f0181951fbf71c4cd2a9f67b4" style="width: 100.0%; height: 100.0%;">Nehruova<br>(44.798, 20.382)</div>`)[0];
+            popup_4c6ebef2b0406fb62566a064c8dfa068.setContent(html_6b5a368f0181951fbf71c4cd2a9f67b4);
+        
+
+        marker_52d4d68f743533268b2edec733430de4.bindPopup(popup_4c6ebef2b0406fb62566a064c8dfa068)
+        ;
+
+        
+    
+    
+            marker_52d4d68f743533268b2edec733430de4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_edc1db5480326ec29fe789bcd2b52389 = L.marker(
+                [44.79880556, 20.450305555556],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_2362d0b6043a74e62a59a69fa52fcc09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_edc1db5480326ec29fe789bcd2b52389.setIcon(icon_2362d0b6043a74e62a59a69fa52fcc09);
+        
+    
+        var popup_4de25140b0b857b8322e61c10dd88979 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e5d013dfd34127da2c0480c7598ad1c = $(`<div id="html_3e5d013dfd34127da2c0480c7598ad1c" style="width: 100.0%; height: 100.0%;">Mostar, Beograd, Serbia<br>(44.79880556, 20.450305555556)</div>`)[0];
+            popup_4de25140b0b857b8322e61c10dd88979.setContent(html_3e5d013dfd34127da2c0480c7598ad1c);
+        
+
+        marker_edc1db5480326ec29fe789bcd2b52389.bindPopup(popup_4de25140b0b857b8322e61c10dd88979)
+        ;
+
+        
+    
+    
+            marker_edc1db5480326ec29fe789bcd2b52389.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4dc2fc13b951452f0279c7f1bc047680 = L.marker(
+                [44.796959, 20.475288],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_b09b2b8b5358389103063a32aacd125d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_4dc2fc13b951452f0279c7f1bc047680.setIcon(icon_b09b2b8b5358389103063a32aacd125d);
+        
+    
+        var popup_933e60661765f3ad1af43673360a5776 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8a6dcb5bc145fa56087ff7ce38c9cfc = $(`<div id="html_f8a6dcb5bc145fa56087ff7ce38c9cfc" style="width: 100.0%; height: 100.0%;">Beograd Vračar, Serbia<br>(44.796959, 20.475288)</div>`)[0];
+            popup_933e60661765f3ad1af43673360a5776.setContent(html_f8a6dcb5bc145fa56087ff7ce38c9cfc);
+        
+
+        marker_4dc2fc13b951452f0279c7f1bc047680.bindPopup(popup_933e60661765f3ad1af43673360a5776)
+        ;
+
+        
+    
+    
+            marker_4dc2fc13b951452f0279c7f1bc047680.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e9ecaaad79452adab4390c7e38886060 = L.marker(
+                [44.82112, 20.459113],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_7b57924452f817d1ef7a8bf8666bf133 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_e9ecaaad79452adab4390c7e38886060.setIcon(icon_7b57924452f817d1ef7a8bf8666bf133);
+        
+    
+        var popup_94913c9cece2416cf1a3d9814707d518 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ce4fc9d1e4d246073f850032d26d5401 = $(`<div id="html_ce4fc9d1e4d246073f850032d26d5401" style="width: 100.0%; height: 100.0%;">Beograd Stari grad, Serbia<br>(44.82112, 20.459113)</div>`)[0];
+            popup_94913c9cece2416cf1a3d9814707d518.setContent(html_ce4fc9d1e4d246073f850032d26d5401);
+        
+
+        marker_e9ecaaad79452adab4390c7e38886060.bindPopup(popup_94913c9cece2416cf1a3d9814707d518)
+        ;
+
+        
+    
+    
+            marker_e9ecaaad79452adab4390c7e38886060.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6203517e4f7d5921252f36ef1cff5aba = L.marker(
+                [44.81151024518, 20.51515824198],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_219b0f75393b32efe7dcdaea8a192755 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6203517e4f7d5921252f36ef1cff5aba.setIcon(icon_219b0f75393b32efe7dcdaea8a192755);
+        
+    
+        var popup_8c28ae4aa026b079fe48eecd4b6c6ed3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e9deea0dfa5eedf42d88812fc9d0d633 = $(`<div id="html_e9deea0dfa5eedf42d88812fc9d0d633" style="width: 100.0%; height: 100.0%;">Mariјane Gregoran<br>(44.81151024518, 20.51515824198)</div>`)[0];
+            popup_8c28ae4aa026b079fe48eecd4b6c6ed3.setContent(html_e9deea0dfa5eedf42d88812fc9d0d633);
+        
+
+        marker_6203517e4f7d5921252f36ef1cff5aba.bindPopup(popup_8c28ae4aa026b079fe48eecd4b6c6ed3)
+        ;
+
+        
+    
+    
+            marker_6203517e4f7d5921252f36ef1cff5aba.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c707ac772dc898e544319517761dc1c = L.marker(
+                [44.798, 20.366],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_a1138536b82ef98d42932aff3529f5ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_9c707ac772dc898e544319517761dc1c.setIcon(icon_a1138536b82ef98d42932aff3529f5ac);
+        
+    
+        var popup_269127410c45be45568abe9450d39de1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_09c5a78e3e7ef8350d5cb8e35e26b2e8 = $(`<div id="html_09c5a78e3e7ef8350d5cb8e35e26b2e8" style="width: 100.0%; height: 100.0%;">Милеве Марић Ајнштајн<br>(44.798, 20.366)</div>`)[0];
+            popup_269127410c45be45568abe9450d39de1.setContent(html_09c5a78e3e7ef8350d5cb8e35e26b2e8);
+        
+
+        marker_9c707ac772dc898e544319517761dc1c.bindPopup(popup_269127410c45be45568abe9450d39de1)
+        ;
+
+        
+    
+    
+            marker_9c707ac772dc898e544319517761dc1c.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_59c29d248a737bbecceb611dc1169bc6 = L.marker(
+                [44.762, 20.486],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_d1da5aecb8a725722d1e2f6c15a63c8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_59c29d248a737bbecceb611dc1169bc6.setIcon(icon_d1da5aecb8a725722d1e2f6c15a63c8a);
+        
+    
+        var popup_6872adba5b69d3a5cc02e4099d6f9a26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_525a8272b7794d8d52dfb82cd0b920ac = $(`<div id="html_525a8272b7794d8d52dfb82cd0b920ac" style="width: 100.0%; height: 100.0%;">Vozdovacki kruzni put<br>(44.762, 20.486)</div>`)[0];
+            popup_6872adba5b69d3a5cc02e4099d6f9a26.setContent(html_525a8272b7794d8d52dfb82cd0b920ac);
+        
+
+        marker_59c29d248a737bbecceb611dc1169bc6.bindPopup(popup_6872adba5b69d3a5cc02e4099d6f9a26)
+        ;
+
+        
+    
+    
+            marker_59c29d248a737bbecceb611dc1169bc6.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cb06c8fa0f6ad01bd8d1879f559cc7ba = L.marker(
+                [44.792, 20.482],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_952c3f069099ae18a3ce3ee43fbd3b9c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_cb06c8fa0f6ad01bd8d1879f559cc7ba.setIcon(icon_952c3f069099ae18a3ce3ee43fbd3b9c);
+        
+    
+        var popup_9d39b6ccc2c377ba342667e6a7bc493a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f3bff0d65681724c68731c76f0ec8c4 = $(`<div id="html_5f3bff0d65681724c68731c76f0ec8c4" style="width: 100.0%; height: 100.0%;">Gospodara Vucica<br>(44.792, 20.482)</div>`)[0];
+            popup_9d39b6ccc2c377ba342667e6a7bc493a.setContent(html_5f3bff0d65681724c68731c76f0ec8c4);
+        
+
+        marker_cb06c8fa0f6ad01bd8d1879f559cc7ba.bindPopup(popup_9d39b6ccc2c377ba342667e6a7bc493a)
+        ;
+
+        
+    
+    
+            marker_cb06c8fa0f6ad01bd8d1879f559cc7ba.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_68a933c17b81a00766b5b4cf68c98e71 = L.marker(
+                [44.804, 20.476],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_ca2492db10940552a0b46e197595ddcc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_68a933c17b81a00766b5b4cf68c98e71.setIcon(icon_ca2492db10940552a0b46e197595ddcc);
+        
+    
+        var popup_42a1b88e2f031ef6d014366099515cba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13d6a281062f05c5589ae7c2c2f89fab = $(`<div id="html_13d6a281062f05c5589ae7c2c2f89fab" style="width: 100.0%; height: 100.0%;">Hadzi-Prodanova<br>(44.804, 20.476)</div>`)[0];
+            popup_42a1b88e2f031ef6d014366099515cba.setContent(html_13d6a281062f05c5589ae7c2c2f89fab);
+        
+
+        marker_68a933c17b81a00766b5b4cf68c98e71.bindPopup(popup_42a1b88e2f031ef6d014366099515cba)
+        ;
+
+        
+    
+    
+            marker_68a933c17b81a00766b5b4cf68c98e71.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b0fe6c410b4fcdd77a25dbb5bbf02b1 = L.marker(
+                [44.78765411896292, 20.43384552210275],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_1ff4591ef3483974ba660961c7f5cdc9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5b0fe6c410b4fcdd77a25dbb5bbf02b1.setIcon(icon_1ff4591ef3483974ba660961c7f5cdc9);
+        
+    
+        var popup_9ddb7d035c3cc1e5b2817e5f98f02934 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6ad7a4ab362cbd1f3c527b1df8974fdd = $(`<div id="html_6ad7a4ab362cbd1f3c527b1df8974fdd" style="width: 100.0%; height: 100.0%;">International School of Belgrade<br>(44.78765411896292, 20.43384552210275)</div>`)[0];
+            popup_9ddb7d035c3cc1e5b2817e5f98f02934.setContent(html_6ad7a4ab362cbd1f3c527b1df8974fdd);
+        
+
+        marker_5b0fe6c410b4fcdd77a25dbb5bbf02b1.bindPopup(popup_9ddb7d035c3cc1e5b2817e5f98f02934)
+        ;
+
+        
+    
+    
+            marker_5b0fe6c410b4fcdd77a25dbb5bbf02b1.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3724f3992d015aa887c9b355a91449cd = L.marker(
+                [44.774, 20.506],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_9e799a538aeccde4e8b2a834a0ab486f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3724f3992d015aa887c9b355a91449cd.setIcon(icon_9e799a538aeccde4e8b2a834a0ab486f);
+        
+    
+        var popup_31d553fd807cf16a063ea2dfdd35c297 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5ec1bbaf2933e8a90ca7e062945a1cbc = $(`<div id="html_5ec1bbaf2933e8a90ca7e062945a1cbc" style="width: 100.0%; height: 100.0%;">Боривоја Стевановића<br>(44.774, 20.506)</div>`)[0];
+            popup_31d553fd807cf16a063ea2dfdd35c297.setContent(html_5ec1bbaf2933e8a90ca7e062945a1cbc);
+        
+
+        marker_3724f3992d015aa887c9b355a91449cd.bindPopup(popup_31d553fd807cf16a063ea2dfdd35c297)
+        ;
+
+        
+    
+    
+            marker_3724f3992d015aa887c9b355a91449cd.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e545b30fd11e8d10650b5a32b7d4ae27 = L.marker(
+                [44.776, 20.476],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_c3a7d6656bbc0690a0de3640f3c3b621 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_e545b30fd11e8d10650b5a32b7d4ae27.setIcon(icon_c3a7d6656bbc0690a0de3640f3c3b621);
+        
+    
+        var popup_bdc2181a2b71374f29766e28056a3ea9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1cd7155848d3aaf1e045478ab4da1dfa = $(`<div id="html_1cd7155848d3aaf1e045478ab4da1dfa" style="width: 100.0%; height: 100.0%;">Činovnička Kolonija<br>(44.776, 20.476)</div>`)[0];
+            popup_bdc2181a2b71374f29766e28056a3ea9.setContent(html_1cd7155848d3aaf1e045478ab4da1dfa);
+        
+
+        marker_e545b30fd11e8d10650b5a32b7d4ae27.bindPopup(popup_bdc2181a2b71374f29766e28056a3ea9)
+        ;
+
+        
+    
+    
+            marker_e545b30fd11e8d10650b5a32b7d4ae27.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bed97b04cf638027c5546eb999d48b22 = L.marker(
+                [44.782, 20.468],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_c6d68868d45c211f01ed58c5794cfd39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bed97b04cf638027c5546eb999d48b22.setIcon(icon_c6d68868d45c211f01ed58c5794cfd39);
+        
+    
+        var popup_97b8538a0967355fe8488d953171bc7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_096fff87489cbb98c2aa15198aa3aaca = $(`<div id="html_096fff87489cbb98c2aa15198aa3aaca" style="width: 100.0%; height: 100.0%;">Милована Маринковића<br>(44.782, 20.468)</div>`)[0];
+            popup_97b8538a0967355fe8488d953171bc7d.setContent(html_096fff87489cbb98c2aa15198aa3aaca);
+        
+
+        marker_bed97b04cf638027c5546eb999d48b22.bindPopup(popup_97b8538a0967355fe8488d953171bc7d)
+        ;
+
+        
+    
+    
+            marker_bed97b04cf638027c5546eb999d48b22.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b7ed9054c2176eb44896a6c9426c1ff = L.marker(
+                [44.80141665866, 20.47246456179],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_c3fb3a534f522d56f7d17bb98dd783f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7b7ed9054c2176eb44896a6c9426c1ff.setIcon(icon_c3fb3a534f522d56f7d17bb98dd783f7);
+        
+    
+        var popup_7af3c1a197ce94bb10df49c857edc0f9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1eca37195c7da338feed3c2d0d0345b8 = $(`<div id="html_1eca37195c7da338feed3c2d0d0345b8" style="width: 100.0%; height: 100.0%;">Koce Kapetana<br>(44.80141665866, 20.47246456179)</div>`)[0];
+            popup_7af3c1a197ce94bb10df49c857edc0f9.setContent(html_1eca37195c7da338feed3c2d0d0345b8);
+        
+
+        marker_7b7ed9054c2176eb44896a6c9426c1ff.bindPopup(popup_7af3c1a197ce94bb10df49c857edc0f9)
+        ;
+
+        
+    
+    
+            marker_7b7ed9054c2176eb44896a6c9426c1ff.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b2946942f59b65090d8c17c2851ff0b = L.marker(
+                [44.816, 20.42],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_055e1e5c45a8eeba11d85d69de22fba4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_2b2946942f59b65090d8c17c2851ff0b.setIcon(icon_055e1e5c45a8eeba11d85d69de22fba4);
+        
+    
+        var popup_980f8e679ae3ed6ce3edc3cc3cf44eb0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5b1137073764789c93d45c9a73c113d2 = $(`<div id="html_5b1137073764789c93d45c9a73c113d2" style="width: 100.0%; height: 100.0%;">Zoran Djindjic Boulevard<br>(44.816, 20.42)</div>`)[0];
+            popup_980f8e679ae3ed6ce3edc3cc3cf44eb0.setContent(html_5b1137073764789c93d45c9a73c113d2);
+        
+
+        marker_2b2946942f59b65090d8c17c2851ff0b.bindPopup(popup_980f8e679ae3ed6ce3edc3cc3cf44eb0)
+        ;
+
+        
+    
+    
+            marker_2b2946942f59b65090d8c17c2851ff0b.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e47f280848867df29c688aafc1f83f1 = L.marker(
+                [44.7912813, 20.47285622644],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_f15002305d881b1adccb6e097537746d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_4e47f280848867df29c688aafc1f83f1.setIcon(icon_f15002305d881b1adccb6e097537746d);
+        
+    
+        var popup_6e4d74f2c532223998a7edb012b874d6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f9345106fa5078d47d6dcc4fdd86c9b = $(`<div id="html_1f9345106fa5078d47d6dcc4fdd86c9b" style="width: 100.0%; height: 100.0%;">Vojvode Hrvoja<br>(44.7912813, 20.47285622644)</div>`)[0];
+            popup_6e4d74f2c532223998a7edb012b874d6.setContent(html_1f9345106fa5078d47d6dcc4fdd86c9b);
+        
+
+        marker_4e47f280848867df29c688aafc1f83f1.bindPopup(popup_6e4d74f2c532223998a7edb012b874d6)
+        ;
+
+        
+    
+    
+            marker_4e47f280848867df29c688aafc1f83f1.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_854da7ea375318d85e53ae0e7978c8b7 = L.marker(
+                [50.100569, 20.122561],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_9bdc191dd8827cd78796b80b74ce5766 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_854da7ea375318d85e53ae0e7978c8b7.setIcon(icon_9bdc191dd8827cd78796b80b74ce5766);
+        
+    
+        var popup_0edf720286df9483b2a446b713208495 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eff0acc36ba981b98664ed4140bcf9c6 = $(`<div id="html_eff0acc36ba981b98664ed4140bcf9c6" style="width: 100.0%; height: 100.0%;">Kraków, os. Wadów, Małopolska, Poland<br>(50.100569, 20.122561)</div>`)[0];
+            popup_0edf720286df9483b2a446b713208495.setContent(html_eff0acc36ba981b98664ed4140bcf9c6);
+        
+
+        marker_854da7ea375318d85e53ae0e7978c8b7.bindPopup(popup_0edf720286df9483b2a446b713208495)
+        ;
+
+        
+    
+    
+            marker_854da7ea375318d85e53ae0e7978c8b7.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad45973c6bba4c490494aef68380b7ce = L.marker(
+                [50.069308, 20.053492],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_bdbee9dc32d540df6df581dbee659e47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_ad45973c6bba4c490494aef68380b7ce.setIcon(icon_bdbee9dc32d540df6df581dbee659e47);
+        
+    
+        var popup_e3555d860826b33d0920cac2a4cab48d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_914edd0f6fc69a6e6539003d7add7974 = $(`<div id="html_914edd0f6fc69a6e6539003d7add7974" style="width: 100.0%; height: 100.0%;">Nowa Huta, Kraków, Małopolska, Poland<br>(50.069308, 20.053492)</div>`)[0];
+            popup_e3555d860826b33d0920cac2a4cab48d.setContent(html_914edd0f6fc69a6e6539003d7add7974);
+        
+
+        marker_ad45973c6bba4c490494aef68380b7ce.bindPopup(popup_e3555d860826b33d0920cac2a4cab48d)
+        ;
+
+        
+    
+    
+            marker_ad45973c6bba4c490494aef68380b7ce.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5853717c7552227f8a988a50020349e4 = L.marker(
+                [50.057447, 19.946008],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_695adcc3a063f5cf31e4614c627e81ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_5853717c7552227f8a988a50020349e4.setIcon(icon_695adcc3a063f5cf31e4614c627e81ff);
+        
+    
+        var popup_8847eb48bc42fa952283456d732dffff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_68a829c46f5310a2a05c2521659faa5f = $(`<div id="html_68a829c46f5310a2a05c2521659faa5f" style="width: 100.0%; height: 100.0%;">Kraków-ul. Dietla, Małopolska, Poland<br>(50.057447, 19.946008)</div>`)[0];
+            popup_8847eb48bc42fa952283456d732dffff.setContent(html_68a829c46f5310a2a05c2521659faa5f);
+        
+
+        marker_5853717c7552227f8a988a50020349e4.bindPopup(popup_8847eb48bc42fa952283456d732dffff)
+        ;
+
+        
+    
+    
+            marker_5853717c7552227f8a988a50020349e4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3e9b10e56183f1c0080c004023d5e57 = L.marker(
+                [50.081197, 19.895358],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_8b1b1dcfd1d8dec99c85d7a770625fdc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_c3e9b10e56183f1c0080c004023d5e57.setIcon(icon_8b1b1dcfd1d8dec99c85d7a770625fdc);
+        
+    
+        var popup_fea56596cc0ad62652ff8ab418168f8e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d8f73768a7b04eb271934e4e4af253c6 = $(`<div id="html_d8f73768a7b04eb271934e4e4af253c6" style="width: 100.0%; height: 100.0%;">Kraków, ul. Złoty Róg, Małopolska, Poland<br>(50.081197, 19.895358)</div>`)[0];
+            popup_fea56596cc0ad62652ff8ab418168f8e.setContent(html_d8f73768a7b04eb271934e4e4af253c6);
+        
+
+        marker_c3e9b10e56183f1c0080c004023d5e57.bindPopup(popup_fea56596cc0ad62652ff8ab418168f8e)
+        ;
+
+        
+    
+    
+            marker_c3e9b10e56183f1c0080c004023d5e57.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dbbf3d643723b8ddc0f7b3f371de3d25 = L.marker(
+                [50.099361, 20.018317],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_bf8b618eac2a7dc88136b32a108c7381 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_dbbf3d643723b8ddc0f7b3f371de3d25.setIcon(icon_bf8b618eac2a7dc88136b32a108c7381);
+        
+    
+        var popup_83cd594ff283c6b73cee9184bc6ea4ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ad7da4f7b03eb5326a317cf475917217 = $(`<div id="html_ad7da4f7b03eb5326a317cf475917217" style="width: 100.0%; height: 100.0%;">Kraków, os. Piastów, Małopolska, Poland<br>(50.099361, 20.018317)</div>`)[0];
+            popup_83cd594ff283c6b73cee9184bc6ea4ba.setContent(html_ad7da4f7b03eb5326a317cf475917217);
+        
+
+        marker_dbbf3d643723b8ddc0f7b3f371de3d25.bindPopup(popup_83cd594ff283c6b73cee9184bc6ea4ba)
+        ;
+
+        
+    
+    
+            marker_dbbf3d643723b8ddc0f7b3f371de3d25.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a0abf9b4d37118113684ae24348c9e4 = L.marker(
+                [51.526454, -0.08491],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_2dd0cfb3c9f060c5864f7a6528be7137 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_2a0abf9b4d37118113684ae24348c9e4.setIcon(icon_2dd0cfb3c9f060c5864f7a6528be7137);
+        
+    
+        var popup_1aa0bbf266a06c2ca92bf4ac181226a5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6ca86170d93adacbc13d3f8f7230cde5 = $(`<div id="html_6ca86170d93adacbc13d3f8f7230cde5" style="width: 100.0%; height: 100.0%;">Hackney - Old Street, United Kingdom<br>(51.526454, -0.08491)</div>`)[0];
+            popup_1aa0bbf266a06c2ca92bf4ac181226a5.setContent(html_6ca86170d93adacbc13d3f8f7230cde5);
+        
+
+        marker_2a0abf9b4d37118113684ae24348c9e4.bindPopup(popup_1aa0bbf266a06c2ca92bf4ac181226a5)
+        ;
+
+        
+    
+    
+            marker_2a0abf9b4d37118113684ae24348c9e4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02302649a0b5b52a733f64ba8b6fc1da = L.marker(
+                [51.527706619465, -0.12905320528252],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_301b81d115f3f89e54e7b6d060af806b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_02302649a0b5b52a733f64ba8b6fc1da.setIcon(icon_301b81d115f3f89e54e7b6d060af806b);
+        
+    
+        var popup_6cb79a7e64bf564de7bb1920841b81a1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_512af56014cd715d1d709889bbf50ebf = $(`<div id="html_512af56014cd715d1d709889bbf50ebf" style="width: 100.0%; height: 100.0%;">Camden - Euston Road, United Kingdom<br>(51.527706619465, -0.12905320528252)</div>`)[0];
+            popup_6cb79a7e64bf564de7bb1920841b81a1.setContent(html_512af56014cd715d1d709889bbf50ebf);
+        
+
+        marker_02302649a0b5b52a733f64ba8b6fc1da.bindPopup(popup_6cb79a7e64bf564de7bb1920841b81a1)
+        ;
+
+        
+    
+    
+            marker_02302649a0b5b52a733f64ba8b6fc1da.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e847941ff4f9526f4540a6e613f0c0c5 = L.marker(
+                [51.5073509, -0.1277583],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_b8d3e3e34842512159487dfe7c10fdd3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e847941ff4f9526f4540a6e613f0c0c5.setIcon(icon_b8d3e3e34842512159487dfe7c10fdd3);
+        
+    
+        var popup_0de8210f07514b44e83ff9de96b531cc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13ef94bd99f3301af334d64c21a02a43 = $(`<div id="html_13ef94bd99f3301af334d64c21a02a43" style="width: 100.0%; height: 100.0%;">London<br>(51.5073509, -0.1277583)</div>`)[0];
+            popup_0de8210f07514b44e83ff9de96b531cc.setContent(html_13ef94bd99f3301af334d64c21a02a43);
+        
+
+        marker_e847941ff4f9526f4540a6e613f0c0c5.bindPopup(popup_0de8210f07514b44e83ff9de96b531cc)
+        ;
+
+        
+    
+    
+            marker_e847941ff4f9526f4540a6e613f0c0c5.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4d23874b9c0068b88525095bf91f6343 = L.marker(
+                [51.552656, -0.248774],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_966f1871b106bc1be07777a04b66938f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_4d23874b9c0068b88525095bf91f6343.setIcon(icon_966f1871b106bc1be07777a04b66938f);
+        
+    
+        var popup_6fb563dffbcc07cb3a0ad14e9e7ac1ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eecd7aa5795af633d43b5cd47e79adb1 = $(`<div id="html_eecd7aa5795af633d43b5cd47e79adb1" style="width: 100.0%; height: 100.0%;">Brent - Neasden Lane, United Kingdom<br>(51.552656, -0.248774)</div>`)[0];
+            popup_6fb563dffbcc07cb3a0ad14e9e7ac1ee.setContent(html_eecd7aa5795af633d43b5cd47e79adb1);
+        
+
+        marker_4d23874b9c0068b88525095bf91f6343.bindPopup(popup_6fb563dffbcc07cb3a0ad14e9e7ac1ee)
+        ;
+
+        
+    
+    
+            marker_4d23874b9c0068b88525095bf91f6343.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d3b73babbfd1bc134098dec897ed1fe = L.marker(
+                [51.532405461781, -0.21771890863938],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_32cc2c99039b4de1684e3cf169f64fb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_0d3b73babbfd1bc134098dec897ed1fe.setIcon(icon_32cc2c99039b4de1684e3cf169f64fb5);
+        
+    
+        var popup_a4ac0b3f68c2dfbca89e3e232d1e5db7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3da042eaf46cd4e58beb9d9ef5f4536e = $(`<div id="html_3da042eaf46cd4e58beb9d9ef5f4536e" style="width: 100.0%; height: 100.0%;">Brent - ARK Franklin Primary Academy, United Kingdom<br>(51.532405461781, -0.21771890863938)</div>`)[0];
+            popup_a4ac0b3f68c2dfbca89e3e232d1e5db7.setContent(html_3da042eaf46cd4e58beb9d9ef5f4536e);
+        
+
+        marker_0d3b73babbfd1bc134098dec897ed1fe.bindPopup(popup_a4ac0b3f68c2dfbca89e3e232d1e5db7)
+        ;
+
+        
+    
+    
+            marker_0d3b73babbfd1bc134098dec897ed1fe.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dbf7e116b182592316a6267dff5fc2ba = L.marker(
+                [51.57661, 0.030858],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_e92ee7dc52abe6bb5aad6c5442cccb75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_dbf7e116b182592316a6267dff5fc2ba.setIcon(icon_e92ee7dc52abe6bb5aad6c5442cccb75);
+        
+    
+        var popup_eafe38a357fb7ea46cb63362e945896e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ec47bd535b16f5a02046b2508f336c1e = $(`<div id="html_ec47bd535b16f5a02046b2508f336c1e" style="width: 100.0%; height: 100.0%;">Redbridge - Gardner Close, United Kingdom<br>(51.57661, 0.030858)</div>`)[0];
+            popup_eafe38a357fb7ea46cb63362e945896e.setContent(html_ec47bd535b16f5a02046b2508f336c1e);
+        
+
+        marker_dbf7e116b182592316a6267dff5fc2ba.bindPopup(popup_eafe38a357fb7ea46cb63362e945896e)
+        ;
+
+        
+    
+    
+            marker_dbf7e116b182592316a6267dff5fc2ba.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eab8fa398573edcd6a5b9537d3d1e1d0 = L.marker(
+                [51.569484331524, 0.082907474896495],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_c5befcaba7dc0bf0f285152340c00454 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_eab8fa398573edcd6a5b9537d3d1e1d0.setIcon(icon_c5befcaba7dc0bf0f285152340c00454);
+        
+    
+        var popup_e7ebe5ffe475deaf3e97b1e93ea530dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a02d4f6b42093af1f7213ee0d922b19d = $(`<div id="html_a02d4f6b42093af1f7213ee0d922b19d" style="width: 100.0%; height: 100.0%;">Redbridge - Ley Street, United Kingdom<br>(51.569484331524, 0.082907474896495)</div>`)[0];
+            popup_e7ebe5ffe475deaf3e97b1e93ea530dc.setContent(html_a02d4f6b42093af1f7213ee0d922b19d);
+        
+
+        marker_eab8fa398573edcd6a5b9537d3d1e1d0.bindPopup(popup_e7ebe5ffe475deaf3e97b1e93ea530dc)
+        ;
+
+        
+    
+    
+            marker_eab8fa398573edcd6a5b9537d3d1e1d0.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e43eb24e05398d710e6c80baffa8ae2f = L.marker(
+                [51.552476, -0.258089],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_2d4b1ca541696595094977b3af97ba11 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e43eb24e05398d710e6c80baffa8ae2f.setIcon(icon_2d4b1ca541696595094977b3af97ba11);
+        
+    
+        var popup_ab2eb8ef9c8a60e095caf5914450fd98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_db31b4f51abe4067758dbb9ad8db6a88 = $(`<div id="html_db31b4f51abe4067758dbb9ad8db6a88" style="width: 100.0%; height: 100.0%;">Brent - Ikea, United Kingdom<br>(51.552476, -0.258089)</div>`)[0];
+            popup_ab2eb8ef9c8a60e095caf5914450fd98.setContent(html_db31b4f51abe4067758dbb9ad8db6a88);
+        
+
+        marker_e43eb24e05398d710e6c80baffa8ae2f.bindPopup(popup_ab2eb8ef9c8a60e095caf5914450fd98)
+        ;
+
+        
+    
+    
+            marker_e43eb24e05398d710e6c80baffa8ae2f.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26e01ad47cb191368ae608dc35f7d0f2 = L.marker(
+                [51.617333, -0.298777],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_1bff76909a10448a2f9df15ad51ce290 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_26e01ad47cb191368ae608dc35f7d0f2.setIcon(icon_1bff76909a10448a2f9df15ad51ce290);
+        
+    
+        var popup_657336b04591b301f869c6e0ca9178de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a9c1708a1a10d36f6860c6155542c98a = $(`<div id="html_a9c1708a1a10d36f6860c6155542c98a" style="width: 100.0%; height: 100.0%;">London Harrow Stanmore, United Kingdom<br>(51.617333, -0.298777)</div>`)[0];
+            popup_657336b04591b301f869c6e0ca9178de.setContent(html_a9c1708a1a10d36f6860c6155542c98a);
+        
+
+        marker_26e01ad47cb191368ae608dc35f7d0f2.bindPopup(popup_657336b04591b301f869c6e0ca9178de)
+        ;
+
+        
+    
+    
+            marker_26e01ad47cb191368ae608dc35f7d0f2.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e7e054c8d979201c64d48115311022c0 = L.marker(
+                [51.520787459334, 0.20546070569404],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_0d2cd21ac4726452a9880a7e9c3dca0f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e7e054c8d979201c64d48115311022c0.setIcon(icon_0d2cd21ac4726452a9880a7e9c3dca0f);
+        
+    
+        var popup_66f010ea8a8a1d1f376ea7ba28e59253 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0c60fb0595ba17e80a1af696b9f824fc = $(`<div id="html_0c60fb0595ba17e80a1af696b9f824fc" style="width: 100.0%; height: 100.0%;">Havering - Rainham, United Kingdom<br>(51.520787459334, 0.20546070569404)</div>`)[0];
+            popup_66f010ea8a8a1d1f376ea7ba28e59253.setContent(html_0c60fb0595ba17e80a1af696b9f824fc);
+        
+
+        marker_e7e054c8d979201c64d48115311022c0.bindPopup(popup_66f010ea8a8a1d1f376ea7ba28e59253)
+        ;
+
+        
+    
+    
+            marker_e7e054c8d979201c64d48115311022c0.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1f94a064f46584da23507ae4f3dd1da9 = L.marker(
+                [51.513847178423, -0.077765681752],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_ae30fb1766bd3ce1a064b680da68ebf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1f94a064f46584da23507ae4f3dd1da9.setIcon(icon_ae30fb1766bd3ce1a064b680da68ebf5);
+        
+    
+        var popup_29fd01df027cc53771c798f6ae958122 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_95683d44f4125e1f4227b2a90856e663 = $(`<div id="html_95683d44f4125e1f4227b2a90856e663" style="width: 100.0%; height: 100.0%;">City of London - Sir John Cass School, United Kingdom<br>(51.513847178423, -0.077765681752)</div>`)[0];
+            popup_29fd01df027cc53771c798f6ae958122.setContent(html_95683d44f4125e1f4227b2a90856e663);
+        
+
+        marker_1f94a064f46584da23507ae4f3dd1da9.bindPopup(popup_29fd01df027cc53771c798f6ae958122)
+        ;
+
+        
+    
+    
+            marker_1f94a064f46584da23507ae4f3dd1da9.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1558b705de7c69d1469073feb287b805 = L.marker(
+                [51.54421, -0.175269],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_55af5b57fe62d01d9c8e0be891a70e75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1558b705de7c69d1469073feb287b805.setIcon(icon_55af5b57fe62d01d9c8e0be891a70e75);
+        
+    
+        var popup_3282f31bfdd097c26302c5742690be1d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6d653be852743e130a3d2bb8a9464cf6 = $(`<div id="html_6d653be852743e130a3d2bb8a9464cf6" style="width: 100.0%; height: 100.0%;">Camden Kerbside, United Kingdom<br>(51.54421, -0.175269)</div>`)[0];
+            popup_3282f31bfdd097c26302c5742690be1d.setContent(html_6d653be852743e130a3d2bb8a9464cf6);
+        
+
+        marker_1558b705de7c69d1469073feb287b805.bindPopup(popup_3282f31bfdd097c26302c5742690be1d)
+        ;
+
+        
+    
+    
+            marker_1558b705de7c69d1469073feb287b805.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5dc76eddfba5adb5140736f3c512f60 = L.marker(
+                [51.52229, -0.125889],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_2aae634f5d0de24b74618aa451d39aa7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e5dc76eddfba5adb5140736f3c512f60.setIcon(icon_2aae634f5d0de24b74618aa451d39aa7);
+        
+    
+        var popup_bcaf60e1151516967fe745ca9da543d1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_00fc3e1c45a36407a38892d1643f3721 = $(`<div id="html_00fc3e1c45a36407a38892d1643f3721" style="width: 100.0%; height: 100.0%;">London Bloomsbury, United Kingdom<br>(51.52229, -0.125889)</div>`)[0];
+            popup_bcaf60e1151516967fe745ca9da543d1.setContent(html_00fc3e1c45a36407a38892d1643f3721);
+        
+
+        marker_e5dc76eddfba5adb5140736f3c512f60.bindPopup(popup_bcaf60e1151516967fe745ca9da543d1)
+        ;
+
+        
+    
+    
+            marker_e5dc76eddfba5adb5140736f3c512f60.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_df597cd4c56ee83c377a631801600e25 = L.marker(
+                [51.5993, -0.068218],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_4d2718df026785929b8463e0938af602 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_df597cd4c56ee83c377a631801600e25.setIcon(icon_4d2718df026785929b8463e0938af602);
+        
+    
+        var popup_c323b158fc5461b3d977bb8cf518cd35 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7eaaeb2eda53fff1378b710184229e00 = $(`<div id="html_7eaaeb2eda53fff1378b710184229e00" style="width: 100.0%; height: 100.0%;">Haringey Roadside, United Kingdom<br>(51.5993, -0.068218)</div>`)[0];
+            popup_c323b158fc5461b3d977bb8cf518cd35.setContent(html_7eaaeb2eda53fff1378b710184229e00);
+        
+
+        marker_df597cd4c56ee83c377a631801600e25.bindPopup(popup_c323b158fc5461b3d977bb8cf518cd35)
+        ;
+
+        
+    
+    
+            marker_df597cd4c56ee83c377a631801600e25.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_902a599260cc1e2e14e16eb3597fa5e2 = L.marker(
+                [51.593048, -0.15866],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_3498ee73ff15e3ba2c12573b61f88aa8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_902a599260cc1e2e14e16eb3597fa5e2.setIcon(icon_3498ee73ff15e3ba2c12573b61f88aa8);
+        
+    
+        var popup_568343cb1af6536c2d18624d49296bb3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7a992a03e23d15e3922dc68d295c29f0 = $(`<div id="html_7a992a03e23d15e3922dc68d295c29f0" style="width: 100.0%; height: 100.0%;">Church Vale<br>(51.593048, -0.15866)</div>`)[0];
+            popup_568343cb1af6536c2d18624d49296bb3.setContent(html_7a992a03e23d15e3922dc68d295c29f0);
+        
+
+        marker_902a599260cc1e2e14e16eb3597fa5e2.bindPopup(popup_568343cb1af6536c2d18624d49296bb3)
+        ;
+
+        
+    
+    
+            marker_902a599260cc1e2e14e16eb3597fa5e2.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6a5e9443c23de75b6cc3a2e237e3e2a = L.marker(
+                [51.515046167401, -0.0084184926564274],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_de1ce98f17fcf9289a9cef26349a7d4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_c6a5e9443c23de75b6cc3a2e237e3e2a.setIcon(icon_de1ce98f17fcf9289a9cef26349a7d4e);
+        
+    
+        var popup_3228165919975c916db695c7979480c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5295a4e1ef19ced06b5995b3026a1980 = $(`<div id="html_5295a4e1ef19ced06b5995b3026a1980" style="width: 100.0%; height: 100.0%;">Tower Hamlets - Blackwall, United Kingdom<br>(51.515046167401, -0.0084184926564274)</div>`)[0];
+            popup_3228165919975c916db695c7979480c6.setContent(html_5295a4e1ef19ced06b5995b3026a1980);
+        
+
+        marker_c6a5e9443c23de75b6cc3a2e237e3e2a.bindPopup(popup_3228165919975c916db695c7979480c6)
+        ;
+
+        
+    
+    
+            marker_c6a5e9443c23de75b6cc3a2e237e3e2a.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_80a60cd24be059f8d6e4aabb6116388d = L.marker(
+                [51.562376, -0.004898],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_fa661161aa89d3df95235df1b5a2fbff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_80a60cd24be059f8d6e4aabb6116388d.setIcon(icon_fa661161aa89d3df95235df1b5a2fbff);
+        
+    
+        var popup_c858da5a7e21cb131e0bf335b547187d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a8435f975e50a6c73085fd1f76b10034 = $(`<div id="html_a8435f975e50a6c73085fd1f76b10034" style="width: 100.0%; height: 100.0%;">Waltham Forest Dawlish Rd, United Kingdom<br>(51.562376, -0.004898)</div>`)[0];
+            popup_c858da5a7e21cb131e0bf335b547187d.setContent(html_a8435f975e50a6c73085fd1f76b10034);
+        
+
+        marker_80a60cd24be059f8d6e4aabb6116388d.bindPopup(popup_c858da5a7e21cb131e0bf335b547187d)
+        ;
+
+        
+    
+    
+            marker_80a60cd24be059f8d6e4aabb6116388d.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d4c2f5aef4cd31e86c72abbe9880ca6 = L.marker(
+                [51.52253, -0.154611],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_979769ca00ab2e50875e3edf14e35512 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_5d4c2f5aef4cd31e86c72abbe9880ca6.setIcon(icon_979769ca00ab2e50875e3edf14e35512);
+        
+    
+        var popup_b952547b2029b1d9696135a673252efd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_790bfad6769e885650ca31c555ba5571 = $(`<div id="html_790bfad6769e885650ca31c555ba5571" style="width: 100.0%; height: 100.0%;">London Marylebone Road, United Kingdom<br>(51.52253, -0.154611)</div>`)[0];
+            popup_b952547b2029b1d9696135a673252efd.setContent(html_790bfad6769e885650ca31c555ba5571);
+        
+
+        marker_5d4c2f5aef4cd31e86c72abbe9880ca6.bindPopup(popup_b952547b2029b1d9696135a673252efd)
+        ;
+
+        
+    
+    
+            marker_5d4c2f5aef4cd31e86c72abbe9880ca6.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9b38313f851ebae3e05c25f02b2b0e7 = L.marker(
+                [51.514525336231, -0.10451562633788],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_1715869fa761aeaabf6aec912acc3cd3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_d9b38313f851ebae3e05c25f02b2b0e7.setIcon(icon_1715869fa761aeaabf6aec912acc3cd3);
+        
+    
+        var popup_7efa761c5278f0acfeb19fb151e8cef3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dfd1b583869a7d687e1fb7d514683778 = $(`<div id="html_dfd1b583869a7d687e1fb7d514683778" style="width: 100.0%; height: 100.0%;">City of London - Farringdon Street, United Kingdom<br>(51.514525336231, -0.10451562633788)</div>`)[0];
+            popup_7efa761c5278f0acfeb19fb151e8cef3.setContent(html_dfd1b583869a7d687e1fb7d514683778);
+        
+
+        marker_d9b38313f851ebae3e05c25f02b2b0e7.bindPopup(popup_7efa761c5278f0acfeb19fb151e8cef3)
+        ;
+
+        
+    
+    
+            marker_d9b38313f851ebae3e05c25f02b2b0e7.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e28ad722b4ffcf7c2af45830ff85cd7f = L.marker(
+                [51.52105, -0.213492],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_ee17e724aace2d7dca246bd674a4f041 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_e28ad722b4ffcf7c2af45830ff85cd7f.setIcon(icon_ee17e724aace2d7dca246bd674a4f041);
+        
+    
+        var popup_82fc8c355d4f52a69b609f7d1f79cbb4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_07ce656b76be03e0b3a079062cf44a17 = $(`<div id="html_07ce656b76be03e0b3a079062cf44a17" style="width: 100.0%; height: 100.0%;">London N. Kensington, United Kingdom<br>(51.52105, -0.213492)</div>`)[0];
+            popup_82fc8c355d4f52a69b609f7d1f79cbb4.setContent(html_07ce656b76be03e0b3a079062cf44a17);
+        
+
+        marker_e28ad722b4ffcf7c2af45830ff85cd7f.bindPopup(popup_82fc8c355d4f52a69b609f7d1f79cbb4)
+        ;
+
+        
+    
+    
+            marker_e28ad722b4ffcf7c2af45830ff85cd7f.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bce36e1d454f18b582d95d0dfb757651 = L.marker(
+                [51.537799, -0.247793],
+                {}
+            ).addTo(map_08bb9d6644d355f417fc49efce20263c);
+        
+    
+            var icon_95216812d1ef436e10c8ac44b8eafe16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_bce36e1d454f18b582d95d0dfb757651.setIcon(icon_95216812d1ef436e10c8ac44b8eafe16);
+        
+    
+        var popup_cffdf32e0da6851fd1662eefd9c18269 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8e982c7c21c38cde0123cfbeacc9de82 = $(`<div id="html_8e982c7c21c38cde0123cfbeacc9de82" style="width: 100.0%; height: 100.0%;">Brent - John Keble Primary School, United Kingdom<br>(51.537799, -0.247793)</div>`)[0];
+            popup_cffdf32e0da6851fd1662eefd9c18269.setContent(html_8e982c7c21c38cde0123cfbeacc9de82);
+        
+
+        marker_bce36e1d454f18b582d95d0dfb757651.bindPopup(popup_cffdf32e0da6851fd1662eefd9c18269)
+        ;
+
+        
+    
+    
+            marker_bce36e1d454f18b582d95d0dfb757651.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

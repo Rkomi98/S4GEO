@@ -3645,13 +3645,32 @@ input:focus{
   border-style: none;
   border: 2px solid rgb(247, 243, 243);
 }
-
+.btn3{
+  width: 15%;
+  background-color: #d1dedd;
+  font-size: 16px;
+  font-weight: 600;
+  color: lavender;
+  border-radius: 20px;
+  padding-right: 13%;
+  border-style: none;
+  border: 2px solid rgb(8 240 202);
+}
 /* CSS mouse hover efects */
 .btn:hover, .btn2:hover, .icon:hover, .iconeBtn:hover{
   background-color: rgb(7, 80, 35);
   color: whitesmoke;
 }
-
+.btn3:hover{
+  background-color: #89EAE1;
+  color: whitesmoke;
+  
+}
+.viewmap{
+position: relative;
+left:40%;
+bottom:150px;
+}
 /* making HTML registration form responsive to mobile devices */
 @media screen and (max-width: 1000px){
   .formWraper{
