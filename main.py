@@ -199,7 +199,7 @@ def translate_data(response):
     G = gdf.set_crs('epsg:4326')
     G.rename(columns={'station.name': 'Station_Name'}, inplace=True, errors='raise')
     coordinate_list = [(x,y) for x,y in zip(G.geometry.x , G.geometry.y)]
-    return coordinate_list, G.Station_Name
+    return coordinate_list, G.Station_Name, df_stations.aqi
     
 
 
@@ -344,14 +344,15 @@ def elements():
     response_Belgrad = requests.get('https://api.waqi.info/v2/map/bounds?latlng=44.762,20.358,44.853,20.621&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
     response_Krakow = requests.get('https://api.waqi.info/v2/map/bounds?latlng=50.018,19.79,50.185,20.189&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
     response_London = requests.get('https://api.waqi.info/v2/map/bounds?latlng=51.722,-0.482,51.498,0.303&networks=all&token=7b5dd86fc12812d40a2d725d9296813872fd7caa')
-    Paris, PG = translate_data(response_paris)
-    Skopje, SG = translate_data(response_skopje)
-    Belgrad, BG = translate_data(response_Belgrad)
-    Krakow, KG = translate_data(response_Krakow)
-    London, LG = translate_data(response_London)
+    Paris, PG, PA = translate_data(response_paris)
+    Skopje, SG, SA = translate_data(response_skopje)
+    Belgrad, BG, BA = translate_data(response_Belgrad)
+    Krakow, KG, KA = translate_data(response_Krakow)
+    London, LG, LA = translate_data(response_London)
     map = folium.Map(location = [45.5170365,13.3888599], tiles='OpenStreetMap' , zoom_start = 5) 
     cities = [Paris,Skopje,Belgrad,Krakow,London]
     station = [PG, SG, BG, KG, LG]
+    AQI = [PA, SA, BA, KA, LA]
     color = ["blue","orange","red","green","purple"]
     k=0
     for city in cities:
@@ -361,7 +362,8 @@ def elements():
             # Place the markers with the popup labels and data
             map= map.add_child(folium.Marker(location= city[i],popup=
                                              str(station[k][i]) + '<br>'
-                                             + str(city[i]),
+                                             + str(city[i]) + '<br>'
+                                             '<strong>AQI level</strong> ' + str(AQI[k][i]),
                                              tooltip='<strong>Click here to see coordinates</strong>',
                                              icon=folium.Icon(color="%s" % type_color,icon="crosshairs", prefix ='fa')).add_to(map))
                                     
