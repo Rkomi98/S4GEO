@@ -280,6 +280,12 @@ p {
   place-content: left;
   margin-top: 1rem ; 
 }
+.p3{
+  text-align: justify;
+  top: -5%;
+  place-content: left;
+  margin-top: 1rem ; 
+}
 .stationlist{
   text-align: justify;
   right:20%;
@@ -312,6 +318,21 @@ p {
   text-decoration: none;
   position: relative;
   margin-top: 3em;
+}
+.parg3{
+  bottom: 80px;
+  font-family: "Poppins";
+  font-size:120%;
+  position: relative;
+  margin-top: 2%;
+}
+.parg31{
+  bottom: 60px;
+  font-family: "Poppins";
+  font-size:120%;
+  position: relative;
+  margin-top: 2%;
+  
 }
 .emphasis {
   font-style: italic;
@@ -446,7 +467,7 @@ hr.major {
 input,
 select,
 textarea {
-  color: #212931;
+  color: #212931; 
 }
 
 a {
@@ -681,9 +702,17 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #212931;
-  box-shadow: none;
-  color: #ffffff !important;
+  width: 15%;
+  background-color: #d1dedd;
+  font-size: 16px;
+  font-weight: 600;
+  color: lavender;
+  border-radius: 20px;
+  padding-right: 90%;
+  border-style: none;
+  border: 2px solid rgb(8 240 202);
+  position: relative;
+  top: 35%;
 }
 
 input[type="submit"].primary:hover,
@@ -1383,7 +1412,6 @@ header > h1 + p {
   margin-top: -0.5rem;
   line-height: 2;
 }
-
 header > h2 + p {
   font-size: 1rem;
   margin-top: -0.75rem;
@@ -3599,7 +3627,23 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   border-style: none;
   padding-left: 30px !important;
 }
-
+.formGroup2 input {
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-color: #b2bdbd;
+  border-style: double;
+  position: relative;
+  bottom:55px;
+}
+.errspan {
+        float: right;
+        margin-right: 6px;
+        margin-top: -20px;
+        position: relative;
+        z-index: 2;
+        color: red;
+    }
 
 /* Code for Icones inside html form input */
 .formGroup i {
@@ -3656,6 +3700,76 @@ input:focus{
   border-style: none;
   border: 2px solid rgb(8 240 202);
 }
+.btn31{
+  width: 1%;
+  background-color: #d1dedd;
+  font-size: 16px;
+  font-weight: 600;
+  color: lavender;
+  border-radius: 20px;
+  padding-right: 6%;
+  border-style: none;
+  border: 2px solid rgb(8 240 202);
+  position:absolute;
+  bottom: 29%;
+  right: 65%;
+  
+}
+.btn32{
+    width: 2%;
+    background-color: #d1dedd;
+    font-size: 16px;
+    font-weight: 600;
+    color: lavender;
+    border-radius: 20px;
+    padding-right: 9%;
+    border-style: none;
+    border: 2px solid rgb(8 240 202);
+    position: absolute;
+    bottom: 90%;
+    left: -5%;
+}
+.btn33{
+    width: 2%;
+    background-color: #d1dedd;
+    font-size: 16px;
+    font-weight: 600;
+    color: lavender;
+    border-radius: 20px;
+    padding-right: 13%;
+    border-style: none;
+    border: 2px solid rgb(8 240 202);
+    position: absolute;
+    bottom: 90%;
+    left: 12%;
+}
+.btn34{
+    width: 2%;
+    background-color: #d1dedd;
+    font-size: 16px;
+    font-weight: 600;
+    color: lavender;
+    border-radius: 20px;
+    padding-right: 11%;
+    border-style: none;
+    border: 2px solid rgb(8 240 202);
+    position: absolute;
+    bottom: 90%;
+    left: 33%;
+}
+.btn35{
+  width: 13%;
+    background-color: #d1dedd;
+    font-size: 16px;
+    font-weight: 600;
+    color: lavender;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid rgb(8 240 202);
+    left: 35%;
+    position: relative;
+    bottom: 156px;
+}
 /* CSS mouse hover efects */
 .btn:hover, .btn2:hover, .icon:hover, .iconeBtn:hover{
   background-color: rgb(7, 80, 35);
@@ -3667,6 +3781,11 @@ input:focus{
   
 }
 .viewmap{
+position: relative;
+left:40%;
+bottom:150px;
+}
+.options{
 position: relative;
 left:40%;
 bottom:150px;
