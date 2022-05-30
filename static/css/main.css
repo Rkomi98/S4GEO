@@ -3710,7 +3710,6 @@ input:focus{
   border-style: none;
   border: 2px solid rgb(8 240 202);
   position:absolute;
-  bottom: 29%;
   right: 110%;
   
 }
@@ -3725,7 +3724,6 @@ input:focus{
     border-style: none;
     border: 2px solid rgb(8 240 202);
     position: absolute;
-    bottom: 90%;
     left: -5%;
 }
 .btn33{
@@ -3739,7 +3737,6 @@ input:focus{
     border-style: none;
     border: 2px solid rgb(8 240 202);
     position: absolute;
-    bottom: 90%;
     left: 12%;
 }
 .btn34{
@@ -3753,11 +3750,10 @@ input:focus{
     border-style: none;
     border: 2px solid rgb(8 240 202);
     position: absolute;
-    bottom: 90%;
     left: 33%;
 }
 .btn35{
-  width: 13%;
+    width: 14%;
     background-color: #d1dedd;
     font-size: 16px;
     font-weight: 600;
@@ -3882,4 +3878,46 @@ bottom:150px;
   color: #000000;
   text-decoration: none !important;
   border-bottom-color: rgb(251, 249, 249);
+}
+body {
+  display: table;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#row {
+  display: table-row;
+  height: 40%; /* adjust as needed for size */
+}
+
+#row1:nth-child(1) {
+  background-color: #eee;
+}
+#row1{
+height: 600px;
+width: 100%;
+background-color:red;
+}
+#row2:nth-child(2) {
+  background-color: #ddd;
+}
+#row2{
+height: 600px;
+width: 100%;
+background-color:red;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.container3 {
+    width: 100%;
+    text-align: justify;
+}
+.container3:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
 }
