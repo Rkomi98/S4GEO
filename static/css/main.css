@@ -327,7 +327,7 @@ p {
   margin-top: 2%;
 }
 .parg31{
-  bottom: 60px;
+  bottom: 30px;
   font-family: "Poppins";
   font-size:120%;
   position: relative;
@@ -3701,18 +3701,17 @@ input:focus{
   border: 2px solid rgb(8 240 202);
 }
 .btn31{
-  width: 1%;
   background-color: #d1dedd;
   font-size: 16px;
   font-weight: 600;
   color: lavender;
   border-radius: 20px;
-  padding-right: 6%;
+  padding-right: 4%;
   border-style: none;
   border: 2px solid rgb(8 240 202);
   position:absolute;
   bottom: 29%;
-  right: 65%;
+  right: 110%;
   
 }
 .btn32{

@@ -179,11 +179,11 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
     db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
+    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G')
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
