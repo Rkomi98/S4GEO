@@ -29,7 +29,6 @@ import matplotlib.pyplot as plt
 from shapely.geometry import Point, Polygon
 import folium
 
-
 env = Environment(loader=FileSystemLoader('.'))
 
 # Create the application instance
