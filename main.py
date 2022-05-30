@@ -105,6 +105,12 @@ def get_forecast_data(city):
         o3_pm10, data_df_forecast_pm25, how="outer", on=["day"])
     final_forecast_table = pd.merge(
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
+    
+    #extracting lon and lat:
+    data_df = pd.json_normalize(data['data'])
+    
+    final_forecast_table['lat'] = data_df['city.geo'][0][0]
+    final_forecast_table['lon'] = data_df['city.geo'][0][1]
 
     final_forecast_table_html = final_forecast_table.to_html()
 
@@ -389,7 +395,7 @@ def createProject():
             elif request.form['dtype'] == 'RT':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": ""}
-                C = get_data_to_DataFrame(request.form['city'],user_id)   
+                #C = get_data_to_DataFrame(request.form['city'],user_id)   
                 """
                 conn = get_dbConn()
                 cur = conn.cursor()
@@ -419,8 +425,8 @@ def createProject():
                 
                 #return redirect(url_for('index'))
                 """
-                D = update_data_on_DB(C)
-                sendDFtoDB(D)
+                #D = update_data_on_DB(C)
+                #sendDFtoDB(D)
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'B':
