@@ -127,6 +127,10 @@ def get_realtime_data(city):
     data_df_day = data_df_day.drop(columns=['idx','attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
                              'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync', 
                              'time.s', 'time.tz'])
+    if city == 'skopje' or city == 'krakow':
+        data_df_day = data_df_day.drop(columns=['iaqi.dew.v', 'iaqi.wg.v'])
+    if city == 'belgrad':
+        data_df_day = data_df_day.drop(columns=['iaqi.wg.v'])
     
     #renaming the columns we will be using for clarity:
     data_df_day = data_df_day.rename(columns={'aqi': 'air quality', 'city.name': 'city', 'iaqi.co.v': 'carbon monoxyde', 
