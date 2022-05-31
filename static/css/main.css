@@ -491,9 +491,14 @@ a {
 
 a:hover {
   border-bottom-color: transparent;
-  color: #dbeaee !important;
+  color: #212931 !important; /*dbeaee*/
   text-decoration: none
 }
+/*a:visited {
+  color: black;
+  border-bottom-color: transparent;
+  text-decoration: none;
+}*/
 
 strong,
 b {
