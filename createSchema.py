@@ -65,7 +65,7 @@ sqlCommands = (
     'INSERT INTO post (title, body, author_id) VALUES (%s, %s, %s)',
     'INSERT INTO city (name_city, air_quality, carbon_monoxyde, relative_humidity, nitrogen_dioxide, ozone,atmospheric_pressure,pm10,pm25,so2,temperature,wind,time_zone,latitude,longitude,geometry,author_id) VALUES(%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
 )
-conn = connect("dbname=S4G user=postgres password=nikolina123")
+conn = connect("dbname=s4g user=postgres password=Soft1234")
 cur = conn.cursor()
 for command in cleanup:
     cur.execute(command)

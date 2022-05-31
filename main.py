@@ -112,8 +112,8 @@ def get_forecast_data(city):
     final_forecast_table['lat'] = data_df['city.geo'][0][0]
     final_forecast_table['lon'] = data_df['city.geo'][0][1]
 
-    final_forecast_table_html = final_forecast_table.to_html()
-
+    final_forecast_table_html = final_forecast_table.dropna(thresh=6).to_html(index=False)
+    final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
     return final_forecast_table_html
 
 
@@ -146,8 +146,8 @@ def get_realtime_data(city):
     
     final_realtime_table = gpd.GeoDataFrame(data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
     
-    final_realtime_table_html = final_realtime_table.to_html()
-    
+    final_realtime_table_html = final_realtime_table.to_html(index=False)
+
     return final_realtime_table_html
 
 def get_data_to_DataFrame(city, User):
@@ -393,13 +393,15 @@ def createProject():
             template = env.get_template("templates/createProject.html")
     
             if request.form['dtype'] == 'F':
-                template_vars = {"table1": get_forecast_data(request.form['city']),
-                                 "table2": ""}
+                template_vars = {"table1": "",
+                                 "table2": get_forecast_data(request.form['city']),
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": ""}
+                                 "table2": "",
+                                 "search": ""}
                 C = get_data_to_DataFrame(request.form['city'],user_id)   
                 """
                 conn = get_dbConn()
@@ -436,12 +438,14 @@ def createProject():
     
             elif request.form['dtype'] == 'B':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": get_forecast_data(request.form['city'])}
+                                 "table2": get_forecast_data(request.form['city']),
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
                 html_out = template.render(template_vars)
     
             else:
                 template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
-                                 "table2": ""}
+                                 "table2": "",
+                                 "search": ""}
                 html_out = template.render(template_vars)
     
             return html_out
