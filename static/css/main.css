@@ -4007,4 +4007,7 @@ html {
     display: block;
   }
 }
-
+.img3{
+position: relative;
+left: 21%;
+}
