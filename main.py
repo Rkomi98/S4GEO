@@ -105,6 +105,12 @@ def get_forecast_data(city):
         o3_pm10, data_df_forecast_pm25, how="outer", on=["day"])
     final_forecast_table = pd.merge(
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
+    
+    #extracting lon and lat:
+    data_df = pd.json_normalize(data['data'])
+    
+    final_forecast_table['lat'] = data_df['city.geo'][0][0]
+    final_forecast_table['lon'] = data_df['city.geo'][0][1]
 
     final_forecast_table_html = final_forecast_table.dropna(thresh=6).to_html(index=False)
     final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
@@ -121,6 +127,10 @@ def get_realtime_data(city):
     data_df_day = data_df_day.drop(columns=['idx','attributions', 'dominentpol', 'city.url', 'city.location', 'time.v', 'time.iso',
                              'forecast.daily.o3', 'forecast.daily.pm10', 'forecast.daily.pm25', 'forecast.daily.uvi', 'debug.sync', 
                              'time.s', 'time.tz'])
+    if city == 'skopje' or city == 'krakow':
+        data_df_day = data_df_day.drop(columns=['iaqi.dew.v', 'iaqi.wg.v'])
+    if city == 'belgrad':
+        data_df_day = data_df_day.drop(columns=['iaqi.wg.v'])
     
     #renaming the columns we will be using for clarity:
     data_df_day = data_df_day.rename(columns={'aqi': 'air quality', 'city.name': 'city', 'iaqi.co.v': 'carbon monoxyde', 
@@ -179,14 +189,15 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:Soft1234@localhost:5432/s4g') 
-    db.to_postgis('city', engine, if_exists = 'replace', index=False) #I can put some queries here
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:Soft1234@localhost:5432/s4g')
-    Data = gpd.GeoDataFrame.from_postgis('city', engine, geom_col='geometry')
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
+    Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
+
 
 # Function to retrieve station coordinates and names in the more info section
 def translate_data(response):
