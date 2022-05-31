@@ -21,6 +21,7 @@ import requests
 import json
 from sqlalchemy import create_engine
 import pandas as pd
+from pandas_profiling import ProfileReport
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
 import contextily as ctx
@@ -189,14 +190,18 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
     db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:nikolin123@localhost:5432/S4G')
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
+def download_data():
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
+    return gdf_sql
 
 
 # Function to retrieve station coordinates and names in the more info section
@@ -399,10 +404,7 @@ def createProject():
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
-                template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": "",
-                                 "search": ""}
-                #C = get_data_to_DataFrame(request.form['city'],user_id)   
+                C = get_data_to_DataFrame(request.form['city'],user_id)   
                 """
                 conn = get_dbConn()
                 cur = conn.cursor()
@@ -432,8 +434,34 @@ def createProject():
                 
                 #return redirect(url_for('index'))
                 """
-                #D = update_data_on_DB(C)
-                #sendDFtoDB(D)
+                D = update_data_on_DB(C)
+                sendDFtoDB(D)
+                DataDB = download_data()
+                if ('iaqi.dew.v' in D.columns):
+                    GDF = DataDB.drop(columns=['iaqi.dew.v','iaqi.wg.v','date_and_time','date','lat','lon','ID'])
+                else:
+                    GDF = DataDB.drop(columns=['date_and_time','date','lat','lon','ID'])
+                if request.form['city']=='Paris':
+                    City = GDF.loc[DataDB['city']=='Paris']
+                elif request.form['city']=='Skopje':
+                    City = GDF.loc[DataDB['city']=='Centar, Skopje, Macedonia (Центар)']
+                    City.drop(columns=['nitrogen_dioxide']) # Because they are all NULL
+                elif request.form['city']=='London':#Kraków
+                    City = GDF.loc[DataDB['city']=='London']
+                elif request.form['city']=='Belgrad':
+                    City = GDF.loc[DataDB['city']=='Beograd Vračar, Serbia']
+                    City.drop(columns=['carbon_monoxyde'])
+                else:
+                    City = GDF.loc[DataDB['city']=='Kraków-ul. Dietla, Małopolska, Poland']
+                    
+                Description = City.describe()
+                Description_html = Description.to_html(index=False)
+                template_vars = {"table1": get_realtime_data(request.form['city']),
+                                 "table2": "",
+                                 "tableStat": Description_html,
+                                 "search": ""}
+                profile = ProfileReport(City, title="Statistical tool", explorative=True)
+                profile.to_file("templates/Analysis/Analysis.html")
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'B':
@@ -456,7 +484,9 @@ def createProject():
         error = 'Only loggedin users can insert posts!'
         flash(error)
         return redirect(url_for('login'))
-
+@app.route('/Analysis')
+def Analysis():
+    return render_template('Analysis/Analysis.html')
 
 """
 @app.route('/create', methods=('GET', 'POST'))
