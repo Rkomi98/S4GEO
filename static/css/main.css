@@ -338,6 +338,15 @@ p {
   margin-top: 2%;
   
 }
+.parg311{
+  bottom: 30px;
+  font-family: "Poppins";
+  font-size:90%;
+  color:red;
+  position: relative;
+  margin-top: 2%;
+  
+}
 .emphasis {
   font-style: italic;
   color: #5db5c5;
@@ -3750,11 +3759,12 @@ input:focus{
     font-weight: 600;
     color: lavender;
     border-radius: 20px;
-    padding-right: 13%;
+    padding-right: 10%;
     border-style: none;
     border: 2px solid rgb(8 240 202);
     position: absolute;
-    left: 12%;
+    margin-top: 1%;
+    right: 40%;
 }
 .btn34{
     width: 2%;
@@ -3763,14 +3773,14 @@ input:focus{
     font-weight: 600;
     color: lavender;
     border-radius: 20px;
-    padding-right: 11%;
+    padding-right: 9%;
     border-style: none;
     border: 2px solid rgb(8 240 202);
     position: absolute;
-    left: 33%;
+    margin-top: 1%;
+    right: 25%;
 }
 .btn35{
-    width: 14%;
     background-color: #d1dedd;
     font-size: 16px;
     font-weight: 600;
@@ -3778,9 +3788,9 @@ input:focus{
     border-radius: 20px;
     border-style: none;
     border: 2px solid rgb(8 240 202);
-    left: 35%;
+    left: 40%;
     position: relative;
-    bottom: 156px;
+    bottom: 10%;
 }
 /* CSS mouse hover efects */
 .btn:hover, .btn2:hover, .icon:hover, .iconeBtn:hover{
@@ -3910,7 +3920,7 @@ body {
 }
 
 #row1:nth-child(1) {
-  background-color: #eee;
+  background-color: white;
 }
 #row1{
 height: 600px;
@@ -4010,4 +4020,7 @@ html {
 .img3{
 position: relative;
 left: 21%;
+}
+#myDIV {
+  display: none;
 }

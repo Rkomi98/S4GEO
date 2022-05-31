@@ -100,10 +100,13 @@
 												</select>
 											</div>
 											<!--<div class="col-6 col-12-xsmall">
-												<input type="text" name="dtype" id="dtype" value="" placeholder="Real Time (RT) // Forecast (F) // Both (B)" required />
+												<input  type="text" name="dtype" id="dtype" value="" placeholder="Real Time (RT) // Forecast (F) // Both (B)" required />
 											</div>-->
 											<div class="col-12">
+											<a href="/Map" target="_blank" data-inline="true"><button class="btn33">VISUALIZE</button></a>
+                    						<a href="#row1" data-inline="true"><button class="btn34">ANALYZE</button></a>
 												<ul class="actions">
+												
 													<li><input type="submit" value="Search" class="primary" /></li>
 												</ul>
 											</div>
@@ -111,9 +114,14 @@
 												{{ table1 }}
 											</div>
 											<div class="col-12">
-												<ul class="actions">
+    											<ul>
+												<ul onclick="myFunction()" class="actions">
 													{{ search }}
 												</ul>
+												<div id="myDIV">
+                                                      <p class="parg311">Click on the column headers for sorting the data!</p>
+                                                 </div> 
+                                                 </ul>
 											</div>
 											
 											<div class="table-wrapper">
@@ -122,31 +130,18 @@
 
 										</div>
 									</form>
-                            <p class="parg31">Export your changes!</p>
-							<div class="formGroup2">	 
-							<form action="/action_page.php">
-    							<input name="txtName" id="txtName" placeholder="Enter project name">
-                            </form>
-                                </div>
-                                <a href="/Analysis"><button class="btn35">EXPORT</button></a>
         						
-        						<div class="options">
-        						<a href="#row1" data-inline="true"><button class="btn31">SORT</button></a>
-         						<a href="#row2" data-inline="true"><button class="btn32">FILTER</button></a>
-         						<a href="/Map" target="_blank" data-inline="true"><button class="btn33">VISUALIZE</button></a>
-         						<a href="#" data-inline="true"><button class="btn34">ANALYZE</button></a>
-        						</div>
+        						
         					<body>
-        					<div class="container3">
-                					<div id="row1" class="parg31">
-                                      Sort the choosen data
-                                    </div>
-                            <div id="row2" class="parg31">Filter the data choosen
+        					<div class="container3">	
+                            <div id="row1" class="parg31">
                             <div class="table-wrapper">
                                 {{ tableStat }}
+                                <a href="/Analysis"><button class="btn35">EXPORT ANALYSIS</button></a>
                             </div>
                             
                             </div>
+                            
                                 </div> 
 				
 		<!-- Scripts -->

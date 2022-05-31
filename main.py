@@ -21,7 +21,7 @@ import requests
 import json
 from sqlalchemy import create_engine
 import pandas as pd
-from pandas_profiling import ProfileReport
+#from pandas_profiling import ProfileReport
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
 import contextily as ctx
@@ -234,16 +234,16 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
     db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
+    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G')
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
 def download_data():
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
     gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     return gdf_sql
 
@@ -522,8 +522,8 @@ def createProject():
                                  "table2": "",
                                  "tableStat": Description_html,
                                  "search": ""}
-                profile = ProfileReport(City, title="Statistical tool", explorative=True)
-                profile.to_file("templates/Analysis/Analysis.html")
+                #profile = ProfileReport(City, title="Statistical tool", explorative=True)
+                #profile.to_file("templates/Analysis/Analysis.html")
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'B':
