@@ -106,8 +106,8 @@ def get_forecast_data(city):
     final_forecast_table = pd.merge(
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
 
-    final_forecast_table_html = final_forecast_table.to_html()
-
+    final_forecast_table_html = final_forecast_table.dropna(thresh=6).to_html(index=False)
+    final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
     return final_forecast_table_html
 
 
@@ -136,8 +136,8 @@ def get_realtime_data(city):
     
     final_realtime_table = gpd.GeoDataFrame(data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
     
-    final_realtime_table_html = final_realtime_table.to_html()
-    
+    final_realtime_table_html = final_realtime_table.to_html(index=False)
+
     return final_realtime_table_html
 
 def get_data_to_DataFrame(city, User):
@@ -179,12 +179,12 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
-    db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
+    engine = create_engine('postgresql://postgres:Soft1234@localhost:5432/s4g') 
+    db.to_postgis('city', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G')
-    Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
+    engine = create_engine('postgresql://postgres:Soft1234@localhost:5432/s4g')
+    Data = gpd.GeoDataFrame.from_postgis('city', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
 
@@ -382,13 +382,15 @@ def createProject():
             template = env.get_template("templates/createProject.html")
     
             if request.form['dtype'] == 'F':
-                template_vars = {"table1": get_forecast_data(request.form['city']),
-                                 "table2": ""}
+                template_vars = {"table1": "",
+                                 "table2": get_forecast_data(request.form['city']),
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": ""}
+                                 "table2": "",
+                                 "search": ""}
                 C = get_data_to_DataFrame(request.form['city'],user_id)   
                 """
                 conn = get_dbConn()
@@ -425,12 +427,14 @@ def createProject():
     
             elif request.form['dtype'] == 'B':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": get_forecast_data(request.form['city'])}
+                                 "table2": get_forecast_data(request.form['city']),
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
                 html_out = template.render(template_vars)
     
             else:
                 template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
-                                 "table2": ""}
+                                 "table2": "",
+                                 "search": ""}
                 html_out = template.render(template_vars)
     
             return html_out

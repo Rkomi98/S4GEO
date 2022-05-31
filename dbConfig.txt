@@ -1,1 +1,1 @@
-dbname=S4G user=postgres password=nikolina123
+dbname=s4g user=postgres password=Soft1234
