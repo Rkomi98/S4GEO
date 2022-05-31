@@ -189,14 +189,15 @@ def get_data_to_DataFrame(city, User):
     return final_realtime_table
 
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G') 
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
     db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:nikolina123@localhost:5432/S4G')
+    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return(DataNew)
+
 
 # Function to retrieve station coordinates and names in the more info section
 def translate_data(response):
@@ -399,7 +400,7 @@ def createProject():
             elif request.form['dtype'] == 'RT':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": ""}
-                #C = get_data_to_DataFrame(request.form['city'],user_id)   
+                C = get_data_to_DataFrame(request.form['city'],user_id)   
                 """
                 conn = get_dbConn()
                 cur = conn.cursor()
@@ -429,8 +430,8 @@ def createProject():
                 
                 #return redirect(url_for('index'))
                 """
-                #D = update_data_on_DB(C)
-                #sendDFtoDB(D)
+                D = update_data_on_DB(C)
+                sendDFtoDB(D)
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'B':
