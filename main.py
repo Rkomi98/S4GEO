@@ -117,6 +117,50 @@ def get_forecast_data(city):
     final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
     return final_forecast_table_html
 
+def get_forecast_data_to_DB(city):
+    data = get_json_API(city)
+
+    # from JSON to Pandas DataFrame: creating the forecast table
+
+    # extracting all the factors seperately:
+    data_df_forecast_o3 = pd.json_normalize(
+        data['data']['forecast']['daily']['o3'])
+    data_df_forecast_pm10 = pd.json_normalize(
+        data['data']['forecast']['daily']['pm10'])
+    data_df_forecast_pm25 = pd.json_normalize(
+        data['data']['forecast']['daily']['pm25'])
+    data_df_forecast_uvi = pd.json_normalize(
+        data['data']['forecast']['daily']['uvi'])
+
+    # preparing each of them to be merged later:
+    data_df_forecast_o3 = data_df_forecast_o3.rename(
+        columns={'avg': 'avg_o3', 'max': 'max_o3', 'min': 'min_o3'})
+    data_df_forecast_o3.insert(0, 'day', data_df_forecast_o3.pop('day'))
+
+    data_df_forecast_pm10 = data_df_forecast_pm10.rename(
+        columns={'avg': 'avg_pm10', 'max': 'max_pm10', 'min': 'min_pm10'})
+    data_df_forecast_pm10.insert(0, 'day', data_df_forecast_pm10.pop('day'))
+
+    data_df_forecast_pm25 = data_df_forecast_pm25.rename(
+        columns={'avg': 'avg_pm25', 'max': 'max_pm25', 'min': 'min_pm25'})
+    data_df_forecast_pm25.insert(0, 'day', data_df_forecast_pm25.pop('day'))
+
+    data_df_forecast_uvi = data_df_forecast_uvi.rename(
+        columns={'avg': 'avg_uvi', 'max': 'max_uvi', 'min': 'min_uvi'})
+    data_df_forecast_uvi.insert(0, 'day', data_df_forecast_uvi.pop('day'))
+
+    # merging all the factors in one prediction table:
+    o3_pm10 = pd.merge(data_df_forecast_o3,
+                       data_df_forecast_pm10, how="outer", on=["day"])
+    o3_pm10_pm25 = pd.merge(
+        o3_pm10, data_df_forecast_pm25, how="outer", on=["day"])
+    final_forecast_table = pd.merge(
+        o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
+
+    final_forecast_table_html = final_forecast_table.to_html()
+
+    return final_forecast_table
+
 
 def get_realtime_data(city):
     data = get_json_API(city)
@@ -398,8 +442,25 @@ def createProject():
             template = env.get_template("templates/createProject.html")
     
             if request.form['dtype'] == 'F':
+                if request.form['city']=='paris':
+                    CityForecast = get_forecast_data_to_DB('Paris')
+                elif request.form['city']=='skopje':
+                    CityForecast = get_forecast_data_to_DB('Belgrad')
+                elif request.form['city']=='london':#Kraków
+                    CityForecast = get_forecast_data_to_DB('Skopje')
+                elif request.form['city']=='belgrad':
+                    CityForecast = get_forecast_data_to_DB('London')
+                else:
+                    CityForecast = get_forecast_data_to_DB('Krakow')
+                CityForecast.dropna()
+                Description = CityForecast.describe()
+                print('\n'+request.form['city']+'\n')
+                Description_html = Description.to_html(index=False)
+                profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
+                profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": "",
                                  "table2": get_forecast_data(request.form['city']),
+                                 "tableStat": Description_html,
                                  "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
                 html_out = template.render(template_vars)
     
@@ -437,24 +498,25 @@ def createProject():
                 D = update_data_on_DB(C)
                 sendDFtoDB(D)
                 DataDB = download_data()
-                if ('iaqi.dew.v' in D.columns):
+                if ('iaqi.dew.v' in DataDB.columns):
                     GDF = DataDB.drop(columns=['iaqi.dew.v','iaqi.wg.v','date_and_time','date','lat','lon','ID'])
                 else:
                     GDF = DataDB.drop(columns=['date_and_time','date','lat','lon','ID'])
-                if request.form['city']=='Paris':
+                if request.form['city']=='paris':
                     City = GDF.loc[DataDB['city']=='Paris']
-                elif request.form['city']=='Skopje':
+                elif request.form['city']=='skopje':
                     City = GDF.loc[DataDB['city']=='Centar, Skopje, Macedonia (Центар)']
                     City.drop(columns=['nitrogen_dioxide']) # Because they are all NULL
-                elif request.form['city']=='London':#Kraków
+                elif request.form['city']=='london':#Kraków
                     City = GDF.loc[DataDB['city']=='London']
-                elif request.form['city']=='Belgrad':
+                elif request.form['city']=='belgrad':
                     City = GDF.loc[DataDB['city']=='Beograd Vračar, Serbia']
                     City.drop(columns=['carbon_monoxyde'])
                 else:
                     City = GDF.loc[DataDB['city']=='Kraków-ul. Dietla, Małopolska, Poland']
-                    
+                name = DataDB['city']
                 Description = City.describe()
+                print('\n'+request.form['city']+'\n')
                 Description_html = Description.to_html(index=False)
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": "",
