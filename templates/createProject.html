@@ -20,24 +20,8 @@
 			</div>
 			<div class="fill"></div>
 			<div class="links2">
-			  <!--
-			  <div>Data</div>
-				<div>Data</div>
-			  <div>Data</div>-->
 			  <div class="l11"><a href="/index">Home</a></div>
 			  <div class="l21"><a href="/createProject">Project</a></div>
-			  
-			  <!--
-			  <div class="dropdown">
-				<a class="dropbtn">Project</a>
-				<div class="dropdown-content">
-				  <a href="#">Link 1</a>
-				  <a href="#">Link 2</a>
-				  <a href="#">Link 3</a>
-				</div>
-			  </div>
-			  -->
-			  <!--<div class="l3">Map Gallery</div>-->
 			  <div class="l41"><a href="/generic">More Info</a></div>
 			<div class="logout">
                  <a class = "logout" href="/logout">Log Out</a>
@@ -58,13 +42,10 @@
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="/generic">New Project</a></li>
-							<!--<li><a href="/elements">Projects Archive</a></li>-->
-							<!--<li><a href="/generic">About Us</a></li>-->
+							
 						</ul>
 						<ul class="icons">
-							<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+							
 							<li><a href="https://github.com/Rkomi98/S4GEO" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
@@ -103,7 +84,7 @@
 												<input  type="text" name="dtype" id="dtype" value="" placeholder="Real Time (RT) // Forecast (F) // Both (B)" required />
 											</div>-->
 											<div class="col-12">
-											<button class="btn33"><a href="/Map" target="_blank" data-inline="true" >VISUALIZE</a></button>
+											<button class="btn33"><a href="#map" data-inline="true" >VISUALIZE</a></button>
                     						<button class="btn34"><a href="#row1" data-inline="true">ANALYZE</a></button>
 												<ul class="actions">
 												
@@ -129,9 +110,11 @@
     										</div>
 
 										</div>
-									</form>
-        						
-        						
+									</form> 
+
+                            <div class="align-center" id="map">
+                            	<div>{{ map }}></div>    
+                            </div>
         					<body>
         					<div class="container3">	
                             <div id="row1" class="parg31">
@@ -139,10 +122,11 @@
                                 {{ tableStat }}
                                 <a href="/Analysis"><button class="btn35">EXPORT ANALYSIS</button></a>
                             </div>
-                            
                             </div>
+                            </div> 
+                            </div> 
+
                             
-                                </div> 
 				
 		<!-- Scripts -->
 			<script src="../static/js/jquery.min.js"></script>

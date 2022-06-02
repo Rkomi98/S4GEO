@@ -24,6 +24,13 @@ import pandas as pd
 from pandas_profiling import ProfileReport
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
+from pyproj import Proj, transform
+from bokeh.plotting import figure#, output_file
+from bokeh.resources import CDN
+from bokeh.embed import file_html
+from bokeh.models import ColumnDataSource, LabelSet
+from bokeh.tile_providers import CARTODBPOSITRON, get_provider
+
 import contextily as ctx
 import numpy as np
 import matplotlib.pyplot as plt
@@ -157,7 +164,7 @@ def get_forecast_data_to_DB(city):
     final_forecast_table = pd.merge(
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
 
-    final_forecast_table_html = final_forecast_table.to_html()
+    #final_forecast_table_html = final_forecast_table.to_html()
 
     return final_forecast_table
 
@@ -195,7 +202,7 @@ def get_realtime_data(city):
 
     return final_realtime_table_html
 
-def get_data_to_DataFrame(city, User):
+def get_data_to_DataFrame(city):#, User):
     data = get_json_API(city)
 
     # from JSON to Pandas DataFrame: creating the real time data table
@@ -224,13 +231,13 @@ def get_data_to_DataFrame(city, User):
                                               })
 
     # creating two columns for geographical coordinates instead of one for easier access:
-    data_df_day['lat'] = data_df_day['city.geo'][0][0]
-    data_df_day['lon'] = data_df_day['city.geo'][0][1]
+    data_df_day['x'], data_df_day['y'] = transform(Proj(init='epsg:4326'), Proj(init='epsg:3857'), data_df_day['city.geo'][0][1], data_df_day['city.geo'][0][0])
     data_df_day = data_df_day.drop(columns=['city.geo'])
-    data_df_day = data_df_day.drop('time zone', 1)
+    data_df_day = data_df_day.drop(columns=['time zone'])
     final_realtime_table = gpd.GeoDataFrame(
-        data_df_day, geometry=gpd.points_from_xy(data_df_day['lon'], data_df_day['lat']))
-    final_realtime_table['ID']=User
+        data_df_day, geometry=gpd.points_from_xy(data_df_day['x'], data_df_day['y']))
+    
+    #final_realtime_table['ID']=User
     return final_realtime_table
 
 def sendDFtoDB(db):
@@ -461,42 +468,15 @@ def createProject():
                 template_vars = {"table1": "",
                                  "table2": get_forecast_data(request.form['city']),
                                  "tableStat": Description_html,
-                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
+                                 "map": visualize_data(request.form['city'])}
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
                 C = get_data_to_DataFrame(request.form['city'],user_id)   
-                """
-                conn = get_dbConn()
-                cur = conn.cursor()
-                time = pd.to_datetime(C.date_and_time)
-                cur.execute('INSERT INTO city (author_id, name_city, air_quality, carbon_monoxyde, relative_humidity, nitrogen_dioxide, ozone,atmospheric_pressure,pm10,pm25,so2,temperature,wind,time_zone,latitude,longitude,geometry) VALUES(%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', 
-                            (g.user[0],
-                             C.city[0],
-                             float(C.air_quality[0]),
-                             C.carbon_monoxyde[0], 
-                             C.relative_humidity[0],
-                             C.nitrogen_dioxide[0],
-                             C.ozone[0], 
-                             C.atmospheric_pressure[0],
-                             float(C.PM10[0]),
-                             float(C.PM25[0]),
-                             C.sulphur_dioxide[0],
-                             C.temperature[0],
-                             float(C.wind[0]),
-                             str(time[0]),
-                             C.lat[0],
-                             C.lon[0],
-                             C.geometry)
-                            )
-                #df.to_sql('bike', engine, if_exists = 'replace', index=False) #I can put some queries here
-                cur.close()
-                conn.commit()
-                
-                #return redirect(url_for('index'))
-                """
                 D = update_data_on_DB(C)
                 sendDFtoDB(D)
+                                
                 DataDB = download_data()
                 if ('iaqi.dew.v' in DataDB.columns):
                     GDF = DataDB.drop(columns=['iaqi.dew.v','iaqi.wg.v','date_and_time','date','lat','lon','ID'])
@@ -521,7 +501,8 @@ def createProject():
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": "",
                                  "tableStat": Description_html,
-                                 "search": ""}
+                                 "search": "",
+                                 "map": visualize_data(request.form['city'])}
                 profile = ProfileReport(City, title="Statistical tool", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 html_out = template.render(template_vars)
@@ -529,13 +510,15 @@ def createProject():
             elif request.form['dtype'] == 'B':
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": get_forecast_data(request.form['city']),
-                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>"}
+                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
+                                 "map": visualize_data(request.form['city'])}
                 html_out = template.render(template_vars)
     
             else:
                 template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
                                  "table2": "",
-                                 "search": ""}
+                                 "search": "",
+                                 "map": ""}
                 html_out = template.render(template_vars)
     
             return html_out
@@ -546,41 +529,37 @@ def createProject():
         error = 'Only loggedin users can insert posts!'
         flash(error)
         return redirect(url_for('login'))
+    
+    
 @app.route('/Analysis')
 def Analysis():
     return render_template('Analysis/Analysis.html')
 
-"""
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    if load_logged_in_user():
-        if request.method == 'POST' :
-            title = request.form['title']
-            body = request.form['body']
-            error = None
-            
-            if not title :
-                error = 'Title is required!'
-            if error is not None :
-                flash(error)
-                return redirect(url_for('index'))
-            else : 
-                conn = get_dbConn()
-                cur = conn.cursor()
-                cur.execute('INSERT INTO post (title, body, author_id) VALUES (%s, %s, %s)', 
-                            (title, body, g.user[0])
-                            )
-                cur.close()
-                conn.commit()
-                return redirect(url_for('index'))
-        else :
-            return render_template('blog/index.html')
-    else :
-        error = 'Only loggedin users can insert posts!'
-        flash(error)
-        return redirect(url_for('login'))
- """
 
+
+def visualize_data(city):
+        df = get_data_to_DataFrame(city).drop(columns = ["geometry"])
+        psource = ColumnDataSource(df)
+        TOOLTIPS = [    ("name", "@city"),
+                        ("air quality", "@air_quality"),
+                        ("temperature","@temperature"),
+                        ("wind", "@wind"),
+                        ("atmospheric pressure", "@atmospheric_pressure"),
+                        ("PM10", "@PM10"),
+                        ("PM25", "@PM25"),
+                        ("local date","@date_and_time")]
+       
+        p1 = figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
+           x_axis_type="mercator", y_axis_type="mercator", tooltips=TOOLTIPS)
+        p1.add_tile(get_provider(CARTODBPOSITRON)) 
+        p1.circle('x', 'y', source=psource, color='red', radius=50) #ICON(map-marker)
+        labels = LabelSet(x='x', y='y', text='ID', level="glyph",
+              x_offset=5, y_offset=5, source=psource, render_mode='css')
+        p1.add_layout(labels)
+        html = file_html(p1, CDN, "my plot")
+        
+        return html
+        
 
 def get_post(id):
     conn = get_dbConn()
