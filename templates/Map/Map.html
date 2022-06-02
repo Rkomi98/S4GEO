@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_9fef5b1b7e967c3ca91827e2683bced9 {
+                #map_41e5f10e617b43f3b18e2d59ea0382d3 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,13 +35,13 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_9fef5b1b7e967c3ca91827e2683bced9" ></div>
+            <div class="folium-map" id="map_41e5f10e617b43f3b18e2d59ea0382d3" ></div>
         
 </body>
 <script>    
     
-            var map_9fef5b1b7e967c3ca91827e2683bced9 = L.map(
-                "map_9fef5b1b7e967c3ca91827e2683bced9",
+            var map_41e5f10e617b43f3b18e2d59ea0382d3 = L.map(
+                "map_41e5f10e617b43f3b18e2d59ea0382d3",
                 {
                     center: [45.5170365, 13.3888599],
                     crs: L.CRS.EPSG3857,
@@ -55,104 +55,38 @@
 
         
     
-            var tile_layer_72b39533ce6802a8ecc2ae887acb110d = L.tileLayer(
+            var tile_layer_91ce45c5a7631d31ed6e5bc4afab5a64 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var marker_a8a0374e5f3e6220651839e0856c0fcd = L.marker(
-                [48.9024, 2.45261],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_46fb1728b47b460b6a6f3b430811a8be = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
-            );
-            marker_a8a0374e5f3e6220651839e0856c0fcd.setIcon(icon_46fb1728b47b460b6a6f3b430811a8be);
-        
-    
-        var popup_f4710d8887ccab7ef40aed1f315587f6 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_6758e8df8de962478b3a24d8dd6d6f79 = $(`<div id="html_6758e8df8de962478b3a24d8dd6d6f79" style="width: 100.0%; height: 100.0%;">Bobigny, Paris<br>(48.9024, 2.45261)<br><strong>AQI level</strong> 21</div>`)[0];
-            popup_f4710d8887ccab7ef40aed1f315587f6.setContent(html_6758e8df8de962478b3a24d8dd6d6f79);
-        
-
-        marker_a8a0374e5f3e6220651839e0856c0fcd.bindPopup(popup_f4710d8887ccab7ef40aed1f315587f6)
-        ;
-
-        
-    
-    
-            marker_a8a0374e5f3e6220651839e0856c0fcd.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_9a8cffbd62b4789543cbde7e4a9dc325 = L.marker(
-                [48.8621, 2.34462],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_6f78516da407b0c6d8909c06de908678 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
-            );
-            marker_9a8cffbd62b4789543cbde7e4a9dc325.setIcon(icon_6f78516da407b0c6d8909c06de908678);
-        
-    
-        var popup_3027100cab97cba58cf75abafdacd722 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_6964f827b63fe4ae9da5b1a09c55a89e = $(`<div id="html_6964f827b63fe4ae9da5b1a09c55a89e" style="width: 100.0%; height: 100.0%;">Paris 1er Les Halles, Paris<br>(48.8621, 2.34462)<br><strong>AQI level</strong> 38</div>`)[0];
-            popup_3027100cab97cba58cf75abafdacd722.setContent(html_6964f827b63fe4ae9da5b1a09c55a89e);
-        
-
-        marker_9a8cffbd62b4789543cbde7e4a9dc325.bindPopup(popup_3027100cab97cba58cf75abafdacd722)
-        ;
-
-        
-    
-    
-            marker_9a8cffbd62b4789543cbde7e4a9dc325.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_a485d9df190d5a3cf37d745a4bd8e28c = L.marker(
+            var marker_ed8804e52b44bca9aa8a2fa74cb3a8dd = L.marker(
                 [48.856614, 2.3522219],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_674845425bc5d1ca442b38c0c39eeb4c = L.AwesomeMarkers.icon(
+            var icon_4e8000b99e6dc8217f6041fb13db0a25 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_a485d9df190d5a3cf37d745a4bd8e28c.setIcon(icon_674845425bc5d1ca442b38c0c39eeb4c);
+            marker_ed8804e52b44bca9aa8a2fa74cb3a8dd.setIcon(icon_4e8000b99e6dc8217f6041fb13db0a25);
         
     
-        var popup_af878f9e238d59d2c63c98ea6bd62df4 = L.popup({"maxWidth": "100%"});
+        var popup_dc11b08593538d29ea6b21b6bc2b410d = L.popup({"maxWidth": "100%"});
 
         
-            var html_8453de5d85271176f87831501e2cd09f = $(`<div id="html_8453de5d85271176f87831501e2cd09f" style="width: 100.0%; height: 100.0%;">Paris<br>(48.856614, 2.3522219)<br><strong>AQI level</strong> 40</div>`)[0];
-            popup_af878f9e238d59d2c63c98ea6bd62df4.setContent(html_8453de5d85271176f87831501e2cd09f);
+            var html_d25b341b3691d8b63b50cc7d0ea1507f = $(`<div id="html_d25b341b3691d8b63b50cc7d0ea1507f" style="width: 100.0%; height: 100.0%;">Paris<br>(48.856614, 2.3522219)<br><strong>AQI level</strong> 40</div>`)[0];
+            popup_dc11b08593538d29ea6b21b6bc2b410d.setContent(html_d25b341b3691d8b63b50cc7d0ea1507f);
         
 
-        marker_a485d9df190d5a3cf37d745a4bd8e28c.bindPopup(popup_af878f9e238d59d2c63c98ea6bd62df4)
+        marker_ed8804e52b44bca9aa8a2fa74cb3a8dd.bindPopup(popup_dc11b08593538d29ea6b21b6bc2b410d)
         ;
 
         
     
     
-            marker_a485d9df190d5a3cf37d745a4bd8e28c.bindTooltip(
+            marker_ed8804e52b44bca9aa8a2fa74cb3a8dd.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -160,32 +94,32 @@
             );
         
     
-            var marker_bb6bd9683b1754af19b6a689a7d1c3d6 = L.marker(
+            var marker_d94c77a480fd89cb6b88bf5e633c4f57 = L.marker(
                 [48.8686, 2.31166],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_d7a8ec0669d3bcfcc6947763c08fa233 = L.AwesomeMarkers.icon(
+            var icon_f6397db1dfa2162bdf4777ac10b3944d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_bb6bd9683b1754af19b6a689a7d1c3d6.setIcon(icon_d7a8ec0669d3bcfcc6947763c08fa233);
+            marker_d94c77a480fd89cb6b88bf5e633c4f57.setIcon(icon_f6397db1dfa2162bdf4777ac10b3944d);
         
     
-        var popup_6c688db6c8020e36c34e3ada6073e1dd = L.popup({"maxWidth": "100%"});
+        var popup_78fa369a2bef2ffc8ee1d1541e8965e9 = L.popup({"maxWidth": "100%"});
 
         
-            var html_11cf192e5d63111aec659398bebb4f7f = $(`<div id="html_11cf192e5d63111aec659398bebb4f7f" style="width: 100.0%; height: 100.0%;">Avenue Des Champs Elysees, Paris<br>(48.8686, 2.31166)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_6c688db6c8020e36c34e3ada6073e1dd.setContent(html_11cf192e5d63111aec659398bebb4f7f);
+            var html_ea14775b4e3976d75d9003791aab5fb2 = $(`<div id="html_ea14775b4e3976d75d9003791aab5fb2" style="width: 100.0%; height: 100.0%;">Avenue Des Champs Elysees, Paris<br>(48.8686, 2.31166)<br><strong>AQI level</strong> 275</div>`)[0];
+            popup_78fa369a2bef2ffc8ee1d1541e8965e9.setContent(html_ea14775b4e3976d75d9003791aab5fb2);
         
 
-        marker_bb6bd9683b1754af19b6a689a7d1c3d6.bindPopup(popup_6c688db6c8020e36c34e3ada6073e1dd)
+        marker_d94c77a480fd89cb6b88bf5e633c4f57.bindPopup(popup_78fa369a2bef2ffc8ee1d1541e8965e9)
         ;
 
         
     
     
-            marker_bb6bd9683b1754af19b6a689a7d1c3d6.bindTooltip(
+            marker_d94c77a480fd89cb6b88bf5e633c4f57.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -193,32 +127,32 @@
             );
         
     
-            var marker_b823f9212c43626f3dbf35590f6776a3 = L.marker(
+            var marker_2cc06a48151f8100a729afa5727e9ae2 = L.marker(
                 [48.8733, 2.32957],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_82c9d67f622c3dad2d1d9e8e2edbd37d = L.AwesomeMarkers.icon(
+            var icon_461b256cca3412bb08a4c2c75d6e5bfb = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_b823f9212c43626f3dbf35590f6776a3.setIcon(icon_82c9d67f622c3dad2d1d9e8e2edbd37d);
+            marker_2cc06a48151f8100a729afa5727e9ae2.setIcon(icon_461b256cca3412bb08a4c2c75d6e5bfb);
         
     
-        var popup_2ca747409842cfa1ab7490491526fc9d = L.popup({"maxWidth": "100%"});
+        var popup_9f6bd02f06f19be15ed14b2b131e2f05 = L.popup({"maxWidth": "100%"});
 
         
-            var html_60cfcac14263691d9260697334dcfd5c = $(`<div id="html_60cfcac14263691d9260697334dcfd5c" style="width: 100.0%; height: 100.0%;">Boulevard Haussmann, Paris<br>(48.8733, 2.32957)<br><strong>AQI level</strong> 32</div>`)[0];
-            popup_2ca747409842cfa1ab7490491526fc9d.setContent(html_60cfcac14263691d9260697334dcfd5c);
+            var html_5a608d650ca18e2a7097a1a5cec2d227 = $(`<div id="html_5a608d650ca18e2a7097a1a5cec2d227" style="width: 100.0%; height: 100.0%;">Boulevard Haussmann, Paris<br>(48.8733, 2.32957)<br><strong>AQI level</strong> 275</div>`)[0];
+            popup_9f6bd02f06f19be15ed14b2b131e2f05.setContent(html_5a608d650ca18e2a7097a1a5cec2d227);
         
 
-        marker_b823f9212c43626f3dbf35590f6776a3.bindPopup(popup_2ca747409842cfa1ab7490491526fc9d)
+        marker_2cc06a48151f8100a729afa5727e9ae2.bindPopup(popup_9f6bd02f06f19be15ed14b2b131e2f05)
         ;
 
         
     
     
-            marker_b823f9212c43626f3dbf35590f6776a3.bindTooltip(
+            marker_2cc06a48151f8100a729afa5727e9ae2.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -226,32 +160,32 @@
             );
         
     
-            var marker_cef19099b8791027b4d90b37dc3fb4ef = L.marker(
+            var marker_b01d568d1faaa97a5ed6ce180a39e16f = L.marker(
                 [48.8704, 2.33241],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_72407ec14a752783e5cab09ae2db4803 = L.AwesomeMarkers.icon(
+            var icon_9d71a293c2d62cb7c266957bfe2d3274 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_cef19099b8791027b4d90b37dc3fb4ef.setIcon(icon_72407ec14a752783e5cab09ae2db4803);
+            marker_b01d568d1faaa97a5ed6ce180a39e16f.setIcon(icon_9d71a293c2d62cb7c266957bfe2d3274);
         
     
-        var popup_5c61bd8e20d7057fdb61e844fa868f90 = L.popup({"maxWidth": "100%"});
+        var popup_d97a3ee611b8b0c533837947aa68dc09 = L.popup({"maxWidth": "100%"});
 
         
-            var html_1c1eb02f5d10d9068b7e657d12a4eb23 = $(`<div id="html_1c1eb02f5d10d9068b7e657d12a4eb23" style="width: 100.0%; height: 100.0%;">Place De Lopera, Paris<br>(48.8704, 2.33241)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_5c61bd8e20d7057fdb61e844fa868f90.setContent(html_1c1eb02f5d10d9068b7e657d12a4eb23);
+            var html_f3a627cc66dc0b9e3493bd477b398ad3 = $(`<div id="html_f3a627cc66dc0b9e3493bd477b398ad3" style="width: 100.0%; height: 100.0%;">Place De Lopera, Paris<br>(48.8704, 2.33241)<br><strong>AQI level</strong> 275</div>`)[0];
+            popup_d97a3ee611b8b0c533837947aa68dc09.setContent(html_f3a627cc66dc0b9e3493bd477b398ad3);
         
 
-        marker_cef19099b8791027b4d90b37dc3fb4ef.bindPopup(popup_5c61bd8e20d7057fdb61e844fa868f90)
+        marker_b01d568d1faaa97a5ed6ce180a39e16f.bindPopup(popup_d97a3ee611b8b0c533837947aa68dc09)
         ;
 
         
     
     
-            marker_cef19099b8791027b4d90b37dc3fb4ef.bindTooltip(
+            marker_b01d568d1faaa97a5ed6ce180a39e16f.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -259,32 +193,32 @@
             );
         
     
-            var marker_a452bd21ef834b742a61dad4c1cc5105 = L.marker(
-                [48.9022, 2.3907],
+            var marker_cac559e7463609e83ae8e2845941f30d = L.marker(
+                [48.9024, 2.45261],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_b366439d69330944c71c5a0d1ae64d14 = L.AwesomeMarkers.icon(
+            var icon_b72c8b57b01be9d7c58910a240c435a3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_a452bd21ef834b742a61dad4c1cc5105.setIcon(icon_b366439d69330944c71c5a0d1ae64d14);
+            marker_cac559e7463609e83ae8e2845941f30d.setIcon(icon_b72c8b57b01be9d7c58910a240c435a3);
         
     
-        var popup_e55745d1760361905600de83012bd32b = L.popup({"maxWidth": "100%"});
+        var popup_4b48312d8a173830522c44c9620bf381 = L.popup({"maxWidth": "100%"});
 
         
-            var html_0f30766c37ec5352b8d34e28090d46b9 = $(`<div id="html_0f30766c37ec5352b8d34e28090d46b9" style="width: 100.0%; height: 100.0%;">Route Nationale 2 - Pantin, Paris<br>(48.9022, 2.3907)<br><strong>AQI level</strong> 40</div>`)[0];
-            popup_e55745d1760361905600de83012bd32b.setContent(html_0f30766c37ec5352b8d34e28090d46b9);
+            var html_95d2ed13f8fd7c79e547e4223b5189c3 = $(`<div id="html_95d2ed13f8fd7c79e547e4223b5189c3" style="width: 100.0%; height: 100.0%;">Bobigny, Paris<br>(48.9024, 2.45261)<br><strong>AQI level</strong> 46</div>`)[0];
+            popup_4b48312d8a173830522c44c9620bf381.setContent(html_95d2ed13f8fd7c79e547e4223b5189c3);
         
 
-        marker_a452bd21ef834b742a61dad4c1cc5105.bindPopup(popup_e55745d1760361905600de83012bd32b)
+        marker_cac559e7463609e83ae8e2845941f30d.bindPopup(popup_4b48312d8a173830522c44c9620bf381)
         ;
 
         
     
     
-            marker_a452bd21ef834b742a61dad4c1cc5105.bindTooltip(
+            marker_cac559e7463609e83ae8e2845941f30d.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -292,65 +226,32 @@
             );
         
     
-            var marker_5de39b3626020af0505c244c048e4f7c = L.marker(
-                [48.899, 2.348],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_c5cd79a364617c5d01227f848845384d = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
-            );
-            marker_5de39b3626020af0505c244c048e4f7c.setIcon(icon_c5cd79a364617c5d01227f848845384d);
-        
-    
-        var popup_3bfae2105cefbbcd7c2fb05e1b9080f1 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_ba07482a4e7e4293e3a0d0f0bbd536ef = $(`<div id="html_ba07482a4e7e4293e3a0d0f0bbd536ef" style="width: 100.0%; height: 100.0%;">Boulevard Ney<br>(48.899, 2.348)<br><strong>AQI level</strong> 8</div>`)[0];
-            popup_3bfae2105cefbbcd7c2fb05e1b9080f1.setContent(html_ba07482a4e7e4293e3a0d0f0bbd536ef);
-        
-
-        marker_5de39b3626020af0505c244c048e4f7c.bindPopup(popup_3bfae2105cefbbcd7c2fb05e1b9080f1)
-        ;
-
-        
-    
-    
-            marker_5de39b3626020af0505c244c048e4f7c.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_bc6fba4e100d78da6bf1879a3402e4a2 = L.marker(
+            var marker_58d0fdd347082775c68819d757a729fd = L.marker(
                 [48.8386, 2.41278],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_af67c3e044934e016d9c72658ce7b8fa = L.AwesomeMarkers.icon(
+            var icon_1b75182f58d567f6e37006a066655015 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_bc6fba4e100d78da6bf1879a3402e4a2.setIcon(icon_af67c3e044934e016d9c72658ce7b8fa);
+            marker_58d0fdd347082775c68819d757a729fd.setIcon(icon_1b75182f58d567f6e37006a066655015);
         
     
-        var popup_a8097b5c280eacdeb886f5aecb1e3081 = L.popup({"maxWidth": "100%"});
+        var popup_77bfce2f693e64c67186cd77c8abc520 = L.popup({"maxWidth": "100%"});
 
         
-            var html_f19eb84bd7b5c2b486d30b79af73d176 = $(`<div id="html_f19eb84bd7b5c2b486d30b79af73d176" style="width: 100.0%; height: 100.0%;">Boulevard Peripherique Est, Paris<br>(48.8386, 2.41278)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_a8097b5c280eacdeb886f5aecb1e3081.setContent(html_f19eb84bd7b5c2b486d30b79af73d176);
+            var html_ccf806e13c28398b988dd37557de7c31 = $(`<div id="html_ccf806e13c28398b988dd37557de7c31" style="width: 100.0%; height: 100.0%;">Boulevard Peripherique Est, Paris<br>(48.8386, 2.41278)<br><strong>AQI level</strong> -</div>`)[0];
+            popup_77bfce2f693e64c67186cd77c8abc520.setContent(html_ccf806e13c28398b988dd37557de7c31);
         
 
-        marker_bc6fba4e100d78da6bf1879a3402e4a2.bindPopup(popup_a8097b5c280eacdeb886f5aecb1e3081)
+        marker_58d0fdd347082775c68819d757a729fd.bindPopup(popup_77bfce2f693e64c67186cd77c8abc520)
         ;
 
         
     
     
-            marker_bc6fba4e100d78da6bf1879a3402e4a2.bindTooltip(
+            marker_58d0fdd347082775c68819d757a729fd.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -358,65 +259,32 @@
             );
         
     
-            var marker_db13c53e51d4375112597864e42e2b93 = L.marker(
-                [48.8277, 2.3267],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_061a449b7dc3fe9869593fbad8e432a6 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
-            );
-            marker_db13c53e51d4375112597864e42e2b93.setIcon(icon_061a449b7dc3fe9869593fbad8e432a6);
-        
-    
-        var popup_06a0f26f67ab4c3b42e1d58ca5349077 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_4ebb89e488cd22c9100258069720f7a9 = $(`<div id="html_4ebb89e488cd22c9100258069720f7a9" style="width: 100.0%; height: 100.0%;">Place Victor Basch, Paris<br>(48.8277, 2.3267)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_06a0f26f67ab4c3b42e1d58ca5349077.setContent(html_4ebb89e488cd22c9100258069720f7a9);
-        
-
-        marker_db13c53e51d4375112597864e42e2b93.bindPopup(popup_06a0f26f67ab4c3b42e1d58ca5349077)
-        ;
-
-        
-    
-    
-            marker_db13c53e51d4375112597864e42e2b93.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_ab0b0fe316dc82db05ea514439cdfeda = L.marker(
+            var marker_59aa42157f55be20ecc47bd450ad6548 = L.marker(
                 [48.8303, 2.26972],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_6850dfec22a6d48d717d8d4beaffb469 = L.AwesomeMarkers.icon(
+            var icon_b663a5bd00954e0816d01848dbca96f8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_ab0b0fe316dc82db05ea514439cdfeda.setIcon(icon_6850dfec22a6d48d717d8d4beaffb469);
+            marker_59aa42157f55be20ecc47bd450ad6548.setIcon(icon_b663a5bd00954e0816d01848dbca96f8);
         
     
-        var popup_e26e56e3643b5a2ef4cf9e174349e021 = L.popup({"maxWidth": "100%"});
+        var popup_6bbe4d5a1564b98deba58faa512c69a1 = L.popup({"maxWidth": "100%"});
 
         
-            var html_17d833def84599f8457a27da1dbcfcaf = $(`<div id="html_17d833def84599f8457a27da1dbcfcaf" style="width: 100.0%; height: 100.0%;">Paris Stade Lenglen, Paris<br>(48.8303, 2.26972)<br><strong>AQI level</strong> 10</div>`)[0];
-            popup_e26e56e3643b5a2ef4cf9e174349e021.setContent(html_17d833def84599f8457a27da1dbcfcaf);
+            var html_4ae8b10f50379667af21797fbd2a46a3 = $(`<div id="html_4ae8b10f50379667af21797fbd2a46a3" style="width: 100.0%; height: 100.0%;">Paris Stade Lenglen, Paris<br>(48.8303, 2.26972)<br><strong>AQI level</strong> 29</div>`)[0];
+            popup_6bbe4d5a1564b98deba58faa512c69a1.setContent(html_4ae8b10f50379667af21797fbd2a46a3);
         
 
-        marker_ab0b0fe316dc82db05ea514439cdfeda.bindPopup(popup_e26e56e3643b5a2ef4cf9e174349e021)
+        marker_59aa42157f55be20ecc47bd450ad6548.bindPopup(popup_6bbe4d5a1564b98deba58faa512c69a1)
         ;
 
         
     
     
-            marker_ab0b0fe316dc82db05ea514439cdfeda.bindTooltip(
+            marker_59aa42157f55be20ecc47bd450ad6548.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -424,32 +292,65 @@
             );
         
     
-            var marker_71184d06247b22d8133e7466f25eaf72 = L.marker(
+            var marker_e79003842bac8f17d81c268ca291cb86 = L.marker(
+                [48.8621, 2.34462],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_46ae95143dd0b6a87a55dd20d6ba2f2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e79003842bac8f17d81c268ca291cb86.setIcon(icon_46ae95143dd0b6a87a55dd20d6ba2f2f);
+        
+    
+        var popup_1606f8c51871223572b834ff7795df5d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_346a33219067d7d76daf20912b56a852 = $(`<div id="html_346a33219067d7d76daf20912b56a852" style="width: 100.0%; height: 100.0%;">Paris 1er Les Halles, Paris<br>(48.8621, 2.34462)<br><strong>AQI level</strong> 26</div>`)[0];
+            popup_1606f8c51871223572b834ff7795df5d.setContent(html_346a33219067d7d76daf20912b56a852);
+        
+
+        marker_e79003842bac8f17d81c268ca291cb86.bindPopup(popup_1606f8c51871223572b834ff7795df5d)
+        ;
+
+        
+    
+    
+            marker_e79003842bac8f17d81c268ca291cb86.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b93f004ec5fbc64a66705f9a551bd396 = L.marker(
                 [48.8917, 2.34563],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_30626557114e87688c146e18b387398b = L.AwesomeMarkers.icon(
+            var icon_65ae47271b0d4387df7cf91bfc5b58b6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_71184d06247b22d8133e7466f25eaf72.setIcon(icon_30626557114e87688c146e18b387398b);
+            marker_b93f004ec5fbc64a66705f9a551bd396.setIcon(icon_65ae47271b0d4387df7cf91bfc5b58b6);
         
     
-        var popup_c4eaaeb1dd992a1bc580ae48c2ad2575 = L.popup({"maxWidth": "100%"});
+        var popup_d7ac8c38e1c18981df7e409971226390 = L.popup({"maxWidth": "100%"});
 
         
-            var html_cdab279acfa53c2e705b9d04fd3d481f = $(`<div id="html_cdab279acfa53c2e705b9d04fd3d481f" style="width: 100.0%; height: 100.0%;">Paris 18eme, Paris<br>(48.8917, 2.34563)<br><strong>AQI level</strong> 40</div>`)[0];
-            popup_c4eaaeb1dd992a1bc580ae48c2ad2575.setContent(html_cdab279acfa53c2e705b9d04fd3d481f);
+            var html_8fa9c2cd99e184d5513e3ae496d1a65e = $(`<div id="html_8fa9c2cd99e184d5513e3ae496d1a65e" style="width: 100.0%; height: 100.0%;">Paris 18eme, Paris<br>(48.8917, 2.34563)<br><strong>AQI level</strong> 40</div>`)[0];
+            popup_d7ac8c38e1c18981df7e409971226390.setContent(html_8fa9c2cd99e184d5513e3ae496d1a65e);
         
 
-        marker_71184d06247b22d8133e7466f25eaf72.bindPopup(popup_c4eaaeb1dd992a1bc580ae48c2ad2575)
+        marker_b93f004ec5fbc64a66705f9a551bd396.bindPopup(popup_d7ac8c38e1c18981df7e409971226390)
         ;
 
         
     
     
-            marker_71184d06247b22d8133e7466f25eaf72.bindTooltip(
+            marker_b93f004ec5fbc64a66705f9a551bd396.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -457,32 +358,32 @@
             );
         
     
-            var marker_6f2b9978ca5e78d311808a1b0056ff81 = L.marker(
-                [42.00666664, 21.38694446],
+            var marker_a6f4726d565f578388dcc8e742c93665 = L.marker(
+                [48.9022, 2.3907],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_f3266b60b5dddd09339986a7b1eb2567 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            var icon_6d3ef4ce16b14fdf47d3d9fb25e943f6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_6f2b9978ca5e78d311808a1b0056ff81.setIcon(icon_f3266b60b5dddd09339986a7b1eb2567);
+            marker_a6f4726d565f578388dcc8e742c93665.setIcon(icon_6d3ef4ce16b14fdf47d3d9fb25e943f6);
         
     
-        var popup_c91d5091aee493180038e64f3650814e = L.popup({"maxWidth": "100%"});
+        var popup_875838da45773e847ab1253c3423563b = L.popup({"maxWidth": "100%"});
 
         
-            var html_9b6a55b50d8b264bbec0f33d0d24f933 = $(`<div id="html_9b6a55b50d8b264bbec0f33d0d24f933" style="width: 100.0%; height: 100.0%;">Karposh, Skopje, Macedonia (Карпош)<br>(42.00666664, 21.38694446)<br><strong>AQI level</strong> 44</div>`)[0];
-            popup_c91d5091aee493180038e64f3650814e.setContent(html_9b6a55b50d8b264bbec0f33d0d24f933);
+            var html_65ef3b6a6679c1f77db9f32fbb541dbd = $(`<div id="html_65ef3b6a6679c1f77db9f32fbb541dbd" style="width: 100.0%; height: 100.0%;">Route Nationale 2 - Pantin, Paris<br>(48.9022, 2.3907)<br><strong>AQI level</strong> 40</div>`)[0];
+            popup_875838da45773e847ab1253c3423563b.setContent(html_65ef3b6a6679c1f77db9f32fbb541dbd);
         
 
-        marker_6f2b9978ca5e78d311808a1b0056ff81.bindPopup(popup_c91d5091aee493180038e64f3650814e)
+        marker_a6f4726d565f578388dcc8e742c93665.bindPopup(popup_875838da45773e847ab1253c3423563b)
         ;
 
         
     
     
-            marker_6f2b9978ca5e78d311808a1b0056ff81.bindTooltip(
+            marker_a6f4726d565f578388dcc8e742c93665.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -490,32 +391,32 @@
             );
         
     
-            var marker_bec2a1916a2c4ecf7a20b0ee57347d23 = L.marker(
-                [41.9992, 21.4408],
+            var marker_9c2598d7dda4801eec8fdbc18c4e829c = L.marker(
+                [48.8277, 2.3267],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_7f8f8dde2b841fb2f3cc2c79c511b490 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            var icon_1bd8a198aafb8084c9fd7c1fc8300b52 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
             );
-            marker_bec2a1916a2c4ecf7a20b0ee57347d23.setIcon(icon_7f8f8dde2b841fb2f3cc2c79c511b490);
+            marker_9c2598d7dda4801eec8fdbc18c4e829c.setIcon(icon_1bd8a198aafb8084c9fd7c1fc8300b52);
         
     
-        var popup_36e8edf727b5ddfa56a727a7130342a5 = L.popup({"maxWidth": "100%"});
+        var popup_313d12ce7039ddc2e1fd657d439e2155 = L.popup({"maxWidth": "100%"});
 
         
-            var html_2fadcf3df1e7b9beb72046c2d18b9f5b = $(`<div id="html_2fadcf3df1e7b9beb72046c2d18b9f5b" style="width: 100.0%; height: 100.0%;">Rektorat, Skopje, Macedonia (Ректорат)<br>(41.9992, 21.4408)<br><strong>AQI level</strong> 61</div>`)[0];
-            popup_36e8edf727b5ddfa56a727a7130342a5.setContent(html_2fadcf3df1e7b9beb72046c2d18b9f5b);
+            var html_353a5fe77e24ccf5ee9250bd8a62e879 = $(`<div id="html_353a5fe77e24ccf5ee9250bd8a62e879" style="width: 100.0%; height: 100.0%;">Place Victor Basch, Paris<br>(48.8277, 2.3267)<br><strong>AQI level</strong> 26</div>`)[0];
+            popup_313d12ce7039ddc2e1fd657d439e2155.setContent(html_353a5fe77e24ccf5ee9250bd8a62e879);
         
 
-        marker_bec2a1916a2c4ecf7a20b0ee57347d23.bindPopup(popup_36e8edf727b5ddfa56a727a7130342a5)
+        marker_9c2598d7dda4801eec8fdbc18c4e829c.bindPopup(popup_313d12ce7039ddc2e1fd657d439e2155)
         ;
 
         
     
     
-            marker_bec2a1916a2c4ecf7a20b0ee57347d23.bindTooltip(
+            marker_9c2598d7dda4801eec8fdbc18c4e829c.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -523,65 +424,32 @@
             );
         
     
-            var marker_3e187ff93e4babfe1ccdfb1a45e144fc = L.marker(
-                [42.004904, 21.36479],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_fed9a83bdb92fd5c33d2c86797eb9cd2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
-            );
-            marker_3e187ff93e4babfe1ccdfb1a45e144fc.setIcon(icon_fed9a83bdb92fd5c33d2c86797eb9cd2);
-        
-    
-        var popup_f481af580bf67c891eb4f9b47bd19068 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_0197c5c32872f7090a13860c7e413efd = $(`<div id="html_0197c5c32872f7090a13860c7e413efd" style="width: 100.0%; height: 100.0%;">MobileGP, Macedonia (Мобилна станица - Ѓ. Петров)<br>(42.004904, 21.36479)<br><strong>AQI level</strong> 48</div>`)[0];
-            popup_f481af580bf67c891eb4f9b47bd19068.setContent(html_0197c5c32872f7090a13860c7e413efd);
-        
-
-        marker_3e187ff93e4babfe1ccdfb1a45e144fc.bindPopup(popup_f481af580bf67c891eb4f9b47bd19068)
-        ;
-
-        
-    
-    
-            marker_3e187ff93e4babfe1ccdfb1a45e144fc.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_c065469925b37a90f3e847223d0b482a = L.marker(
+            var marker_5c065455e4a78bf2ef0ed86c4e7a13c6 = L.marker(
                 [42.0036, 21.4636],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_c3378a6095dcaa53be6553c3d5c104cc = L.AwesomeMarkers.icon(
+            var icon_11848f95dcf60fd28d270c33f199c5a7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_c065469925b37a90f3e847223d0b482a.setIcon(icon_c3378a6095dcaa53be6553c3d5c104cc);
+            marker_5c065455e4a78bf2ef0ed86c4e7a13c6.setIcon(icon_11848f95dcf60fd28d270c33f199c5a7);
         
     
-        var popup_5bd0114c336017f090637731b5c97daa = L.popup({"maxWidth": "100%"});
+        var popup_d728e6ac45d6ea2ee924135317b7c114 = L.popup({"maxWidth": "100%"});
 
         
-            var html_783850accb0361ee29e2cfa5d9085015 = $(`<div id="html_783850accb0361ee29e2cfa5d9085015" style="width: 100.0%; height: 100.0%;">Gazi Baba, Skopje, Macedonia (Гази Баба)<br>(42.0036, 21.4636)<br><strong>AQI level</strong> 42</div>`)[0];
-            popup_5bd0114c336017f090637731b5c97daa.setContent(html_783850accb0361ee29e2cfa5d9085015);
+            var html_7382d91ca80b66b5136f811d55982431 = $(`<div id="html_7382d91ca80b66b5136f811d55982431" style="width: 100.0%; height: 100.0%;">Gazi Baba, Skopje, Macedonia (Гази Баба)<br>(42.0036, 21.4636)<br><strong>AQI level</strong> 53</div>`)[0];
+            popup_d728e6ac45d6ea2ee924135317b7c114.setContent(html_7382d91ca80b66b5136f811d55982431);
         
 
-        marker_c065469925b37a90f3e847223d0b482a.bindPopup(popup_5bd0114c336017f090637731b5c97daa)
+        marker_5c065455e4a78bf2ef0ed86c4e7a13c6.bindPopup(popup_d728e6ac45d6ea2ee924135317b7c114)
         ;
 
         
     
     
-            marker_c065469925b37a90f3e847223d0b482a.bindTooltip(
+            marker_5c065455e4a78bf2ef0ed86c4e7a13c6.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -589,32 +457,32 @@
             );
         
     
-            var marker_9b1a1906761742eaf704e41d81a67b3d = L.marker(
+            var marker_adae3ce8196a30916260dc405d1fca26 = L.marker(
                 [41.9783, 21.47],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_6f99e1df5cfaab9b2c2f7ba0a7aadc4a = L.AwesomeMarkers.icon(
+            var icon_66ce4a17fdef7c8baf99a66c14829f25 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_9b1a1906761742eaf704e41d81a67b3d.setIcon(icon_6f99e1df5cfaab9b2c2f7ba0a7aadc4a);
+            marker_adae3ce8196a30916260dc405d1fca26.setIcon(icon_66ce4a17fdef7c8baf99a66c14829f25);
         
     
-        var popup_4c8f6c27944cfbfeb2b544f1fa9513c7 = L.popup({"maxWidth": "100%"});
+        var popup_877d25ea50f69fb1d92b8cdaf87889c0 = L.popup({"maxWidth": "100%"});
 
         
-            var html_ee6514ebf863585b8c2381d94a3955b2 = $(`<div id="html_ee6514ebf863585b8c2381d94a3955b2" style="width: 100.0%; height: 100.0%;">Lisice, Macedonia (Лисиче)<br>(41.9783, 21.47)<br><strong>AQI level</strong> 48</div>`)[0];
-            popup_4c8f6c27944cfbfeb2b544f1fa9513c7.setContent(html_ee6514ebf863585b8c2381d94a3955b2);
+            var html_099ac0545e4c768108afcf40151e2421 = $(`<div id="html_099ac0545e4c768108afcf40151e2421" style="width: 100.0%; height: 100.0%;">Lisice, Macedonia (Лисиче)<br>(41.9783, 21.47)<br><strong>AQI level</strong> 50</div>`)[0];
+            popup_877d25ea50f69fb1d92b8cdaf87889c0.setContent(html_099ac0545e4c768108afcf40151e2421);
         
 
-        marker_9b1a1906761742eaf704e41d81a67b3d.bindPopup(popup_4c8f6c27944cfbfeb2b544f1fa9513c7)
+        marker_adae3ce8196a30916260dc405d1fca26.bindPopup(popup_877d25ea50f69fb1d92b8cdaf87889c0)
         ;
 
         
     
     
-            marker_9b1a1906761742eaf704e41d81a67b3d.bindTooltip(
+            marker_adae3ce8196a30916260dc405d1fca26.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -622,32 +490,32 @@
             );
         
     
-            var marker_c5c488be1d99379bbc655d6f830fc057 = L.marker(
+            var marker_abefad2539eb1dc55e2ba37c404b10e0 = L.marker(
                 [41.99249998, 21.42361109],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_ff12c881d1279379cdd170abdbf32233 = L.AwesomeMarkers.icon(
+            var icon_0e370a6ac4511996911082cdb974c0e2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_c5c488be1d99379bbc655d6f830fc057.setIcon(icon_ff12c881d1279379cdd170abdbf32233);
+            marker_abefad2539eb1dc55e2ba37c404b10e0.setIcon(icon_0e370a6ac4511996911082cdb974c0e2);
         
     
-        var popup_b57c869656383ed58c8204d0afcc95fe = L.popup({"maxWidth": "100%"});
+        var popup_3c859dfaf63d94cf97aa18c77db5f72e = L.popup({"maxWidth": "100%"});
 
         
-            var html_a2cdd5ea5e8d672a63515647efa03120 = $(`<div id="html_a2cdd5ea5e8d672a63515647efa03120" style="width: 100.0%; height: 100.0%;">Centar, Skopje, Macedonia (Центар)<br>(41.99249998, 21.42361109)<br><strong>AQI level</strong> 54</div>`)[0];
-            popup_b57c869656383ed58c8204d0afcc95fe.setContent(html_a2cdd5ea5e8d672a63515647efa03120);
+            var html_8b71ebdb85c6b8602fd195afd4a73307 = $(`<div id="html_8b71ebdb85c6b8602fd195afd4a73307" style="width: 100.0%; height: 100.0%;">Centar, Skopje, Macedonia (Центар)<br>(41.99249998, 21.42361109)<br><strong>AQI level</strong> 32</div>`)[0];
+            popup_3c859dfaf63d94cf97aa18c77db5f72e.setContent(html_8b71ebdb85c6b8602fd195afd4a73307);
         
 
-        marker_c5c488be1d99379bbc655d6f830fc057.bindPopup(popup_b57c869656383ed58c8204d0afcc95fe)
+        marker_abefad2539eb1dc55e2ba37c404b10e0.bindPopup(popup_3c859dfaf63d94cf97aa18c77db5f72e)
         ;
 
         
     
     
-            marker_c5c488be1d99379bbc655d6f830fc057.bindTooltip(
+            marker_abefad2539eb1dc55e2ba37c404b10e0.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -655,32 +523,32 @@
             );
         
     
-            var marker_312a7cc1c782b40b2e0f72bffd1e49f0 = L.marker(
-                [44.771, 20.411],
+            var marker_d26d0c724d435265bc7be711b67ef261 = L.marker(
+                [42.00666664, 21.38694446],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_fd27eabd35573d46752527b79e26a5a6 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            var icon_fa2414f84f69c1708280216e414be9d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_312a7cc1c782b40b2e0f72bffd1e49f0.setIcon(icon_fd27eabd35573d46752527b79e26a5a6);
+            marker_d26d0c724d435265bc7be711b67ef261.setIcon(icon_fa2414f84f69c1708280216e414be9d9);
         
     
-        var popup_a1b2a87fa65a75e304693c32abd447ba = L.popup({"maxWidth": "100%"});
+        var popup_d933e0e1990b474eba78422680b24197 = L.popup({"maxWidth": "100%"});
 
         
-            var html_73dc6159e195ccc250f5f90f87685737 = $(`<div id="html_73dc6159e195ccc250f5f90f87685737" style="width: 100.0%; height: 100.0%;">Paxy<br>(44.771, 20.411)<br><strong>AQI level</strong> 53</div>`)[0];
-            popup_a1b2a87fa65a75e304693c32abd447ba.setContent(html_73dc6159e195ccc250f5f90f87685737);
+            var html_a7c4626bb4812c559146e04781c8e702 = $(`<div id="html_a7c4626bb4812c559146e04781c8e702" style="width: 100.0%; height: 100.0%;">Karposh, Skopje, Macedonia (Карпош)<br>(42.00666664, 21.38694446)<br><strong>AQI level</strong> 27</div>`)[0];
+            popup_d933e0e1990b474eba78422680b24197.setContent(html_a7c4626bb4812c559146e04781c8e702);
         
 
-        marker_312a7cc1c782b40b2e0f72bffd1e49f0.bindPopup(popup_a1b2a87fa65a75e304693c32abd447ba)
+        marker_d26d0c724d435265bc7be711b67ef261.bindPopup(popup_d933e0e1990b474eba78422680b24197)
         ;
 
         
     
     
-            marker_312a7cc1c782b40b2e0f72bffd1e49f0.bindTooltip(
+            marker_d26d0c724d435265bc7be711b67ef261.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -688,32 +556,32 @@
             );
         
     
-            var marker_435a6e373efb5981517e21af85c6ab53 = L.marker(
-                [44.782, 20.468],
+            var marker_c0e07807627f7c3738e2d98e99847e3f = L.marker(
+                [41.9992, 21.4408],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_309778f6fa778a0d62b0747f482fa99b = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            var icon_8275f1e5a9c0910b3c445dd1e1c98fa6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_435a6e373efb5981517e21af85c6ab53.setIcon(icon_309778f6fa778a0d62b0747f482fa99b);
+            marker_c0e07807627f7c3738e2d98e99847e3f.setIcon(icon_8275f1e5a9c0910b3c445dd1e1c98fa6);
         
     
-        var popup_bf1b3af133fc14cf2ce71271b7ae174c = L.popup({"maxWidth": "100%"});
+        var popup_d5c3fae1695bf050cc4f8ea1de8edfbe = L.popup({"maxWidth": "100%"});
 
         
-            var html_ca6cee90f01f215e96b12e898780f871 = $(`<div id="html_ca6cee90f01f215e96b12e898780f871" style="width: 100.0%; height: 100.0%;">Милована Маринковића<br>(44.782, 20.468)<br><strong>AQI level</strong> 54</div>`)[0];
-            popup_bf1b3af133fc14cf2ce71271b7ae174c.setContent(html_ca6cee90f01f215e96b12e898780f871);
+            var html_d5cd4aba1eec817b7ef2e35ab88f56be = $(`<div id="html_d5cd4aba1eec817b7ef2e35ab88f56be" style="width: 100.0%; height: 100.0%;">Rektorat, Skopje, Macedonia (Ректорат)<br>(41.9992, 21.4408)<br><strong>AQI level</strong> 63</div>`)[0];
+            popup_d5c3fae1695bf050cc4f8ea1de8edfbe.setContent(html_d5cd4aba1eec817b7ef2e35ab88f56be);
         
 
-        marker_435a6e373efb5981517e21af85c6ab53.bindPopup(popup_bf1b3af133fc14cf2ce71271b7ae174c)
+        marker_c0e07807627f7c3738e2d98e99847e3f.bindPopup(popup_d5c3fae1695bf050cc4f8ea1de8edfbe)
         ;
 
         
     
     
-            marker_435a6e373efb5981517e21af85c6ab53.bindTooltip(
+            marker_c0e07807627f7c3738e2d98e99847e3f.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -721,32 +589,32 @@
             );
         
     
-            var marker_7381ac458a6617783af4f3439afa8543 = L.marker(
-                [44.803111111111, 20.400027777778],
+            var marker_4c1f07d5386125cee0220266d6d5d17b = L.marker(
+                [42.004904, 21.36479],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_8398bf2c40302c1c5d9230064e3af162 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            var icon_9faeed6af062ab8aa9acb5efc524afd8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
             );
-            marker_7381ac458a6617783af4f3439afa8543.setIcon(icon_8398bf2c40302c1c5d9230064e3af162);
+            marker_4c1f07d5386125cee0220266d6d5d17b.setIcon(icon_9faeed6af062ab8aa9acb5efc524afd8);
         
     
-        var popup_710b485c21feb25ec9520407ad306779 = L.popup({"maxWidth": "100%"});
+        var popup_4805bbfa6415ff0c6a8dd60122f3fea7 = L.popup({"maxWidth": "100%"});
 
         
-            var html_a712e31c2e69d1a2b6e137df74a93cda = $(`<div id="html_a712e31c2e69d1a2b6e137df74a93cda" style="width: 100.0%; height: 100.0%;">Novi Beograd, Beograd, Serbia<br>(44.803111111111, 20.400027777778)<br><strong>AQI level</strong> 68</div>`)[0];
-            popup_710b485c21feb25ec9520407ad306779.setContent(html_a712e31c2e69d1a2b6e137df74a93cda);
+            var html_22f7b513b56179662cb815b7a850800e = $(`<div id="html_22f7b513b56179662cb815b7a850800e" style="width: 100.0%; height: 100.0%;">MobileGP, Macedonia (Мобилна станица - Ѓ. Петров)<br>(42.004904, 21.36479)<br><strong>AQI level</strong> 55</div>`)[0];
+            popup_4805bbfa6415ff0c6a8dd60122f3fea7.setContent(html_22f7b513b56179662cb815b7a850800e);
         
 
-        marker_7381ac458a6617783af4f3439afa8543.bindPopup(popup_710b485c21feb25ec9520407ad306779)
+        marker_4c1f07d5386125cee0220266d6d5d17b.bindPopup(popup_4805bbfa6415ff0c6a8dd60122f3fea7)
         ;
 
         
     
     
-            marker_7381ac458a6617783af4f3439afa8543.bindTooltip(
+            marker_4c1f07d5386125cee0220266d6d5d17b.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -754,164 +622,32 @@
             );
         
     
-            var marker_63bcb739c5c8ca36849e95bff2fcb43e = L.marker(
-                [44.796959, 20.475288],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_dab9b73603ce43f7601cce3fd302f23a = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_63bcb739c5c8ca36849e95bff2fcb43e.setIcon(icon_dab9b73603ce43f7601cce3fd302f23a);
-        
-    
-        var popup_73db894a027467349c273305e94b88fa = L.popup({"maxWidth": "100%"});
-
-        
-            var html_358d20af47162126d4f3cfcd4405f3be = $(`<div id="html_358d20af47162126d4f3cfcd4405f3be" style="width: 100.0%; height: 100.0%;">Beograd Vračar, Serbia<br>(44.796959, 20.475288)<br><strong>AQI level</strong> 75</div>`)[0];
-            popup_73db894a027467349c273305e94b88fa.setContent(html_358d20af47162126d4f3cfcd4405f3be);
-        
-
-        marker_63bcb739c5c8ca36849e95bff2fcb43e.bindPopup(popup_73db894a027467349c273305e94b88fa)
-        ;
-
-        
-    
-    
-            marker_63bcb739c5c8ca36849e95bff2fcb43e.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_bd115ba277e94c0a19e91c3a3e7fe509 = L.marker(
-                [44.82112, 20.459113],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_ca7fb9e5f6bff026bf47c74a877b6a94 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_bd115ba277e94c0a19e91c3a3e7fe509.setIcon(icon_ca7fb9e5f6bff026bf47c74a877b6a94);
-        
-    
-        var popup_bd09c2d7041aedee207492fcf2f29751 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_284d27a931eb83903215bd97b2590d2b = $(`<div id="html_284d27a931eb83903215bd97b2590d2b" style="width: 100.0%; height: 100.0%;">Beograd Stari grad, Serbia<br>(44.82112, 20.459113)<br><strong>AQI level</strong> 71</div>`)[0];
-            popup_bd09c2d7041aedee207492fcf2f29751.setContent(html_284d27a931eb83903215bd97b2590d2b);
-        
-
-        marker_bd115ba277e94c0a19e91c3a3e7fe509.bindPopup(popup_bd09c2d7041aedee207492fcf2f29751)
-        ;
-
-        
-    
-    
-            marker_bd115ba277e94c0a19e91c3a3e7fe509.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_4aa0ea35ddf2bdf032277cb1eb59a2d9 = L.marker(
-                [44.774, 20.506],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_affdc9ce67f7c673257c00ac27fb70b8 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_4aa0ea35ddf2bdf032277cb1eb59a2d9.setIcon(icon_affdc9ce67f7c673257c00ac27fb70b8);
-        
-    
-        var popup_b95004feaa785ba159aa3659e82d97de = L.popup({"maxWidth": "100%"});
-
-        
-            var html_3ed028a66fe4c6efb424e2b994fda26f = $(`<div id="html_3ed028a66fe4c6efb424e2b994fda26f" style="width: 100.0%; height: 100.0%;">Боривоја Стевановића<br>(44.774, 20.506)<br><strong>AQI level</strong> 70</div>`)[0];
-            popup_b95004feaa785ba159aa3659e82d97de.setContent(html_3ed028a66fe4c6efb424e2b994fda26f);
-        
-
-        marker_4aa0ea35ddf2bdf032277cb1eb59a2d9.bindPopup(popup_b95004feaa785ba159aa3659e82d97de)
-        ;
-
-        
-    
-    
-            marker_4aa0ea35ddf2bdf032277cb1eb59a2d9.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_dc214d211ad9dda44e605d09b016ec32 = L.marker(
-                [44.792, 20.482],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_0a1b3dbad021e5ce9751e0747eb797c6 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_dc214d211ad9dda44e605d09b016ec32.setIcon(icon_0a1b3dbad021e5ce9751e0747eb797c6);
-        
-    
-        var popup_a39e6f28c977af2ad156ec756fdf015e = L.popup({"maxWidth": "100%"});
-
-        
-            var html_4163d9f2d658bb8de7d69bfa53f61020 = $(`<div id="html_4163d9f2d658bb8de7d69bfa53f61020" style="width: 100.0%; height: 100.0%;">Gospodara Vucica<br>(44.792, 20.482)<br><strong>AQI level</strong> 74</div>`)[0];
-            popup_a39e6f28c977af2ad156ec756fdf015e.setContent(html_4163d9f2d658bb8de7d69bfa53f61020);
-        
-
-        marker_dc214d211ad9dda44e605d09b016ec32.bindPopup(popup_a39e6f28c977af2ad156ec756fdf015e)
-        ;
-
-        
-    
-    
-            marker_dc214d211ad9dda44e605d09b016ec32.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_48ea0bba7d505c4b7c923ddb2712dde7 = L.marker(
+            var marker_7007531612d181d350b98ba0b5eac3f0 = L.marker(
                 [44.796, 20.532],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_b515bab19a4729e61de641bb255bca7f = L.AwesomeMarkers.icon(
+            var icon_f08636d4636b4545fbb4ccdf0739e089 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_48ea0bba7d505c4b7c923ddb2712dde7.setIcon(icon_b515bab19a4729e61de641bb255bca7f);
+            marker_7007531612d181d350b98ba0b5eac3f0.setIcon(icon_f08636d4636b4545fbb4ccdf0739e089);
         
     
-        var popup_1cd5a6bffc82061409ebd58a5462282d = L.popup({"maxWidth": "100%"});
+        var popup_5f1c239dc5000eac68239afc7f4c3d93 = L.popup({"maxWidth": "100%"});
 
         
-            var html_4f4e2b3952a82d7a78ad18d5cf6ec8ec = $(`<div id="html_4f4e2b3952a82d7a78ad18d5cf6ec8ec" style="width: 100.0%; height: 100.0%;">Заграђе<br>(44.796, 20.532)<br><strong>AQI level</strong> 81</div>`)[0];
-            popup_1cd5a6bffc82061409ebd58a5462282d.setContent(html_4f4e2b3952a82d7a78ad18d5cf6ec8ec);
+            var html_3e6853b15cc1d1cf371dd0d4552c8d8d = $(`<div id="html_3e6853b15cc1d1cf371dd0d4552c8d8d" style="width: 100.0%; height: 100.0%;">Заграђе<br>(44.796, 20.532)<br><strong>AQI level</strong> 17</div>`)[0];
+            popup_5f1c239dc5000eac68239afc7f4c3d93.setContent(html_3e6853b15cc1d1cf371dd0d4552c8d8d);
         
 
-        marker_48ea0bba7d505c4b7c923ddb2712dde7.bindPopup(popup_1cd5a6bffc82061409ebd58a5462282d)
+        marker_7007531612d181d350b98ba0b5eac3f0.bindPopup(popup_5f1c239dc5000eac68239afc7f4c3d93)
         ;
 
         
     
     
-            marker_48ea0bba7d505c4b7c923ddb2712dde7.bindTooltip(
+            marker_7007531612d181d350b98ba0b5eac3f0.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -919,164 +655,32 @@
             );
         
     
-            var marker_4819e369fda4a39824dbacdaf67df727 = L.marker(
-                [44.78765411896292, 20.43384552210275],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_0d1a68d184d01fab1de6bf8a8a38e9fe = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_4819e369fda4a39824dbacdaf67df727.setIcon(icon_0d1a68d184d01fab1de6bf8a8a38e9fe);
-        
-    
-        var popup_99a87d0ba77f0e04ff5ad88f43b32034 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_c53e454eb87f3730f5d558e74f7febba = $(`<div id="html_c53e454eb87f3730f5d558e74f7febba" style="width: 100.0%; height: 100.0%;">International School of Belgrade<br>(44.78765411896292, 20.43384552210275)<br><strong>AQI level</strong> 109</div>`)[0];
-            popup_99a87d0ba77f0e04ff5ad88f43b32034.setContent(html_c53e454eb87f3730f5d558e74f7febba);
-        
-
-        marker_4819e369fda4a39824dbacdaf67df727.bindPopup(popup_99a87d0ba77f0e04ff5ad88f43b32034)
-        ;
-
-        
-    
-    
-            marker_4819e369fda4a39824dbacdaf67df727.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_78bac8e4a506b7fc049d582d8a2344a0 = L.marker(
-                [44.786458333333, 20.52173611111],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_1edc5eaa1b390c208a413cbc88332e69 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_78bac8e4a506b7fc049d582d8a2344a0.setIcon(icon_1edc5eaa1b390c208a413cbc88332e69);
-        
-    
-        var popup_a11a7196b363f10a5defb3ab15f5b91a = L.popup({"maxWidth": "100%"});
-
-        
-            var html_5b137e39f79ff306a238e087bf10d46b = $(`<div id="html_5b137e39f79ff306a238e087bf10d46b" style="width: 100.0%; height: 100.0%;">Zeleno Brdo, Beograd, Serbia<br>(44.786458333333, 20.52173611111)<br><strong>AQI level</strong> 72</div>`)[0];
-            popup_a11a7196b363f10a5defb3ab15f5b91a.setContent(html_5b137e39f79ff306a238e087bf10d46b);
-        
-
-        marker_78bac8e4a506b7fc049d582d8a2344a0.bindPopup(popup_a11a7196b363f10a5defb3ab15f5b91a)
-        ;
-
-        
-    
-    
-            marker_78bac8e4a506b7fc049d582d8a2344a0.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_c3f8de616bcc664e6afc0ff73a34a857 = L.marker(
-                [44.762, 20.486],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_7f50e78ed0f4acd53d3b52ceaa95814e = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_c3f8de616bcc664e6afc0ff73a34a857.setIcon(icon_7f50e78ed0f4acd53d3b52ceaa95814e);
-        
-    
-        var popup_2e9deb1d1509050492e171084ba96148 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_4de70b9668988d3c3ed8aae4cdb750bc = $(`<div id="html_4de70b9668988d3c3ed8aae4cdb750bc" style="width: 100.0%; height: 100.0%;">Vozdovacki kruzni put<br>(44.762, 20.486)<br><strong>AQI level</strong> 106</div>`)[0];
-            popup_2e9deb1d1509050492e171084ba96148.setContent(html_4de70b9668988d3c3ed8aae4cdb750bc);
-        
-
-        marker_c3f8de616bcc664e6afc0ff73a34a857.bindPopup(popup_2e9deb1d1509050492e171084ba96148)
-        ;
-
-        
-    
-    
-            marker_c3f8de616bcc664e6afc0ff73a34a857.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_31c8c799d100c2e03d3d26775c45b4bd = L.marker(
-                [44.81151024518, 20.51515824198],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_3692fb33c389afc9fabc865a2158f7f6 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_31c8c799d100c2e03d3d26775c45b4bd.setIcon(icon_3692fb33c389afc9fabc865a2158f7f6);
-        
-    
-        var popup_d2d68d9a9e9604c2e57c7c5b24a6504d = L.popup({"maxWidth": "100%"});
-
-        
-            var html_dedc4e57be7eedf12af44157fc824da2 = $(`<div id="html_dedc4e57be7eedf12af44157fc824da2" style="width: 100.0%; height: 100.0%;">Mariјane Gregoran<br>(44.81151024518, 20.51515824198)<br><strong>AQI level</strong> 58</div>`)[0];
-            popup_d2d68d9a9e9604c2e57c7c5b24a6504d.setContent(html_dedc4e57be7eedf12af44157fc824da2);
-        
-
-        marker_31c8c799d100c2e03d3d26775c45b4bd.bindPopup(popup_d2d68d9a9e9604c2e57c7c5b24a6504d)
-        ;
-
-        
-    
-    
-            marker_31c8c799d100c2e03d3d26775c45b4bd.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_3f45ff8ce71b78d6b4cc519cf4078023 = L.marker(
+            var marker_bd229ea754dd6bab6c5d9bb3fa97961b = L.marker(
                 [44.816, 20.538],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_d3d4ae6b21eeddcc0230749904919f3e = L.AwesomeMarkers.icon(
+            var icon_fd9e40a654520cd79423331dc4723c60 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_3f45ff8ce71b78d6b4cc519cf4078023.setIcon(icon_d3d4ae6b21eeddcc0230749904919f3e);
+            marker_bd229ea754dd6bab6c5d9bb3fa97961b.setIcon(icon_fd9e40a654520cd79423331dc4723c60);
         
     
-        var popup_31673897ff6bbc72f3e746bdf1213a8a = L.popup({"maxWidth": "100%"});
+        var popup_db09eadd6fe747cfd4f2d8cb605e8e7c = L.popup({"maxWidth": "100%"});
 
         
-            var html_919008ec32dce2febb73c7cb496a1453 = $(`<div id="html_919008ec32dce2febb73c7cb496a1453" style="width: 100.0%; height: 100.0%;">Слободана Јовановића<br>(44.816, 20.538)<br><strong>AQI level</strong> 42</div>`)[0];
-            popup_31673897ff6bbc72f3e746bdf1213a8a.setContent(html_919008ec32dce2febb73c7cb496a1453);
+            var html_39f44c58abaaeebcac2d462dfafb4a86 = $(`<div id="html_39f44c58abaaeebcac2d462dfafb4a86" style="width: 100.0%; height: 100.0%;">Слободана Јовановића<br>(44.816, 20.538)<br><strong>AQI level</strong> 15</div>`)[0];
+            popup_db09eadd6fe747cfd4f2d8cb605e8e7c.setContent(html_39f44c58abaaeebcac2d462dfafb4a86);
         
 
-        marker_3f45ff8ce71b78d6b4cc519cf4078023.bindPopup(popup_31673897ff6bbc72f3e746bdf1213a8a)
+        marker_bd229ea754dd6bab6c5d9bb3fa97961b.bindPopup(popup_db09eadd6fe747cfd4f2d8cb605e8e7c)
         ;
 
         
     
     
-            marker_3f45ff8ce71b78d6b4cc519cf4078023.bindTooltip(
+            marker_bd229ea754dd6bab6c5d9bb3fa97961b.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1084,164 +688,32 @@
             );
         
     
-            var marker_f8bdf30788e9ecc8b19fc563dd65478c = L.marker(
-                [44.776, 20.476],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_a0c882b6bdea2e796fdabf33c8a20f55 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_f8bdf30788e9ecc8b19fc563dd65478c.setIcon(icon_a0c882b6bdea2e796fdabf33c8a20f55);
-        
-    
-        var popup_abe69408011020e25ef07b368df6ebf9 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_9da5407eeac0535bb1f3aebb6265aaf8 = $(`<div id="html_9da5407eeac0535bb1f3aebb6265aaf8" style="width: 100.0%; height: 100.0%;">Činovnička Kolonija<br>(44.776, 20.476)<br><strong>AQI level</strong> 32</div>`)[0];
-            popup_abe69408011020e25ef07b368df6ebf9.setContent(html_9da5407eeac0535bb1f3aebb6265aaf8);
-        
-
-        marker_f8bdf30788e9ecc8b19fc563dd65478c.bindPopup(popup_abe69408011020e25ef07b368df6ebf9)
-        ;
-
-        
-    
-    
-            marker_f8bdf30788e9ecc8b19fc563dd65478c.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_68fb77a768125cbc8ed961cc3a8f2353 = L.marker(
-                [44.7912813, 20.47285622644],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_5d071666a14389e889c62ea951c17d9d = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_68fb77a768125cbc8ed961cc3a8f2353.setIcon(icon_5d071666a14389e889c62ea951c17d9d);
-        
-    
-        var popup_44b7700f3ae5225d4148937cbaea5080 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_f2bc4d68e0d361f864f375174a34b7f6 = $(`<div id="html_f2bc4d68e0d361f864f375174a34b7f6" style="width: 100.0%; height: 100.0%;">Vojvode Hrvoja<br>(44.7912813, 20.47285622644)<br><strong>AQI level</strong> 59</div>`)[0];
-            popup_44b7700f3ae5225d4148937cbaea5080.setContent(html_f2bc4d68e0d361f864f375174a34b7f6);
-        
-
-        marker_68fb77a768125cbc8ed961cc3a8f2353.bindPopup(popup_44b7700f3ae5225d4148937cbaea5080)
-        ;
-
-        
-    
-    
-            marker_68fb77a768125cbc8ed961cc3a8f2353.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_e503452bfa00b248acaefd6264da4fd3 = L.marker(
-                [44.78, 20.408],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_fb6bd1c9a0f637447f855d8759cd12d4 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_e503452bfa00b248acaefd6264da4fd3.setIcon(icon_fb6bd1c9a0f637447f855d8759cd12d4);
-        
-    
-        var popup_9749f2184988a845256d2d2a827bf171 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_334b1b4231fb5b6bb80a1ad6b1ad65e0 = $(`<div id="html_334b1b4231fb5b6bb80a1ad6b1ad65e0" style="width: 100.0%; height: 100.0%;">Obalskih radnika<br>(44.78, 20.408)<br><strong>AQI level</strong> 66</div>`)[0];
-            popup_9749f2184988a845256d2d2a827bf171.setContent(html_334b1b4231fb5b6bb80a1ad6b1ad65e0);
-        
-
-        marker_e503452bfa00b248acaefd6264da4fd3.bindPopup(popup_9749f2184988a845256d2d2a827bf171)
-        ;
-
-        
-    
-    
-            marker_e503452bfa00b248acaefd6264da4fd3.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_01f8bdbcedfee0fc5edb32e4a2074929 = L.marker(
-                [44.804, 20.476],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_0d0b2209e15b2a0c0b6ac8c078880cfe = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
-            );
-            marker_01f8bdbcedfee0fc5edb32e4a2074929.setIcon(icon_0d0b2209e15b2a0c0b6ac8c078880cfe);
-        
-    
-        var popup_03e27fdaf01acc7a214525904fc1c0a2 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_87812eb7fea7130da02cf71385105cfe = $(`<div id="html_87812eb7fea7130da02cf71385105cfe" style="width: 100.0%; height: 100.0%;">Hadzi-Prodanova<br>(44.804, 20.476)<br><strong>AQI level</strong> 67</div>`)[0];
-            popup_03e27fdaf01acc7a214525904fc1c0a2.setContent(html_87812eb7fea7130da02cf71385105cfe);
-        
-
-        marker_01f8bdbcedfee0fc5edb32e4a2074929.bindPopup(popup_03e27fdaf01acc7a214525904fc1c0a2)
-        ;
-
-        
-    
-    
-            marker_01f8bdbcedfee0fc5edb32e4a2074929.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_3a693eeffc02dc743db1d659043768ad = L.marker(
+            var marker_5930a43226309b9a50eddc991e98fef8 = L.marker(
                 [44.816, 20.42],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_706e5d20a625e50dc5ab7d06e7270c85 = L.AwesomeMarkers.icon(
+            var icon_ff63808b399c390c5246cb73cf28994d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_3a693eeffc02dc743db1d659043768ad.setIcon(icon_706e5d20a625e50dc5ab7d06e7270c85);
+            marker_5930a43226309b9a50eddc991e98fef8.setIcon(icon_ff63808b399c390c5246cb73cf28994d);
         
     
-        var popup_7d256a2bad6cbac5ec0f3fec0aeef8ad = L.popup({"maxWidth": "100%"});
+        var popup_c83a77b2e8b588b17fa4656b7b92d0a5 = L.popup({"maxWidth": "100%"});
 
         
-            var html_81e826a18c14bbd2499b37fb7ce1a237 = $(`<div id="html_81e826a18c14bbd2499b37fb7ce1a237" style="width: 100.0%; height: 100.0%;">Zoran Djindjic Boulevard<br>(44.816, 20.42)<br><strong>AQI level</strong> 74</div>`)[0];
-            popup_7d256a2bad6cbac5ec0f3fec0aeef8ad.setContent(html_81e826a18c14bbd2499b37fb7ce1a237);
+            var html_c113d577d75f648e5b8ca602aec9ee1e = $(`<div id="html_c113d577d75f648e5b8ca602aec9ee1e" style="width: 100.0%; height: 100.0%;">Zoran Djindjic Boulevard<br>(44.816, 20.42)<br><strong>AQI level</strong> 23</div>`)[0];
+            popup_c83a77b2e8b588b17fa4656b7b92d0a5.setContent(html_c113d577d75f648e5b8ca602aec9ee1e);
         
 
-        marker_3a693eeffc02dc743db1d659043768ad.bindPopup(popup_7d256a2bad6cbac5ec0f3fec0aeef8ad)
+        marker_5930a43226309b9a50eddc991e98fef8.bindPopup(popup_c83a77b2e8b588b17fa4656b7b92d0a5)
         ;
 
         
     
     
-            marker_3a693eeffc02dc743db1d659043768ad.bindTooltip(
+            marker_5930a43226309b9a50eddc991e98fef8.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1249,32 +721,32 @@
             );
         
     
-            var marker_3479aadcc22c9551eea41409374372d7 = L.marker(
-                [44.80141665866, 20.47246456179],
+            var marker_886cac25f9a232a5c86f07aaae25ac67 = L.marker(
+                [44.82112, 20.459113],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_766e278dee4d9d318e1515007ad144f3 = L.AwesomeMarkers.icon(
+            var icon_415d7ddd30b94ea47aa4f7462d3ed84c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_3479aadcc22c9551eea41409374372d7.setIcon(icon_766e278dee4d9d318e1515007ad144f3);
+            marker_886cac25f9a232a5c86f07aaae25ac67.setIcon(icon_415d7ddd30b94ea47aa4f7462d3ed84c);
         
     
-        var popup_68f4545df2d3d7485bcdf4b0c2257ded = L.popup({"maxWidth": "100%"});
+        var popup_db2d205fb8928e6e57e6b9d5854cf8d1 = L.popup({"maxWidth": "100%"});
 
         
-            var html_8a95d718141936a7cc90517a8c2f2000 = $(`<div id="html_8a95d718141936a7cc90517a8c2f2000" style="width: 100.0%; height: 100.0%;">Koce Kapetana<br>(44.80141665866, 20.47246456179)<br><strong>AQI level</strong> 98</div>`)[0];
-            popup_68f4545df2d3d7485bcdf4b0c2257ded.setContent(html_8a95d718141936a7cc90517a8c2f2000);
+            var html_1e671f9a3b766fb113926fd6cc9e52e8 = $(`<div id="html_1e671f9a3b766fb113926fd6cc9e52e8" style="width: 100.0%; height: 100.0%;">Beograd Stari grad, Serbia<br>(44.82112, 20.459113)<br><strong>AQI level</strong> 38</div>`)[0];
+            popup_db2d205fb8928e6e57e6b9d5854cf8d1.setContent(html_1e671f9a3b766fb113926fd6cc9e52e8);
         
 
-        marker_3479aadcc22c9551eea41409374372d7.bindPopup(popup_68f4545df2d3d7485bcdf4b0c2257ded)
+        marker_886cac25f9a232a5c86f07aaae25ac67.bindPopup(popup_db2d205fb8928e6e57e6b9d5854cf8d1)
         ;
 
         
     
     
-            marker_3479aadcc22c9551eea41409374372d7.bindTooltip(
+            marker_886cac25f9a232a5c86f07aaae25ac67.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1282,32 +754,32 @@
             );
         
     
-            var marker_70c795f8766352dfc4044360597e5ab4 = L.marker(
-                [44.79880556, 20.450305555556],
+            var marker_a649d40c92906bc08b9f2afaaf88935c = L.marker(
+                [44.774, 20.506],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_eaa0e61a03a12ed18a80a6f401acdf60 = L.AwesomeMarkers.icon(
+            var icon_d136c3716be500c7e7b5df445e2512ce = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_70c795f8766352dfc4044360597e5ab4.setIcon(icon_eaa0e61a03a12ed18a80a6f401acdf60);
+            marker_a649d40c92906bc08b9f2afaaf88935c.setIcon(icon_d136c3716be500c7e7b5df445e2512ce);
         
     
-        var popup_f84e3f62a849cdb8ffb30c0bca4c077f = L.popup({"maxWidth": "100%"});
+        var popup_4a052196518c446b5b7404c01a0e5388 = L.popup({"maxWidth": "100%"});
 
         
-            var html_4bea679520050c743ec8632219b9a256 = $(`<div id="html_4bea679520050c743ec8632219b9a256" style="width: 100.0%; height: 100.0%;">Mostar, Beograd, Serbia<br>(44.79880556, 20.450305555556)<br><strong>AQI level</strong> 64</div>`)[0];
-            popup_f84e3f62a849cdb8ffb30c0bca4c077f.setContent(html_4bea679520050c743ec8632219b9a256);
+            var html_3b1fca04daf4a089fb547e0bfd635c60 = $(`<div id="html_3b1fca04daf4a089fb547e0bfd635c60" style="width: 100.0%; height: 100.0%;">Боривоја Стевановића<br>(44.774, 20.506)<br><strong>AQI level</strong> 20</div>`)[0];
+            popup_4a052196518c446b5b7404c01a0e5388.setContent(html_3b1fca04daf4a089fb547e0bfd635c60);
         
 
-        marker_70c795f8766352dfc4044360597e5ab4.bindPopup(popup_f84e3f62a849cdb8ffb30c0bca4c077f)
+        marker_a649d40c92906bc08b9f2afaaf88935c.bindPopup(popup_4a052196518c446b5b7404c01a0e5388)
         ;
 
         
     
     
-            marker_70c795f8766352dfc4044360597e5ab4.bindTooltip(
+            marker_a649d40c92906bc08b9f2afaaf88935c.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1315,32 +787,164 @@
             );
         
     
-            var marker_ff21da05a9e2c99783228caed40cde57 = L.marker(
+            var marker_95d85855016f1a9e1a5e976369c60994 = L.marker(
+                [44.792, 20.482],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_5c5f3f0160f584b3a6194746bdecdd27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_95d85855016f1a9e1a5e976369c60994.setIcon(icon_5c5f3f0160f584b3a6194746bdecdd27);
+        
+    
+        var popup_c03fa8a01119c5a44061b60a48a97f06 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bb9458cb8f8d04f215304e3618354bdd = $(`<div id="html_bb9458cb8f8d04f215304e3618354bdd" style="width: 100.0%; height: 100.0%;">Gospodara Vucica<br>(44.792, 20.482)<br><strong>AQI level</strong> 14</div>`)[0];
+            popup_c03fa8a01119c5a44061b60a48a97f06.setContent(html_bb9458cb8f8d04f215304e3618354bdd);
+        
+
+        marker_95d85855016f1a9e1a5e976369c60994.bindPopup(popup_c03fa8a01119c5a44061b60a48a97f06)
+        ;
+
+        
+    
+    
+            marker_95d85855016f1a9e1a5e976369c60994.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5c4a18bde4fdc3daa74813b87995999c = L.marker(
+                [44.776, 20.476],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_907dfdc71d6b388f8f5962b67e37646e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5c4a18bde4fdc3daa74813b87995999c.setIcon(icon_907dfdc71d6b388f8f5962b67e37646e);
+        
+    
+        var popup_49199c5f6cb22b904a9807db22697368 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e9ffd13bb46fca1edbb498eafef978e0 = $(`<div id="html_e9ffd13bb46fca1edbb498eafef978e0" style="width: 100.0%; height: 100.0%;">Činovnička Kolonija<br>(44.776, 20.476)<br><strong>AQI level</strong> 6</div>`)[0];
+            popup_49199c5f6cb22b904a9807db22697368.setContent(html_e9ffd13bb46fca1edbb498eafef978e0);
+        
+
+        marker_5c4a18bde4fdc3daa74813b87995999c.bindPopup(popup_49199c5f6cb22b904a9807db22697368)
+        ;
+
+        
+    
+    
+            marker_5c4a18bde4fdc3daa74813b87995999c.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a50969c862285b422f0335ad2fd46f91 = L.marker(
+                [44.804, 20.476],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_09f62007173a9a36948178adbc56d565 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a50969c862285b422f0335ad2fd46f91.setIcon(icon_09f62007173a9a36948178adbc56d565);
+        
+    
+        var popup_7fdf49d43b7fe0c8ee25c39657c4a00f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2c81723b3f19ae81d2de08d051d668ec = $(`<div id="html_2c81723b3f19ae81d2de08d051d668ec" style="width: 100.0%; height: 100.0%;">Hadzi-Prodanova<br>(44.804, 20.476)<br><strong>AQI level</strong> 19</div>`)[0];
+            popup_7fdf49d43b7fe0c8ee25c39657c4a00f.setContent(html_2c81723b3f19ae81d2de08d051d668ec);
+        
+
+        marker_a50969c862285b422f0335ad2fd46f91.bindPopup(popup_7fdf49d43b7fe0c8ee25c39657c4a00f)
+        ;
+
+        
+    
+    
+            marker_a50969c862285b422f0335ad2fd46f91.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a15317ef4a23dfeb0d7a5bdf42103e61 = L.marker(
+                [44.78765411896292, 20.43384552210275],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_a2be10131fd17af09bbdeb743bfad116 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a15317ef4a23dfeb0d7a5bdf42103e61.setIcon(icon_a2be10131fd17af09bbdeb743bfad116);
+        
+    
+        var popup_59bfefeebc3ca0b5ca90192c91c8b108 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_24620dd2fd6be383272273b23a298585 = $(`<div id="html_24620dd2fd6be383272273b23a298585" style="width: 100.0%; height: 100.0%;">International School of Belgrade<br>(44.78765411896292, 20.43384552210275)<br><strong>AQI level</strong> 42</div>`)[0];
+            popup_59bfefeebc3ca0b5ca90192c91c8b108.setContent(html_24620dd2fd6be383272273b23a298585);
+        
+
+        marker_a15317ef4a23dfeb0d7a5bdf42103e61.bindPopup(popup_59bfefeebc3ca0b5ca90192c91c8b108)
+        ;
+
+        
+    
+    
+            marker_a15317ef4a23dfeb0d7a5bdf42103e61.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d09cc833e240532784dd017b6157348e = L.marker(
                 [44.798, 20.366],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_4dd2ba8112ffa74ed440c09056395ab0 = L.AwesomeMarkers.icon(
+            var icon_058e1847a9802fccc15bfc79fbbf7946 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_ff21da05a9e2c99783228caed40cde57.setIcon(icon_4dd2ba8112ffa74ed440c09056395ab0);
+            marker_d09cc833e240532784dd017b6157348e.setIcon(icon_058e1847a9802fccc15bfc79fbbf7946);
         
     
-        var popup_7dc947980993b2852c36cdcfc3a8e6ab = L.popup({"maxWidth": "100%"});
+        var popup_f13e284e00dda70d7394d1f76ee48140 = L.popup({"maxWidth": "100%"});
 
         
-            var html_33bdab34b6027388c3b86d9083fdf69b = $(`<div id="html_33bdab34b6027388c3b86d9083fdf69b" style="width: 100.0%; height: 100.0%;">Милеве Марић Ајнштајн<br>(44.798, 20.366)<br><strong>AQI level</strong> 71</div>`)[0];
-            popup_7dc947980993b2852c36cdcfc3a8e6ab.setContent(html_33bdab34b6027388c3b86d9083fdf69b);
+            var html_cc4d877e2ac4f826c277248eaedf6566 = $(`<div id="html_cc4d877e2ac4f826c277248eaedf6566" style="width: 100.0%; height: 100.0%;">Милеве Марић Ајнштајн<br>(44.798, 20.366)<br><strong>AQI level</strong> 11</div>`)[0];
+            popup_f13e284e00dda70d7394d1f76ee48140.setContent(html_cc4d877e2ac4f826c277248eaedf6566);
         
 
-        marker_ff21da05a9e2c99783228caed40cde57.bindPopup(popup_7dc947980993b2852c36cdcfc3a8e6ab)
+        marker_d09cc833e240532784dd017b6157348e.bindPopup(popup_f13e284e00dda70d7394d1f76ee48140)
         ;
 
         
     
     
-            marker_ff21da05a9e2c99783228caed40cde57.bindTooltip(
+            marker_d09cc833e240532784dd017b6157348e.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1348,32 +952,32 @@
             );
         
     
-            var marker_da01841098c2570ab9829db27660e68d = L.marker(
-                [50.081197, 19.895358],
+            var marker_9a524cad75d3467709bb613825bf8aa0 = L.marker(
+                [44.79880556, 20.450305555556],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_2316ee94e42339393bdf41aafe203ef9 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            var icon_bed70d73f29f7bef0a134472694f62c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
             );
-            marker_da01841098c2570ab9829db27660e68d.setIcon(icon_2316ee94e42339393bdf41aafe203ef9);
+            marker_9a524cad75d3467709bb613825bf8aa0.setIcon(icon_bed70d73f29f7bef0a134472694f62c0);
         
     
-        var popup_53cbe5d8e350f1ca5797be17ad87c5d2 = L.popup({"maxWidth": "100%"});
+        var popup_d4a7f657838599b34ae7f915e934969d = L.popup({"maxWidth": "100%"});
 
         
-            var html_021cd2468210dcac3b802805da03bc7b = $(`<div id="html_021cd2468210dcac3b802805da03bc7b" style="width: 100.0%; height: 100.0%;">Kraków, ul. Złoty Róg, Małopolska, Poland<br>(50.081197, 19.895358)<br><strong>AQI level</strong> 35</div>`)[0];
-            popup_53cbe5d8e350f1ca5797be17ad87c5d2.setContent(html_021cd2468210dcac3b802805da03bc7b);
+            var html_e26faf334f3022c82ef277bfbbdc1b31 = $(`<div id="html_e26faf334f3022c82ef277bfbbdc1b31" style="width: 100.0%; height: 100.0%;">Mostar, Beograd, Serbia<br>(44.79880556, 20.450305555556)<br><strong>AQI level</strong> 25</div>`)[0];
+            popup_d4a7f657838599b34ae7f915e934969d.setContent(html_e26faf334f3022c82ef277bfbbdc1b31);
         
 
-        marker_da01841098c2570ab9829db27660e68d.bindPopup(popup_53cbe5d8e350f1ca5797be17ad87c5d2)
+        marker_9a524cad75d3467709bb613825bf8aa0.bindPopup(popup_d4a7f657838599b34ae7f915e934969d)
         ;
 
         
     
     
-            marker_da01841098c2570ab9829db27660e68d.bindTooltip(
+            marker_9a524cad75d3467709bb613825bf8aa0.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1381,32 +985,362 @@
             );
         
     
-            var marker_c6428b687669b7fb0ce96d784082813e = L.marker(
+            var marker_2de63a56da417e8584be4cf721972472 = L.marker(
+                [44.786458333333, 20.52173611111],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_5674042efbe6c164c166c6afe0fd2de9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_2de63a56da417e8584be4cf721972472.setIcon(icon_5674042efbe6c164c166c6afe0fd2de9);
+        
+    
+        var popup_4749dc3ca3e82cc474c6fb6b0de30a8f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5378ee6994ce482b7a821978220dde5e = $(`<div id="html_5378ee6994ce482b7a821978220dde5e" style="width: 100.0%; height: 100.0%;">Zeleno Brdo, Beograd, Serbia<br>(44.786458333333, 20.52173611111)<br><strong>AQI level</strong> 43</div>`)[0];
+            popup_4749dc3ca3e82cc474c6fb6b0de30a8f.setContent(html_5378ee6994ce482b7a821978220dde5e);
+        
+
+        marker_2de63a56da417e8584be4cf721972472.bindPopup(popup_4749dc3ca3e82cc474c6fb6b0de30a8f)
+        ;
+
+        
+    
+    
+            marker_2de63a56da417e8584be4cf721972472.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b6c304eb977e87c1c68df4e69293f0df = L.marker(
+                [44.803111111111, 20.400027777778],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_87843e037f42a1da9328d23790ab8e18 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_b6c304eb977e87c1c68df4e69293f0df.setIcon(icon_87843e037f42a1da9328d23790ab8e18);
+        
+    
+        var popup_dddad537f69dfac4b058cbcb798dcd6f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_59b0d88a826cf222ba081e3984506538 = $(`<div id="html_59b0d88a826cf222ba081e3984506538" style="width: 100.0%; height: 100.0%;">Novi Beograd, Beograd, Serbia<br>(44.803111111111, 20.400027777778)<br><strong>AQI level</strong> 40</div>`)[0];
+            popup_dddad537f69dfac4b058cbcb798dcd6f.setContent(html_59b0d88a826cf222ba081e3984506538);
+        
+
+        marker_b6c304eb977e87c1c68df4e69293f0df.bindPopup(popup_dddad537f69dfac4b058cbcb798dcd6f)
+        ;
+
+        
+    
+    
+            marker_b6c304eb977e87c1c68df4e69293f0df.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_159b9e4fea670261cf939f0a0803f6f9 = L.marker(
+                [44.796959, 20.475288],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_9a227466b1dc3091b9067eba73c0c002 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_159b9e4fea670261cf939f0a0803f6f9.setIcon(icon_9a227466b1dc3091b9067eba73c0c002);
+        
+    
+        var popup_53b98699e191725f3d6babc402b22c2a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0b235d05d952c2c2a413111471b08f46 = $(`<div id="html_0b235d05d952c2c2a413111471b08f46" style="width: 100.0%; height: 100.0%;">Beograd Vračar, Serbia<br>(44.796959, 20.475288)<br><strong>AQI level</strong> 37</div>`)[0];
+            popup_53b98699e191725f3d6babc402b22c2a.setContent(html_0b235d05d952c2c2a413111471b08f46);
+        
+
+        marker_159b9e4fea670261cf939f0a0803f6f9.bindPopup(popup_53b98699e191725f3d6babc402b22c2a)
+        ;
+
+        
+    
+    
+            marker_159b9e4fea670261cf939f0a0803f6f9.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b76c4175c47a19de8822906e3e86232 = L.marker(
+                [44.762, 20.486],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_a1a42c1c753c5ce3d3ceeb525c636363 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6b76c4175c47a19de8822906e3e86232.setIcon(icon_a1a42c1c753c5ce3d3ceeb525c636363);
+        
+    
+        var popup_c7f58b91a9779b5409762360bdb89e53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0282eee57849f72aea5cb5a5a224cf3d = $(`<div id="html_0282eee57849f72aea5cb5a5a224cf3d" style="width: 100.0%; height: 100.0%;">Vozdovacki kruzni put<br>(44.762, 20.486)<br><strong>AQI level</strong> 53</div>`)[0];
+            popup_c7f58b91a9779b5409762360bdb89e53.setContent(html_0282eee57849f72aea5cb5a5a224cf3d);
+        
+
+        marker_6b76c4175c47a19de8822906e3e86232.bindPopup(popup_c7f58b91a9779b5409762360bdb89e53)
+        ;
+
+        
+    
+    
+            marker_6b76c4175c47a19de8822906e3e86232.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_329c9ba0d6d0039f1b88cddcfc0a6432 = L.marker(
+                [44.81151024518, 20.51515824198],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_e7b1636de64bafaa9e5bc26c916fb70a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_329c9ba0d6d0039f1b88cddcfc0a6432.setIcon(icon_e7b1636de64bafaa9e5bc26c916fb70a);
+        
+    
+        var popup_5156e4bfe575dc29f64d09bbeffd83fc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_44ed56a70066de4368f4cf9adb8e5419 = $(`<div id="html_44ed56a70066de4368f4cf9adb8e5419" style="width: 100.0%; height: 100.0%;">Mariјane Gregoran<br>(44.81151024518, 20.51515824198)<br><strong>AQI level</strong> 9</div>`)[0];
+            popup_5156e4bfe575dc29f64d09bbeffd83fc.setContent(html_44ed56a70066de4368f4cf9adb8e5419);
+        
+
+        marker_329c9ba0d6d0039f1b88cddcfc0a6432.bindPopup(popup_5156e4bfe575dc29f64d09bbeffd83fc)
+        ;
+
+        
+    
+    
+            marker_329c9ba0d6d0039f1b88cddcfc0a6432.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bd027b84502eed7319d608d1c81ac3d = L.marker(
+                [44.782, 20.468],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_b3e6cd7f711f48f35c257bda91899bc1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_9bd027b84502eed7319d608d1c81ac3d.setIcon(icon_b3e6cd7f711f48f35c257bda91899bc1);
+        
+    
+        var popup_45ac10f924d4ae29edc779f4af187a58 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9044c4f7903f3065d660feff002d9968 = $(`<div id="html_9044c4f7903f3065d660feff002d9968" style="width: 100.0%; height: 100.0%;">Милована Маринковића<br>(44.782, 20.468)<br><strong>AQI level</strong> 14</div>`)[0];
+            popup_45ac10f924d4ae29edc779f4af187a58.setContent(html_9044c4f7903f3065d660feff002d9968);
+        
+
+        marker_9bd027b84502eed7319d608d1c81ac3d.bindPopup(popup_45ac10f924d4ae29edc779f4af187a58)
+        ;
+
+        
+    
+    
+            marker_9bd027b84502eed7319d608d1c81ac3d.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_47fe6bb1e1fca0a8d8a727a413792275 = L.marker(
+                [44.7912813, 20.47285622644],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_db736d73b00f6b109a9dcda836f372e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_47fe6bb1e1fca0a8d8a727a413792275.setIcon(icon_db736d73b00f6b109a9dcda836f372e4);
+        
+    
+        var popup_9f83562a4187aeec18dadf86f54498e7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_75fd75c496ac7df6f9014a716b99da2a = $(`<div id="html_75fd75c496ac7df6f9014a716b99da2a" style="width: 100.0%; height: 100.0%;">Vojvode Hrvoja<br>(44.7912813, 20.47285622644)<br><strong>AQI level</strong> 13</div>`)[0];
+            popup_9f83562a4187aeec18dadf86f54498e7.setContent(html_75fd75c496ac7df6f9014a716b99da2a);
+        
+
+        marker_47fe6bb1e1fca0a8d8a727a413792275.bindPopup(popup_9f83562a4187aeec18dadf86f54498e7)
+        ;
+
+        
+    
+    
+            marker_47fe6bb1e1fca0a8d8a727a413792275.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f43498127de3508216da4380385fd2f = L.marker(
+                [44.771, 20.411],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_d684842f9f41ed2954b40acaf4a3af55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6f43498127de3508216da4380385fd2f.setIcon(icon_d684842f9f41ed2954b40acaf4a3af55);
+        
+    
+        var popup_15ad54aef0bd4b82066b8ca7e05ee9a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a9786f49d2e25c2c4fa6ea23e3a4144 = $(`<div id="html_9a9786f49d2e25c2c4fa6ea23e3a4144" style="width: 100.0%; height: 100.0%;">Paxy<br>(44.771, 20.411)<br><strong>AQI level</strong> 45</div>`)[0];
+            popup_15ad54aef0bd4b82066b8ca7e05ee9a3.setContent(html_9a9786f49d2e25c2c4fa6ea23e3a4144);
+        
+
+        marker_6f43498127de3508216da4380385fd2f.bindPopup(popup_15ad54aef0bd4b82066b8ca7e05ee9a3)
+        ;
+
+        
+    
+    
+            marker_6f43498127de3508216da4380385fd2f.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bb841278175af073989c6f4d493d9f48 = L.marker(
+                [44.78, 20.408],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_fad2b121d80789ee67d3bafc8df22bdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bb841278175af073989c6f4d493d9f48.setIcon(icon_fad2b121d80789ee67d3bafc8df22bdb);
+        
+    
+        var popup_8f7294cc808413bdc4e77bb8f663bb06 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f11c36d34956ad0492e08bfcc8f0370 = $(`<div id="html_2f11c36d34956ad0492e08bfcc8f0370" style="width: 100.0%; height: 100.0%;">Obalskih radnika<br>(44.78, 20.408)<br><strong>AQI level</strong> 15</div>`)[0];
+            popup_8f7294cc808413bdc4e77bb8f663bb06.setContent(html_2f11c36d34956ad0492e08bfcc8f0370);
+        
+
+        marker_bb841278175af073989c6f4d493d9f48.bindPopup(popup_8f7294cc808413bdc4e77bb8f663bb06)
+        ;
+
+        
+    
+    
+            marker_bb841278175af073989c6f4d493d9f48.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7e254826b3c05a41d17c48944b56f8e3 = L.marker(
+                [44.80141665866, 20.47246456179],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_7073e35302529816c5e8699f68a1f56d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7e254826b3c05a41d17c48944b56f8e3.setIcon(icon_7073e35302529816c5e8699f68a1f56d);
+        
+    
+        var popup_5f6a78b28be88ede66e8b99742e78956 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cd1e0f784d760a0b86ed1f3c5b0cceb0 = $(`<div id="html_cd1e0f784d760a0b86ed1f3c5b0cceb0" style="width: 100.0%; height: 100.0%;">Koce Kapetana<br>(44.80141665866, 20.47246456179)<br><strong>AQI level</strong> 28</div>`)[0];
+            popup_5f6a78b28be88ede66e8b99742e78956.setContent(html_cd1e0f784d760a0b86ed1f3c5b0cceb0);
+        
+
+        marker_7e254826b3c05a41d17c48944b56f8e3.bindPopup(popup_5f6a78b28be88ede66e8b99742e78956)
+        ;
+
+        
+    
+    
+            marker_7e254826b3c05a41d17c48944b56f8e3.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75b9cf71c79c4066244092bf17910a32 = L.marker(
                 [50.099361, 20.018317],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_7189453c81e0133f1775de9817b717a5 = L.AwesomeMarkers.icon(
+            var icon_afe3bac3646757ed3280bc7e2823d103 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
             );
-            marker_c6428b687669b7fb0ce96d784082813e.setIcon(icon_7189453c81e0133f1775de9817b717a5);
+            marker_75b9cf71c79c4066244092bf17910a32.setIcon(icon_afe3bac3646757ed3280bc7e2823d103);
         
     
-        var popup_e4593bf935651386d620f69978fa485d = L.popup({"maxWidth": "100%"});
+        var popup_57b57a3eafe652005fa945081dbb8c9f = L.popup({"maxWidth": "100%"});
 
         
-            var html_878e9db92eff133e8de64e3129dddb92 = $(`<div id="html_878e9db92eff133e8de64e3129dddb92" style="width: 100.0%; height: 100.0%;">Kraków, os. Piastów, Małopolska, Poland<br>(50.099361, 20.018317)<br><strong>AQI level</strong> 35</div>`)[0];
-            popup_e4593bf935651386d620f69978fa485d.setContent(html_878e9db92eff133e8de64e3129dddb92);
+            var html_7a30ec622d5dfdd4f7f45dbcf3ced5cc = $(`<div id="html_7a30ec622d5dfdd4f7f45dbcf3ced5cc" style="width: 100.0%; height: 100.0%;">Kraków, os. Piastów, Małopolska, Poland<br>(50.099361, 20.018317)<br><strong>AQI level</strong> 28</div>`)[0];
+            popup_57b57a3eafe652005fa945081dbb8c9f.setContent(html_7a30ec622d5dfdd4f7f45dbcf3ced5cc);
         
 
-        marker_c6428b687669b7fb0ce96d784082813e.bindPopup(popup_e4593bf935651386d620f69978fa485d)
+        marker_75b9cf71c79c4066244092bf17910a32.bindPopup(popup_57b57a3eafe652005fa945081dbb8c9f)
         ;
 
         
     
     
-            marker_c6428b687669b7fb0ce96d784082813e.bindTooltip(
+            marker_75b9cf71c79c4066244092bf17910a32.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1414,32 +1348,32 @@
             );
         
     
-            var marker_4c22352e12235d46f4d5b9acbf1c3e45 = L.marker(
+            var marker_dbfec4e74c983b3e9f8a29e5cbabe1e1 = L.marker(
                 [50.100569, 20.122561],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_fbe7e58b488e53d6c1f884005c0d629d = L.AwesomeMarkers.icon(
+            var icon_113e7aca019a224a0cef9aa9f7863b8d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
             );
-            marker_4c22352e12235d46f4d5b9acbf1c3e45.setIcon(icon_fbe7e58b488e53d6c1f884005c0d629d);
+            marker_dbfec4e74c983b3e9f8a29e5cbabe1e1.setIcon(icon_113e7aca019a224a0cef9aa9f7863b8d);
         
     
-        var popup_c3929deee98e1837dab0166415d9dfdb = L.popup({"maxWidth": "100%"});
+        var popup_4aea2b7aae30b712aa34d16520f503c5 = L.popup({"maxWidth": "100%"});
 
         
-            var html_5c3e95417dfdc49842fdb3db1d36612b = $(`<div id="html_5c3e95417dfdc49842fdb3db1d36612b" style="width: 100.0%; height: 100.0%;">Kraków, os. Wadów, Małopolska, Poland<br>(50.100569, 20.122561)<br><strong>AQI level</strong> 31</div>`)[0];
-            popup_c3929deee98e1837dab0166415d9dfdb.setContent(html_5c3e95417dfdc49842fdb3db1d36612b);
+            var html_434721f114d45300fcdd628f76930a02 = $(`<div id="html_434721f114d45300fcdd628f76930a02" style="width: 100.0%; height: 100.0%;">Kraków, os. Wadów, Małopolska, Poland<br>(50.100569, 20.122561)<br><strong>AQI level</strong> 30</div>`)[0];
+            popup_4aea2b7aae30b712aa34d16520f503c5.setContent(html_434721f114d45300fcdd628f76930a02);
         
 
-        marker_4c22352e12235d46f4d5b9acbf1c3e45.bindPopup(popup_c3929deee98e1837dab0166415d9dfdb)
+        marker_dbfec4e74c983b3e9f8a29e5cbabe1e1.bindPopup(popup_4aea2b7aae30b712aa34d16520f503c5)
         ;
 
         
     
     
-            marker_4c22352e12235d46f4d5b9acbf1c3e45.bindTooltip(
+            marker_dbfec4e74c983b3e9f8a29e5cbabe1e1.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1447,32 +1381,32 @@
             );
         
     
-            var marker_be0af72f2b1c66e6cdecef92cc803741 = L.marker(
+            var marker_ab08cea367b286f7be9d17a023664b48 = L.marker(
                 [50.069308, 20.053492],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_367625b1102e55fe9fd66853560a0112 = L.AwesomeMarkers.icon(
+            var icon_1f5fbec352f180fb73e4f9493ec37b13 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
             );
-            marker_be0af72f2b1c66e6cdecef92cc803741.setIcon(icon_367625b1102e55fe9fd66853560a0112);
+            marker_ab08cea367b286f7be9d17a023664b48.setIcon(icon_1f5fbec352f180fb73e4f9493ec37b13);
         
     
-        var popup_5e67767e8f2c07d807d325e0c2470256 = L.popup({"maxWidth": "100%"});
+        var popup_76698e952b696e1218e01c14a98c9b4a = L.popup({"maxWidth": "100%"});
 
         
-            var html_9956c9001bbd5267c84c6dc281966f21 = $(`<div id="html_9956c9001bbd5267c84c6dc281966f21" style="width: 100.0%; height: 100.0%;">Nowa Huta, Kraków, Małopolska, Poland<br>(50.069308, 20.053492)<br><strong>AQI level</strong> 33</div>`)[0];
-            popup_5e67767e8f2c07d807d325e0c2470256.setContent(html_9956c9001bbd5267c84c6dc281966f21);
+            var html_6d21aac2f3fd55a834439afa392ea566 = $(`<div id="html_6d21aac2f3fd55a834439afa392ea566" style="width: 100.0%; height: 100.0%;">Nowa Huta, Kraków, Małopolska, Poland<br>(50.069308, 20.053492)<br><strong>AQI level</strong> 28</div>`)[0];
+            popup_76698e952b696e1218e01c14a98c9b4a.setContent(html_6d21aac2f3fd55a834439afa392ea566);
         
 
-        marker_be0af72f2b1c66e6cdecef92cc803741.bindPopup(popup_5e67767e8f2c07d807d325e0c2470256)
+        marker_ab08cea367b286f7be9d17a023664b48.bindPopup(popup_76698e952b696e1218e01c14a98c9b4a)
         ;
 
         
     
     
-            marker_be0af72f2b1c66e6cdecef92cc803741.bindTooltip(
+            marker_ab08cea367b286f7be9d17a023664b48.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1480,32 +1414,32 @@
             );
         
     
-            var marker_2281ec99937960484539b4542a7225c7 = L.marker(
+            var marker_0ae5dbb1c825a053f7021b43a5f333eb = L.marker(
                 [50.057447, 19.946008],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_40e7626c51c54df237a5f5fa2335b0f8 = L.AwesomeMarkers.icon(
+            var icon_9879e00e1dea313e263c7b39247b98d5 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
             );
-            marker_2281ec99937960484539b4542a7225c7.setIcon(icon_40e7626c51c54df237a5f5fa2335b0f8);
+            marker_0ae5dbb1c825a053f7021b43a5f333eb.setIcon(icon_9879e00e1dea313e263c7b39247b98d5);
         
     
-        var popup_a3afa3e6d4ffafe715613bc203cab3e0 = L.popup({"maxWidth": "100%"});
+        var popup_284782c5810a6021ef1095e7ece9c673 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d0e4df04337ada945c04c610a66d84ac = $(`<div id="html_d0e4df04337ada945c04c610a66d84ac" style="width: 100.0%; height: 100.0%;">Kraków-ul. Dietla, Małopolska, Poland<br>(50.057447, 19.946008)<br><strong>AQI level</strong> 32</div>`)[0];
-            popup_a3afa3e6d4ffafe715613bc203cab3e0.setContent(html_d0e4df04337ada945c04c610a66d84ac);
+            var html_da1ed20c289fdc31b998bc8d8c00407d = $(`<div id="html_da1ed20c289fdc31b998bc8d8c00407d" style="width: 100.0%; height: 100.0%;">Kraków-ul. Dietla, Małopolska, Poland<br>(50.057447, 19.946008)<br><strong>AQI level</strong> 23</div>`)[0];
+            popup_284782c5810a6021ef1095e7ece9c673.setContent(html_da1ed20c289fdc31b998bc8d8c00407d);
         
 
-        marker_2281ec99937960484539b4542a7225c7.bindPopup(popup_a3afa3e6d4ffafe715613bc203cab3e0)
+        marker_0ae5dbb1c825a053f7021b43a5f333eb.bindPopup(popup_284782c5810a6021ef1095e7ece9c673)
         ;
 
         
     
     
-            marker_2281ec99937960484539b4542a7225c7.bindTooltip(
+            marker_0ae5dbb1c825a053f7021b43a5f333eb.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1513,32 +1447,32 @@
             );
         
     
-            var marker_a3c9b445cdf97976992058325134b69b = L.marker(
-                [51.57661, 0.030858],
+            var marker_bbf87a8fbde826cce34d94260ebd5b8a = L.marker(
+                [50.081197, 19.895358],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_1b91e6aae4c82f0c72bd9101f6ee2090 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            var icon_6f3aec4dd9d0e45119f3e86de0e552fb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
             );
-            marker_a3c9b445cdf97976992058325134b69b.setIcon(icon_1b91e6aae4c82f0c72bd9101f6ee2090);
+            marker_bbf87a8fbde826cce34d94260ebd5b8a.setIcon(icon_6f3aec4dd9d0e45119f3e86de0e552fb);
         
     
-        var popup_2e2afea372dc5adcb991ddedfe664241 = L.popup({"maxWidth": "100%"});
+        var popup_d7bc396927514a0a83c3df38171f4240 = L.popup({"maxWidth": "100%"});
 
         
-            var html_6bf26d7f0e180e8abad95249ed69a471 = $(`<div id="html_6bf26d7f0e180e8abad95249ed69a471" style="width: 100.0%; height: 100.0%;">Redbridge - Gardner Close, United Kingdom<br>(51.57661, 0.030858)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_2e2afea372dc5adcb991ddedfe664241.setContent(html_6bf26d7f0e180e8abad95249ed69a471);
+            var html_a9949904c12b292912aa82b20b32f488 = $(`<div id="html_a9949904c12b292912aa82b20b32f488" style="width: 100.0%; height: 100.0%;">Kraków, ul. Złoty Róg, Małopolska, Poland<br>(50.081197, 19.895358)<br><strong>AQI level</strong> 25</div>`)[0];
+            popup_d7bc396927514a0a83c3df38171f4240.setContent(html_a9949904c12b292912aa82b20b32f488);
         
 
-        marker_a3c9b445cdf97976992058325134b69b.bindPopup(popup_2e2afea372dc5adcb991ddedfe664241)
+        marker_bbf87a8fbde826cce34d94260ebd5b8a.bindPopup(popup_d7bc396927514a0a83c3df38171f4240)
         ;
 
         
     
     
-            marker_a3c9b445cdf97976992058325134b69b.bindTooltip(
+            marker_bbf87a8fbde826cce34d94260ebd5b8a.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1546,32 +1480,32 @@
             );
         
     
-            var marker_8e0ff1687250fa35bf5a450ce08da627 = L.marker(
+            var marker_e859d5c08c85f1f18ec2a1bdc883f6e7 = L.marker(
                 [51.515046167401, -0.0084184926564274],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_8ad06adb8cea5f23aaa26cafec48a170 = L.AwesomeMarkers.icon(
+            var icon_272c9ef7e3c21de6b91358839f8fa574 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_8e0ff1687250fa35bf5a450ce08da627.setIcon(icon_8ad06adb8cea5f23aaa26cafec48a170);
+            marker_e859d5c08c85f1f18ec2a1bdc883f6e7.setIcon(icon_272c9ef7e3c21de6b91358839f8fa574);
         
     
-        var popup_40ee345967fcbea885d6d82f4e626976 = L.popup({"maxWidth": "100%"});
+        var popup_23a4a9f2ed0a1b01448a161f6453b58e = L.popup({"maxWidth": "100%"});
 
         
-            var html_48773f83af7350fb8589632170e1230d = $(`<div id="html_48773f83af7350fb8589632170e1230d" style="width: 100.0%; height: 100.0%;">Tower Hamlets - Blackwall, United Kingdom<br>(51.515046167401, -0.0084184926564274)<br><strong>AQI level</strong> 12</div>`)[0];
-            popup_40ee345967fcbea885d6d82f4e626976.setContent(html_48773f83af7350fb8589632170e1230d);
+            var html_e57bd7d715ce03203d8c7930fcb31c42 = $(`<div id="html_e57bd7d715ce03203d8c7930fcb31c42" style="width: 100.0%; height: 100.0%;">Tower Hamlets - Blackwall, United Kingdom<br>(51.515046167401, -0.0084184926564274)<br><strong>AQI level</strong> 9</div>`)[0];
+            popup_23a4a9f2ed0a1b01448a161f6453b58e.setContent(html_e57bd7d715ce03203d8c7930fcb31c42);
         
 
-        marker_8e0ff1687250fa35bf5a450ce08da627.bindPopup(popup_40ee345967fcbea885d6d82f4e626976)
+        marker_e859d5c08c85f1f18ec2a1bdc883f6e7.bindPopup(popup_23a4a9f2ed0a1b01448a161f6453b58e)
         ;
 
         
     
     
-            marker_8e0ff1687250fa35bf5a450ce08da627.bindTooltip(
+            marker_e859d5c08c85f1f18ec2a1bdc883f6e7.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1579,32 +1513,32 @@
             );
         
     
-            var marker_39ba05f04c091caa48764686c3b4312f = L.marker(
+            var marker_9f1cc21ffe1848d4861db41901979684 = L.marker(
                 [51.513847178423, -0.077765681752],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_a45c6bf0ac9a176703d2809b7b6e919c = L.AwesomeMarkers.icon(
+            var icon_776cd2ca8898e0e95b946f3bd8dc3469 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_39ba05f04c091caa48764686c3b4312f.setIcon(icon_a45c6bf0ac9a176703d2809b7b6e919c);
+            marker_9f1cc21ffe1848d4861db41901979684.setIcon(icon_776cd2ca8898e0e95b946f3bd8dc3469);
         
     
-        var popup_9f5914d11758bea253d0b7a28f433d80 = L.popup({"maxWidth": "100%"});
+        var popup_cde67c9b489c2adb611ebd8cd1163562 = L.popup({"maxWidth": "100%"});
 
         
-            var html_168df0e77dcd7339d5d26f7c486d63c2 = $(`<div id="html_168df0e77dcd7339d5d26f7c486d63c2" style="width: 100.0%; height: 100.0%;">City of London - Sir John Cass School, United Kingdom<br>(51.513847178423, -0.077765681752)<br><strong>AQI level</strong> 25</div>`)[0];
-            popup_9f5914d11758bea253d0b7a28f433d80.setContent(html_168df0e77dcd7339d5d26f7c486d63c2);
+            var html_43fe6c2498ba1faf6f91015ae19fe123 = $(`<div id="html_43fe6c2498ba1faf6f91015ae19fe123" style="width: 100.0%; height: 100.0%;">City of London - Sir John Cass School, United Kingdom<br>(51.513847178423, -0.077765681752)<br><strong>AQI level</strong> 38</div>`)[0];
+            popup_cde67c9b489c2adb611ebd8cd1163562.setContent(html_43fe6c2498ba1faf6f91015ae19fe123);
         
 
-        marker_39ba05f04c091caa48764686c3b4312f.bindPopup(popup_9f5914d11758bea253d0b7a28f433d80)
+        marker_9f1cc21ffe1848d4861db41901979684.bindPopup(popup_cde67c9b489c2adb611ebd8cd1163562)
         ;
 
         
     
     
-            marker_39ba05f04c091caa48764686c3b4312f.bindTooltip(
+            marker_9f1cc21ffe1848d4861db41901979684.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1612,32 +1546,32 @@
             );
         
     
-            var marker_441995f589906be2468d9957ce0a8aa9 = L.marker(
+            var marker_bc03ee348512fa08e9e575fa9b47b00e = L.marker(
                 [51.514525336231, -0.10451562633788],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_0f43d3c5b4458654a0defaa624ca2484 = L.AwesomeMarkers.icon(
+            var icon_636e5acc0d45a33f9ad20751ebbbb66b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_441995f589906be2468d9957ce0a8aa9.setIcon(icon_0f43d3c5b4458654a0defaa624ca2484);
+            marker_bc03ee348512fa08e9e575fa9b47b00e.setIcon(icon_636e5acc0d45a33f9ad20751ebbbb66b);
         
     
-        var popup_8de18abaa205a4b22e59918945e14e93 = L.popup({"maxWidth": "100%"});
+        var popup_3f19b8bce86f6c661ab7b3512c82a626 = L.popup({"maxWidth": "100%"});
 
         
-            var html_250b0ae2b296ebc54344ed4fb45687df = $(`<div id="html_250b0ae2b296ebc54344ed4fb45687df" style="width: 100.0%; height: 100.0%;">City of London - Farringdon Street, United Kingdom<br>(51.514525336231, -0.10451562633788)<br><strong>AQI level</strong> 34</div>`)[0];
-            popup_8de18abaa205a4b22e59918945e14e93.setContent(html_250b0ae2b296ebc54344ed4fb45687df);
+            var html_1dac61b32a0a312ea7ceec4eb27d829a = $(`<div id="html_1dac61b32a0a312ea7ceec4eb27d829a" style="width: 100.0%; height: 100.0%;">City of London - Farringdon Street, United Kingdom<br>(51.514525336231, -0.10451562633788)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_3f19b8bce86f6c661ab7b3512c82a626.setContent(html_1dac61b32a0a312ea7ceec4eb27d829a);
         
 
-        marker_441995f589906be2468d9957ce0a8aa9.bindPopup(popup_8de18abaa205a4b22e59918945e14e93)
+        marker_bc03ee348512fa08e9e575fa9b47b00e.bindPopup(popup_3f19b8bce86f6c661ab7b3512c82a626)
         ;
 
         
     
     
-            marker_441995f589906be2468d9957ce0a8aa9.bindTooltip(
+            marker_bc03ee348512fa08e9e575fa9b47b00e.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -1645,428 +1579,32 @@
             );
         
     
-            var marker_bbd5ac46865fc961866f389ca450a0c3 = L.marker(
-                [51.537799, -0.247793],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_6f002715ce8b81226b17aed6f385ce77 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_bbd5ac46865fc961866f389ca450a0c3.setIcon(icon_6f002715ce8b81226b17aed6f385ce77);
-        
-    
-        var popup_1b662c98ba46a2665bfdee09da40fd26 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_754606479bed6a65af6cfd9759def6d1 = $(`<div id="html_754606479bed6a65af6cfd9759def6d1" style="width: 100.0%; height: 100.0%;">Brent - John Keble Primary School, United Kingdom<br>(51.537799, -0.247793)<br><strong>AQI level</strong> 16</div>`)[0];
-            popup_1b662c98ba46a2665bfdee09da40fd26.setContent(html_754606479bed6a65af6cfd9759def6d1);
-        
-
-        marker_bbd5ac46865fc961866f389ca450a0c3.bindPopup(popup_1b662c98ba46a2665bfdee09da40fd26)
-        ;
-
-        
-    
-    
-            marker_bbd5ac46865fc961866f389ca450a0c3.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_cbd743f03da05edd2003015e248994f7 = L.marker(
-                [51.526454, -0.08491],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_5d3ca449cde4ad02e02e87ddf84e5614 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_cbd743f03da05edd2003015e248994f7.setIcon(icon_5d3ca449cde4ad02e02e87ddf84e5614);
-        
-    
-        var popup_ecb82aba46a6df4f16d2ff121834297c = L.popup({"maxWidth": "100%"});
-
-        
-            var html_fe2884ed6977e41d7e1a040301f4572e = $(`<div id="html_fe2884ed6977e41d7e1a040301f4572e" style="width: 100.0%; height: 100.0%;">Hackney - Old Street, United Kingdom<br>(51.526454, -0.08491)<br><strong>AQI level</strong> 36</div>`)[0];
-            popup_ecb82aba46a6df4f16d2ff121834297c.setContent(html_fe2884ed6977e41d7e1a040301f4572e);
-        
-
-        marker_cbd743f03da05edd2003015e248994f7.bindPopup(popup_ecb82aba46a6df4f16d2ff121834297c)
-        ;
-
-        
-    
-    
-            marker_cbd743f03da05edd2003015e248994f7.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_8e64af9bc85e595db0d5c1fde7c63483 = L.marker(
-                [51.54421, -0.175269],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_987133bdcde6b1da533be865351c2020 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_8e64af9bc85e595db0d5c1fde7c63483.setIcon(icon_987133bdcde6b1da533be865351c2020);
-        
-    
-        var popup_41b8af82a9a1dcb7b613dc41f1a1db26 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_d5b190a5b10814fd6fc44f4f65d12cd6 = $(`<div id="html_d5b190a5b10814fd6fc44f4f65d12cd6" style="width: 100.0%; height: 100.0%;">Camden Kerbside, United Kingdom<br>(51.54421, -0.175269)<br><strong>AQI level</strong> 17</div>`)[0];
-            popup_41b8af82a9a1dcb7b613dc41f1a1db26.setContent(html_d5b190a5b10814fd6fc44f4f65d12cd6);
-        
-
-        marker_8e64af9bc85e595db0d5c1fde7c63483.bindPopup(popup_41b8af82a9a1dcb7b613dc41f1a1db26)
-        ;
-
-        
-    
-    
-            marker_8e64af9bc85e595db0d5c1fde7c63483.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_ab65876d3ce9860f543c6c5dd30fa5b3 = L.marker(
-                [51.52229, -0.125889],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_43d1735e4c220650b037a826eaaa6106 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_ab65876d3ce9860f543c6c5dd30fa5b3.setIcon(icon_43d1735e4c220650b037a826eaaa6106);
-        
-    
-        var popup_41515ee09f27ea405084b260a230d30b = L.popup({"maxWidth": "100%"});
-
-        
-            var html_effab3ec68ee5c52aed5b21e72ef6573 = $(`<div id="html_effab3ec68ee5c52aed5b21e72ef6573" style="width: 100.0%; height: 100.0%;">London Bloomsbury, United Kingdom<br>(51.52229, -0.125889)<br><strong>AQI level</strong> 19</div>`)[0];
-            popup_41515ee09f27ea405084b260a230d30b.setContent(html_effab3ec68ee5c52aed5b21e72ef6573);
-        
-
-        marker_ab65876d3ce9860f543c6c5dd30fa5b3.bindPopup(popup_41515ee09f27ea405084b260a230d30b)
-        ;
-
-        
-    
-    
-            marker_ab65876d3ce9860f543c6c5dd30fa5b3.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_79bef3c0aa0a38309891f17730b7794d = L.marker(
-                [51.5993, -0.068218],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_fa73ecb295b66be81be9b877fc512f2f = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_79bef3c0aa0a38309891f17730b7794d.setIcon(icon_fa73ecb295b66be81be9b877fc512f2f);
-        
-    
-        var popup_798f6ccbce70d0fa4f23f772fd5104c2 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_d43da7691f393e2e191a795875a9c9b0 = $(`<div id="html_d43da7691f393e2e191a795875a9c9b0" style="width: 100.0%; height: 100.0%;">Haringey Roadside, United Kingdom<br>(51.5993, -0.068218)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_798f6ccbce70d0fa4f23f772fd5104c2.setContent(html_d43da7691f393e2e191a795875a9c9b0);
-        
-
-        marker_79bef3c0aa0a38309891f17730b7794d.bindPopup(popup_798f6ccbce70d0fa4f23f772fd5104c2)
-        ;
-
-        
-    
-    
-            marker_79bef3c0aa0a38309891f17730b7794d.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_b4099242954b3f9daa05e5f5c80c10bb = L.marker(
-                [51.617333, -0.298777],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_27beecc53d23faeba0d6e69ff5d02f79 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_b4099242954b3f9daa05e5f5c80c10bb.setIcon(icon_27beecc53d23faeba0d6e69ff5d02f79);
-        
-    
-        var popup_8a04a45f321fd07c89e875559ee7261f = L.popup({"maxWidth": "100%"});
-
-        
-            var html_96ebb465604bf673a6c41781878672bb = $(`<div id="html_96ebb465604bf673a6c41781878672bb" style="width: 100.0%; height: 100.0%;">London Harrow Stanmore, United Kingdom<br>(51.617333, -0.298777)<br><strong>AQI level</strong> 17</div>`)[0];
-            popup_8a04a45f321fd07c89e875559ee7261f.setContent(html_96ebb465604bf673a6c41781878672bb);
-        
-
-        marker_b4099242954b3f9daa05e5f5c80c10bb.bindPopup(popup_8a04a45f321fd07c89e875559ee7261f)
-        ;
-
-        
-    
-    
-            marker_b4099242954b3f9daa05e5f5c80c10bb.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_84dbed8db6814be01b20302a75073e44 = L.marker(
-                [51.569484331524, 0.082907474896495],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_ee923c2832af4ea9d62eb87151b3739d = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_84dbed8db6814be01b20302a75073e44.setIcon(icon_ee923c2832af4ea9d62eb87151b3739d);
-        
-    
-        var popup_eb922e67447b6e4983bd839b5b3029f8 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_03f39cf009cf21e9514b39cb319fb60a = $(`<div id="html_03f39cf009cf21e9514b39cb319fb60a" style="width: 100.0%; height: 100.0%;">Redbridge - Ley Street, United Kingdom<br>(51.569484331524, 0.082907474896495)<br><strong>AQI level</strong> 24</div>`)[0];
-            popup_eb922e67447b6e4983bd839b5b3029f8.setContent(html_03f39cf009cf21e9514b39cb319fb60a);
-        
-
-        marker_84dbed8db6814be01b20302a75073e44.bindPopup(popup_eb922e67447b6e4983bd839b5b3029f8)
-        ;
-
-        
-    
-    
-            marker_84dbed8db6814be01b20302a75073e44.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_cd15dcea4b986032ff469acbe109bd11 = L.marker(
-                [51.520787459334, 0.20546070569404],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_87b73779740b8bdd25d37b86b2f58ac3 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_cd15dcea4b986032ff469acbe109bd11.setIcon(icon_87b73779740b8bdd25d37b86b2f58ac3);
-        
-    
-        var popup_0f8b8255344ece3ac5bd58e441d511ba = L.popup({"maxWidth": "100%"});
-
-        
-            var html_84d2ce856c21bbf6555c24fafdaffe1f = $(`<div id="html_84d2ce856c21bbf6555c24fafdaffe1f" style="width: 100.0%; height: 100.0%;">Havering - Rainham, United Kingdom<br>(51.520787459334, 0.20546070569404)<br><strong>AQI level</strong> 13</div>`)[0];
-            popup_0f8b8255344ece3ac5bd58e441d511ba.setContent(html_84d2ce856c21bbf6555c24fafdaffe1f);
-        
-
-        marker_cd15dcea4b986032ff469acbe109bd11.bindPopup(popup_0f8b8255344ece3ac5bd58e441d511ba)
-        ;
-
-        
-    
-    
-            marker_cd15dcea4b986032ff469acbe109bd11.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_b03972239986a572b9916e7c85f97f08 = L.marker(
-                [51.562376, -0.004898],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_9b24e833a0438341db2090fbd9454616 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_b03972239986a572b9916e7c85f97f08.setIcon(icon_9b24e833a0438341db2090fbd9454616);
-        
-    
-        var popup_7c8de706945c5caad25f9616e42affab = L.popup({"maxWidth": "100%"});
-
-        
-            var html_2213bd3032822f68c927ab1aa5d4e681 = $(`<div id="html_2213bd3032822f68c927ab1aa5d4e681" style="width: 100.0%; height: 100.0%;">Waltham Forest Dawlish Rd, United Kingdom<br>(51.562376, -0.004898)<br><strong>AQI level</strong> -</div>`)[0];
-            popup_7c8de706945c5caad25f9616e42affab.setContent(html_2213bd3032822f68c927ab1aa5d4e681);
-        
-
-        marker_b03972239986a572b9916e7c85f97f08.bindPopup(popup_7c8de706945c5caad25f9616e42affab)
-        ;
-
-        
-    
-    
-            marker_b03972239986a572b9916e7c85f97f08.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_c5ab4e32f52cd763ae76f5b0a21a12b0 = L.marker(
-                [51.552476, -0.258089],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_ae9740337ce7a0c5cdb12707964ba509 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_c5ab4e32f52cd763ae76f5b0a21a12b0.setIcon(icon_ae9740337ce7a0c5cdb12707964ba509);
-        
-    
-        var popup_ab61e850ea9d0a2c7c913e77415367e1 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_42a4ef5441b9a43312ce4e75d2d55b6a = $(`<div id="html_42a4ef5441b9a43312ce4e75d2d55b6a" style="width: 100.0%; height: 100.0%;">Brent - Ikea, United Kingdom<br>(51.552476, -0.258089)<br><strong>AQI level</strong> 30</div>`)[0];
-            popup_ab61e850ea9d0a2c7c913e77415367e1.setContent(html_42a4ef5441b9a43312ce4e75d2d55b6a);
-        
-
-        marker_c5ab4e32f52cd763ae76f5b0a21a12b0.bindPopup(popup_ab61e850ea9d0a2c7c913e77415367e1)
-        ;
-
-        
-    
-    
-            marker_c5ab4e32f52cd763ae76f5b0a21a12b0.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_f8eaa2f4f2f21354e346acc368c55e57 = L.marker(
-                [51.552656, -0.248774],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_51c7ba81e7fefad925e0becc506462bd = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_f8eaa2f4f2f21354e346acc368c55e57.setIcon(icon_51c7ba81e7fefad925e0becc506462bd);
-        
-    
-        var popup_cc1f6080e536fdb45f259ab1aa6feccf = L.popup({"maxWidth": "100%"});
-
-        
-            var html_c998b9a8982eaa340bbab9e9840b3932 = $(`<div id="html_c998b9a8982eaa340bbab9e9840b3932" style="width: 100.0%; height: 100.0%;">Brent - Neasden Lane, United Kingdom<br>(51.552656, -0.248774)<br><strong>AQI level</strong> 9</div>`)[0];
-            popup_cc1f6080e536fdb45f259ab1aa6feccf.setContent(html_c998b9a8982eaa340bbab9e9840b3932);
-        
-
-        marker_f8eaa2f4f2f21354e346acc368c55e57.bindPopup(popup_cc1f6080e536fdb45f259ab1aa6feccf)
-        ;
-
-        
-    
-    
-            marker_f8eaa2f4f2f21354e346acc368c55e57.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_a1a2109099bc64b35e9f89e4d6aad7c7 = L.marker(
-                [51.532405461781, -0.21771890863938],
-                {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
-        
-    
-            var icon_93ae140dcd4650be8b4bf2a2d363a894 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
-            );
-            marker_a1a2109099bc64b35e9f89e4d6aad7c7.setIcon(icon_93ae140dcd4650be8b4bf2a2d363a894);
-        
-    
-        var popup_5cf6393970af391154316a52ff9b7be9 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_2c2b0d35270dbb59803e4539429ef409 = $(`<div id="html_2c2b0d35270dbb59803e4539429ef409" style="width: 100.0%; height: 100.0%;">Brent - ARK Franklin Primary Academy, United Kingdom<br>(51.532405461781, -0.21771890863938)<br><strong>AQI level</strong> 20</div>`)[0];
-            popup_5cf6393970af391154316a52ff9b7be9.setContent(html_2c2b0d35270dbb59803e4539429ef409);
-        
-
-        marker_a1a2109099bc64b35e9f89e4d6aad7c7.bindPopup(popup_5cf6393970af391154316a52ff9b7be9)
-        ;
-
-        
-    
-    
-            marker_a1a2109099bc64b35e9f89e4d6aad7c7.bindTooltip(
-                `<div>
-                     <strong>Click here to see coordinates</strong>
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_1b2f26f9765cd24bd768050220248a10 = L.marker(
+            var marker_79826d5c67ed34e4dd9e72f1b1602962 = L.marker(
                 [51.593048, -0.15866],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_966f27d3e157b950cfb4e72df2868048 = L.AwesomeMarkers.icon(
+            var icon_5d46b3b99e27c66c9832b5dace6bec29 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_1b2f26f9765cd24bd768050220248a10.setIcon(icon_966f27d3e157b950cfb4e72df2868048);
+            marker_79826d5c67ed34e4dd9e72f1b1602962.setIcon(icon_5d46b3b99e27c66c9832b5dace6bec29);
         
     
-        var popup_3f3cfd0225d6a138fcf71f44db8916c9 = L.popup({"maxWidth": "100%"});
+        var popup_b5af4d5b91f737823e5dc7066788a880 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e6727f05c6562640b2f4413c1dd3921f = $(`<div id="html_e6727f05c6562640b2f4413c1dd3921f" style="width: 100.0%; height: 100.0%;">Church Vale<br>(51.593048, -0.15866)<br><strong>AQI level</strong> 4</div>`)[0];
-            popup_3f3cfd0225d6a138fcf71f44db8916c9.setContent(html_e6727f05c6562640b2f4413c1dd3921f);
+            var html_41f80e8690c39ba1d8517f7eee3cbf1d = $(`<div id="html_41f80e8690c39ba1d8517f7eee3cbf1d" style="width: 100.0%; height: 100.0%;">Church Vale<br>(51.593048, -0.15866)<br><strong>AQI level</strong> 8</div>`)[0];
+            popup_b5af4d5b91f737823e5dc7066788a880.setContent(html_41f80e8690c39ba1d8517f7eee3cbf1d);
         
 
-        marker_1b2f26f9765cd24bd768050220248a10.bindPopup(popup_3f3cfd0225d6a138fcf71f44db8916c9)
+        marker_79826d5c67ed34e4dd9e72f1b1602962.bindPopup(popup_b5af4d5b91f737823e5dc7066788a880)
         ;
 
         
     
     
-            marker_1b2f26f9765cd24bd768050220248a10.bindTooltip(
+            marker_79826d5c67ed34e4dd9e72f1b1602962.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -2074,32 +1612,32 @@
             );
         
     
-            var marker_c9d9a2b9c0b72af803f08f8e7b155df5 = L.marker(
-                [51.52253, -0.154611],
+            var marker_ea85aa50e24cabdfddc34a173bee664b = L.marker(
+                [51.520787459334, 0.20546070569404],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_c376d6b1112463f693f858566544a4e8 = L.AwesomeMarkers.icon(
+            var icon_b9460e9d2d22ec5e84b24fe32268c649 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_c9d9a2b9c0b72af803f08f8e7b155df5.setIcon(icon_c376d6b1112463f693f858566544a4e8);
+            marker_ea85aa50e24cabdfddc34a173bee664b.setIcon(icon_b9460e9d2d22ec5e84b24fe32268c649);
         
     
-        var popup_37ea89d61337ebf92b610f554e7f6acb = L.popup({"maxWidth": "100%"});
+        var popup_f8a73843c38452badb7fca30fb621e76 = L.popup({"maxWidth": "100%"});
 
         
-            var html_fa4f6c08b04d6f7c7991c5dca6cd7b65 = $(`<div id="html_fa4f6c08b04d6f7c7991c5dca6cd7b65" style="width: 100.0%; height: 100.0%;">London Marylebone Road, United Kingdom<br>(51.52253, -0.154611)<br><strong>AQI level</strong> 30</div>`)[0];
-            popup_37ea89d61337ebf92b610f554e7f6acb.setContent(html_fa4f6c08b04d6f7c7991c5dca6cd7b65);
+            var html_e1f31cecfab29d70c042dcf7164a9f29 = $(`<div id="html_e1f31cecfab29d70c042dcf7164a9f29" style="width: 100.0%; height: 100.0%;">Havering - Rainham, United Kingdom<br>(51.520787459334, 0.20546070569404)<br><strong>AQI level</strong> 48</div>`)[0];
+            popup_f8a73843c38452badb7fca30fb621e76.setContent(html_e1f31cecfab29d70c042dcf7164a9f29);
         
 
-        marker_c9d9a2b9c0b72af803f08f8e7b155df5.bindPopup(popup_37ea89d61337ebf92b610f554e7f6acb)
+        marker_ea85aa50e24cabdfddc34a173bee664b.bindPopup(popup_f8a73843c38452badb7fca30fb621e76)
         ;
 
         
     
     
-            marker_c9d9a2b9c0b72af803f08f8e7b155df5.bindTooltip(
+            marker_ea85aa50e24cabdfddc34a173bee664b.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -2107,32 +1645,32 @@
             );
         
     
-            var marker_fb23ff90951a46088d5401f370a987db = L.marker(
-                [51.527706619465, -0.12905320528252],
+            var marker_95bc24cc7e7f0c8ba89c7d111b875b59 = L.marker(
+                [51.569484331524, 0.082907474896495],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_e68d350b1779885ee29a3f27187a0978 = L.AwesomeMarkers.icon(
+            var icon_c0d4a7c7a55907fd4c1c18d8f68fffc3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_fb23ff90951a46088d5401f370a987db.setIcon(icon_e68d350b1779885ee29a3f27187a0978);
+            marker_95bc24cc7e7f0c8ba89c7d111b875b59.setIcon(icon_c0d4a7c7a55907fd4c1c18d8f68fffc3);
         
     
-        var popup_4a7b8ec1b0c7cc1a1088cf8b243ddb35 = L.popup({"maxWidth": "100%"});
+        var popup_4d1ea74a8804b34de2fd902caa2bdf1c = L.popup({"maxWidth": "100%"});
 
         
-            var html_c28a601cd2551a3b4513543690f6b148 = $(`<div id="html_c28a601cd2551a3b4513543690f6b148" style="width: 100.0%; height: 100.0%;">Camden - Euston Road, United Kingdom<br>(51.527706619465, -0.12905320528252)<br><strong>AQI level</strong> 14</div>`)[0];
-            popup_4a7b8ec1b0c7cc1a1088cf8b243ddb35.setContent(html_c28a601cd2551a3b4513543690f6b148);
+            var html_d6c650d7d0841bb8581d483c67f1460c = $(`<div id="html_d6c650d7d0841bb8581d483c67f1460c" style="width: 100.0%; height: 100.0%;">Redbridge - Ley Street, United Kingdom<br>(51.569484331524, 0.082907474896495)<br><strong>AQI level</strong> 15</div>`)[0];
+            popup_4d1ea74a8804b34de2fd902caa2bdf1c.setContent(html_d6c650d7d0841bb8581d483c67f1460c);
         
 
-        marker_fb23ff90951a46088d5401f370a987db.bindPopup(popup_4a7b8ec1b0c7cc1a1088cf8b243ddb35)
+        marker_95bc24cc7e7f0c8ba89c7d111b875b59.bindPopup(popup_4d1ea74a8804b34de2fd902caa2bdf1c)
         ;
 
         
     
     
-            marker_fb23ff90951a46088d5401f370a987db.bindTooltip(
+            marker_95bc24cc7e7f0c8ba89c7d111b875b59.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -2140,32 +1678,98 @@
             );
         
     
-            var marker_1f2d363afe0aa3de80d0c95ce1e05ad7 = L.marker(
+            var marker_8452f5dd091b9edf7b43e78bf3e8ca0a = L.marker(
+                [51.526454, -0.08491],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_f708a1cd9ddb6effa1860fac5ef5b57b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_8452f5dd091b9edf7b43e78bf3e8ca0a.setIcon(icon_f708a1cd9ddb6effa1860fac5ef5b57b);
+        
+    
+        var popup_f719ac53730e9b189bb2e21f1e833e73 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_546ce6fc41341f098a8e55cca9858b5f = $(`<div id="html_546ce6fc41341f098a8e55cca9858b5f" style="width: 100.0%; height: 100.0%;">Hackney - Old Street, United Kingdom<br>(51.526454, -0.08491)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_f719ac53730e9b189bb2e21f1e833e73.setContent(html_546ce6fc41341f098a8e55cca9858b5f);
+        
+
+        marker_8452f5dd091b9edf7b43e78bf3e8ca0a.bindPopup(popup_f719ac53730e9b189bb2e21f1e833e73)
+        ;
+
+        
+    
+    
+            marker_8452f5dd091b9edf7b43e78bf3e8ca0a.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b070001378cd0df793cdd2a897e5101 = L.marker(
+                [51.562376, -0.004898],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_8c020ff5da4c85396f2e7c78fd1fb38b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_6b070001378cd0df793cdd2a897e5101.setIcon(icon_8c020ff5da4c85396f2e7c78fd1fb38b);
+        
+    
+        var popup_97e8188aa0f1f95250f65780ec55cc2b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bbd7cef7ec490e7adc9b43a6d94fad04 = $(`<div id="html_bbd7cef7ec490e7adc9b43a6d94fad04" style="width: 100.0%; height: 100.0%;">Waltham Forest Dawlish Rd, United Kingdom<br>(51.562376, -0.004898)<br><strong>AQI level</strong> 9</div>`)[0];
+            popup_97e8188aa0f1f95250f65780ec55cc2b.setContent(html_bbd7cef7ec490e7adc9b43a6d94fad04);
+        
+
+        marker_6b070001378cd0df793cdd2a897e5101.bindPopup(popup_97e8188aa0f1f95250f65780ec55cc2b)
+        ;
+
+        
+    
+    
+            marker_6b070001378cd0df793cdd2a897e5101.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3687f93aa5f020b19b503924af1e7e02 = L.marker(
                 [51.5073509, -0.1277583],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_3e3bd2fee80ba8bcc611cc9af84083bf = L.AwesomeMarkers.icon(
+            var icon_a4982f108d60e74727f7365531fdf982 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_1f2d363afe0aa3de80d0c95ce1e05ad7.setIcon(icon_3e3bd2fee80ba8bcc611cc9af84083bf);
+            marker_3687f93aa5f020b19b503924af1e7e02.setIcon(icon_a4982f108d60e74727f7365531fdf982);
         
     
-        var popup_b51ce8b3ab2c5d214f4ef6735de804a7 = L.popup({"maxWidth": "100%"});
+        var popup_ef3e269355434da23888dcdcd5955477 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e83ec58f8c306a9c70f866a49e9c8ee0 = $(`<div id="html_e83ec58f8c306a9c70f866a49e9c8ee0" style="width: 100.0%; height: 100.0%;">London<br>(51.5073509, -0.1277583)<br><strong>AQI level</strong> 61</div>`)[0];
-            popup_b51ce8b3ab2c5d214f4ef6735de804a7.setContent(html_e83ec58f8c306a9c70f866a49e9c8ee0);
+            var html_29e02ff5ccbf9f335a5587f397a88fae = $(`<div id="html_29e02ff5ccbf9f335a5587f397a88fae" style="width: 100.0%; height: 100.0%;">London<br>(51.5073509, -0.1277583)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_ef3e269355434da23888dcdcd5955477.setContent(html_29e02ff5ccbf9f335a5587f397a88fae);
         
 
-        marker_1f2d363afe0aa3de80d0c95ce1e05ad7.bindPopup(popup_b51ce8b3ab2c5d214f4ef6735de804a7)
+        marker_3687f93aa5f020b19b503924af1e7e02.bindPopup(popup_ef3e269355434da23888dcdcd5955477)
         ;
 
         
     
     
-            marker_1f2d363afe0aa3de80d0c95ce1e05ad7.bindTooltip(
+            marker_3687f93aa5f020b19b503924af1e7e02.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,
@@ -2173,32 +1777,428 @@
             );
         
     
-            var marker_c212a9cdf71aa8631ac2fda2be12f03f = L.marker(
+            var marker_2d3e27312b2a5b96134c78984b578b89 = L.marker(
                 [51.52105, -0.213492],
                 {}
-            ).addTo(map_9fef5b1b7e967c3ca91827e2683bced9);
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
         
     
-            var icon_bdd9fe27c4dae54ff6d1160c424345bb = L.AwesomeMarkers.icon(
+            var icon_e04c1db4f075fac34ccffdf35b641fa5 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
             );
-            marker_c212a9cdf71aa8631ac2fda2be12f03f.setIcon(icon_bdd9fe27c4dae54ff6d1160c424345bb);
+            marker_2d3e27312b2a5b96134c78984b578b89.setIcon(icon_e04c1db4f075fac34ccffdf35b641fa5);
         
     
-        var popup_0baf32d31129f7cae1191d3ba2aac68d = L.popup({"maxWidth": "100%"});
+        var popup_fd881665e9de2e4055c96f85c3535d87 = L.popup({"maxWidth": "100%"});
 
         
-            var html_9ce5b3388ffd5b4e6da9f0628e8f39fc = $(`<div id="html_9ce5b3388ffd5b4e6da9f0628e8f39fc" style="width: 100.0%; height: 100.0%;">London N. Kensington, United Kingdom<br>(51.52105, -0.213492)<br><strong>AQI level</strong> 23</div>`)[0];
-            popup_0baf32d31129f7cae1191d3ba2aac68d.setContent(html_9ce5b3388ffd5b4e6da9f0628e8f39fc);
+            var html_86be3d24fadbd8669e50c33bd3381009 = $(`<div id="html_86be3d24fadbd8669e50c33bd3381009" style="width: 100.0%; height: 100.0%;">London N. Kensington, United Kingdom<br>(51.52105, -0.213492)<br><strong>AQI level</strong> 17</div>`)[0];
+            popup_fd881665e9de2e4055c96f85c3535d87.setContent(html_86be3d24fadbd8669e50c33bd3381009);
         
 
-        marker_c212a9cdf71aa8631ac2fda2be12f03f.bindPopup(popup_0baf32d31129f7cae1191d3ba2aac68d)
+        marker_2d3e27312b2a5b96134c78984b578b89.bindPopup(popup_fd881665e9de2e4055c96f85c3535d87)
         ;
 
         
     
     
-            marker_c212a9cdf71aa8631ac2fda2be12f03f.bindTooltip(
+            marker_2d3e27312b2a5b96134c78984b578b89.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f591c7dfdcb3e1da84ec303921cfa73f = L.marker(
+                [51.552656, -0.248774],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_fffe636e356e9c3c9243fc0cf38c9e61 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_f591c7dfdcb3e1da84ec303921cfa73f.setIcon(icon_fffe636e356e9c3c9243fc0cf38c9e61);
+        
+    
+        var popup_59851a9e4519af0a95135efc32a0c421 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_17afc3e5f3d15197c5ad8c8d5cc6fe3f = $(`<div id="html_17afc3e5f3d15197c5ad8c8d5cc6fe3f" style="width: 100.0%; height: 100.0%;">Brent - Neasden Lane, United Kingdom<br>(51.552656, -0.248774)<br><strong>AQI level</strong> 32</div>`)[0];
+            popup_59851a9e4519af0a95135efc32a0c421.setContent(html_17afc3e5f3d15197c5ad8c8d5cc6fe3f);
+        
+
+        marker_f591c7dfdcb3e1da84ec303921cfa73f.bindPopup(popup_59851a9e4519af0a95135efc32a0c421)
+        ;
+
+        
+    
+    
+            marker_f591c7dfdcb3e1da84ec303921cfa73f.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f80c4e2b95410a3aeebedf55fd202a4 = L.marker(
+                [51.57661, 0.030858],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_7ff51423601c36629fbf9ff8ae5b2d77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_0f80c4e2b95410a3aeebedf55fd202a4.setIcon(icon_7ff51423601c36629fbf9ff8ae5b2d77);
+        
+    
+        var popup_9c7e103e46e14033f626142a9eb9d86c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f434c813a4153b8acf8638bf2886f270 = $(`<div id="html_f434c813a4153b8acf8638bf2886f270" style="width: 100.0%; height: 100.0%;">Redbridge - Gardner Close, United Kingdom<br>(51.57661, 0.030858)<br><strong>AQI level</strong> -</div>`)[0];
+            popup_9c7e103e46e14033f626142a9eb9d86c.setContent(html_f434c813a4153b8acf8638bf2886f270);
+        
+
+        marker_0f80c4e2b95410a3aeebedf55fd202a4.bindPopup(popup_9c7e103e46e14033f626142a9eb9d86c)
+        ;
+
+        
+    
+    
+            marker_0f80c4e2b95410a3aeebedf55fd202a4.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce59e205a476f70e58a43d37814064ed = L.marker(
+                [51.552476, -0.258089],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_e06e586971a51e5e1eec02c19d6ce892 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_ce59e205a476f70e58a43d37814064ed.setIcon(icon_e06e586971a51e5e1eec02c19d6ce892);
+        
+    
+        var popup_9880a87814d936cbe3470482381e0307 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_97239799c98639cc285b3cbb0a33b9e3 = $(`<div id="html_97239799c98639cc285b3cbb0a33b9e3" style="width: 100.0%; height: 100.0%;">Brent - Ikea, United Kingdom<br>(51.552476, -0.258089)<br><strong>AQI level</strong> 30</div>`)[0];
+            popup_9880a87814d936cbe3470482381e0307.setContent(html_97239799c98639cc285b3cbb0a33b9e3);
+        
+
+        marker_ce59e205a476f70e58a43d37814064ed.bindPopup(popup_9880a87814d936cbe3470482381e0307)
+        ;
+
+        
+    
+    
+            marker_ce59e205a476f70e58a43d37814064ed.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c4b84c6a78ab1b4bf96f9c19cec4375 = L.marker(
+                [51.537799, -0.247793],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_d0280c833caea8797f4f43a5a5dac81d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_6c4b84c6a78ab1b4bf96f9c19cec4375.setIcon(icon_d0280c833caea8797f4f43a5a5dac81d);
+        
+    
+        var popup_0afbcb69bd46f646409483fc79d5c2fd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fb20c3a1725c28a65222a09781d8d583 = $(`<div id="html_fb20c3a1725c28a65222a09781d8d583" style="width: 100.0%; height: 100.0%;">Brent - John Keble Primary School, United Kingdom<br>(51.537799, -0.247793)<br><strong>AQI level</strong> 12</div>`)[0];
+            popup_0afbcb69bd46f646409483fc79d5c2fd.setContent(html_fb20c3a1725c28a65222a09781d8d583);
+        
+
+        marker_6c4b84c6a78ab1b4bf96f9c19cec4375.bindPopup(popup_0afbcb69bd46f646409483fc79d5c2fd)
+        ;
+
+        
+    
+    
+            marker_6c4b84c6a78ab1b4bf96f9c19cec4375.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0eefd7eb5eb849dbc9a0e71ec823ab5 = L.marker(
+                [51.532405461781, -0.21771890863938],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_ac5c342d607aff8464e5e0c2900b5c3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_a0eefd7eb5eb849dbc9a0e71ec823ab5.setIcon(icon_ac5c342d607aff8464e5e0c2900b5c3f);
+        
+    
+        var popup_2988cf11591fe97e503300c57ea9df0c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d5e69ce188063a24c040f55f92dd661b = $(`<div id="html_d5e69ce188063a24c040f55f92dd661b" style="width: 100.0%; height: 100.0%;">Brent - ARK Franklin Primary Academy, United Kingdom<br>(51.532405461781, -0.21771890863938)<br><strong>AQI level</strong> 15</div>`)[0];
+            popup_2988cf11591fe97e503300c57ea9df0c.setContent(html_d5e69ce188063a24c040f55f92dd661b);
+        
+
+        marker_a0eefd7eb5eb849dbc9a0e71ec823ab5.bindPopup(popup_2988cf11591fe97e503300c57ea9df0c)
+        ;
+
+        
+    
+    
+            marker_a0eefd7eb5eb849dbc9a0e71ec823ab5.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdd65fd75ceef942a7836af273764409 = L.marker(
+                [51.617333, -0.298777],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_e4cea2fbbe845fa05b89b351c7e4bdcd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_fdd65fd75ceef942a7836af273764409.setIcon(icon_e4cea2fbbe845fa05b89b351c7e4bdcd);
+        
+    
+        var popup_541a69c82bd92e364a162dc5e66c62f3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_54ad83ea4337aa2f8d6e1f27f14394a8 = $(`<div id="html_54ad83ea4337aa2f8d6e1f27f14394a8" style="width: 100.0%; height: 100.0%;">London Harrow Stanmore, United Kingdom<br>(51.617333, -0.298777)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_541a69c82bd92e364a162dc5e66c62f3.setContent(html_54ad83ea4337aa2f8d6e1f27f14394a8);
+        
+
+        marker_fdd65fd75ceef942a7836af273764409.bindPopup(popup_541a69c82bd92e364a162dc5e66c62f3)
+        ;
+
+        
+    
+    
+            marker_fdd65fd75ceef942a7836af273764409.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1c4d5ea5fae480d63b3a30662291f719 = L.marker(
+                [51.54421, -0.175269],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_8a7144d36e1cc6af2e3476c9bbd10516 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1c4d5ea5fae480d63b3a30662291f719.setIcon(icon_8a7144d36e1cc6af2e3476c9bbd10516);
+        
+    
+        var popup_f4f87f797b99ae37bf69dd22995ba679 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_40b59deca799935722c1d557b895bdad = $(`<div id="html_40b59deca799935722c1d557b895bdad" style="width: 100.0%; height: 100.0%;">Camden Kerbside, United Kingdom<br>(51.54421, -0.175269)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_f4f87f797b99ae37bf69dd22995ba679.setContent(html_40b59deca799935722c1d557b895bdad);
+        
+
+        marker_1c4d5ea5fae480d63b3a30662291f719.bindPopup(popup_f4f87f797b99ae37bf69dd22995ba679)
+        ;
+
+        
+    
+    
+            marker_1c4d5ea5fae480d63b3a30662291f719.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1fa982174491e367304e58c1d56400b9 = L.marker(
+                [51.52253, -0.154611],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_3a7c1c5b8231eeed4c63e7bd9815cba7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1fa982174491e367304e58c1d56400b9.setIcon(icon_3a7c1c5b8231eeed4c63e7bd9815cba7);
+        
+    
+        var popup_ee60ff50601949bd3a71b72565a17dc4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_926efdf7396cc3c719f571c1c4f591e2 = $(`<div id="html_926efdf7396cc3c719f571c1c4f591e2" style="width: 100.0%; height: 100.0%;">London Marylebone Road, United Kingdom<br>(51.52253, -0.154611)<br><strong>AQI level</strong> 34</div>`)[0];
+            popup_ee60ff50601949bd3a71b72565a17dc4.setContent(html_926efdf7396cc3c719f571c1c4f591e2);
+        
+
+        marker_1fa982174491e367304e58c1d56400b9.bindPopup(popup_ee60ff50601949bd3a71b72565a17dc4)
+        ;
+
+        
+    
+    
+            marker_1fa982174491e367304e58c1d56400b9.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9994cd1508b3513017096608db24956a = L.marker(
+                [51.527706619465, -0.12905320528252],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_c4262a182c3d107cc1831f7647ce6393 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_9994cd1508b3513017096608db24956a.setIcon(icon_c4262a182c3d107cc1831f7647ce6393);
+        
+    
+        var popup_72b1b0e50034ef40cb5d88574931df80 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_44d9f7cb5a6ed074bf37afbe3fd9e511 = $(`<div id="html_44d9f7cb5a6ed074bf37afbe3fd9e511" style="width: 100.0%; height: 100.0%;">Camden - Euston Road, United Kingdom<br>(51.527706619465, -0.12905320528252)<br><strong>AQI level</strong> -</div>`)[0];
+            popup_72b1b0e50034ef40cb5d88574931df80.setContent(html_44d9f7cb5a6ed074bf37afbe3fd9e511);
+        
+
+        marker_9994cd1508b3513017096608db24956a.bindPopup(popup_72b1b0e50034ef40cb5d88574931df80)
+        ;
+
+        
+    
+    
+            marker_9994cd1508b3513017096608db24956a.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fcb737ecdd18b2f630dbbf6a4efca689 = L.marker(
+                [51.5993, -0.068218],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_6aeb49f990d1a7b6003e7b5e3fee9665 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_fcb737ecdd18b2f630dbbf6a4efca689.setIcon(icon_6aeb49f990d1a7b6003e7b5e3fee9665);
+        
+    
+        var popup_43565247b3fc28625688493e8cb7eb72 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9048b2a00e6bfadd1be18288811c780f = $(`<div id="html_9048b2a00e6bfadd1be18288811c780f" style="width: 100.0%; height: 100.0%;">Haringey Roadside, United Kingdom<br>(51.5993, -0.068218)<br><strong>AQI level</strong> 9</div>`)[0];
+            popup_43565247b3fc28625688493e8cb7eb72.setContent(html_9048b2a00e6bfadd1be18288811c780f);
+        
+
+        marker_fcb737ecdd18b2f630dbbf6a4efca689.bindPopup(popup_43565247b3fc28625688493e8cb7eb72)
+        ;
+
+        
+    
+    
+            marker_fcb737ecdd18b2f630dbbf6a4efca689.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29b2b9647e3c4d625cd42ec52fb90194 = L.marker(
+                [51.50432, -0.046012],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_e97d7d727e56cd42b2e7266ed39d20a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_29b2b9647e3c4d625cd42ec52fb90194.setIcon(icon_e97d7d727e56cd42b2e7266ed39d20a3);
+        
+    
+        var popup_54fcdcefd2f17a88d2ff9d9d4caa4373 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_386c5af67d23aa171c851bf151b05d10 = $(`<div id="html_386c5af67d23aa171c851bf151b05d10" style="width: 100.0%; height: 100.0%;">Salter Road<br>(51.50432, -0.046012)<br><strong>AQI level</strong> 8</div>`)[0];
+            popup_54fcdcefd2f17a88d2ff9d9d4caa4373.setContent(html_386c5af67d23aa171c851bf151b05d10);
+        
+
+        marker_29b2b9647e3c4d625cd42ec52fb90194.bindPopup(popup_54fcdcefd2f17a88d2ff9d9d4caa4373)
+        ;
+
+        
+    
+    
+            marker_29b2b9647e3c4d625cd42ec52fb90194.bindTooltip(
+                `<div>
+                     <strong>Click here to see coordinates</strong>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61811f7a2563c3a3bf726005ce745e7d = L.marker(
+                [51.52229, -0.125889],
+                {}
+            ).addTo(map_41e5f10e617b43f3b18e2d59ea0382d3);
+        
+    
+            var icon_36dfb1bf51d7a13b26ccaf1f2880489d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "crosshairs", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_61811f7a2563c3a3bf726005ce745e7d.setIcon(icon_36dfb1bf51d7a13b26ccaf1f2880489d);
+        
+    
+        var popup_2464490630a3030abc71e5a25e2f5443 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_673d8f2190f9a59c7bbe7a984de617fe = $(`<div id="html_673d8f2190f9a59c7bbe7a984de617fe" style="width: 100.0%; height: 100.0%;">London Bloomsbury, United Kingdom<br>(51.52229, -0.125889)<br><strong>AQI level</strong> 25</div>`)[0];
+            popup_2464490630a3030abc71e5a25e2f5443.setContent(html_673d8f2190f9a59c7bbe7a984de617fe);
+        
+
+        marker_61811f7a2563c3a3bf726005ce745e7d.bindPopup(popup_2464490630a3030abc71e5a25e2f5443)
+        ;
+
+        
+    
+    
+            marker_61811f7a2563c3a3bf726005ce745e7d.bindTooltip(
                 `<div>
                      <strong>Click here to see coordinates</strong>
                  </div>`,

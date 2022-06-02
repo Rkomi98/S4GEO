@@ -241,7 +241,7 @@ def update_data_on_DB(db):
     engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
-    return(DataNew)
+    return DataNew
 def download_data():
     engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
     gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
@@ -455,7 +455,7 @@ def createProject():
                 CityForecast.dropna()
                 Description = CityForecast.describe()
                 print('\n'+request.form['city']+'\n')
-                Description_html = Description.to_html(index=False)
+                Description_html = Description.to_html(index=True)
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": "",
@@ -517,7 +517,7 @@ def createProject():
                 name = DataDB['city']
                 Description = City.describe()
                 print('\n'+request.form['city']+'\n')
-                Description_html = Description.to_html(index=False)
+                Description_html = Description.to_html(index=True)
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": "",
                                  "tableStat": Description_html,
