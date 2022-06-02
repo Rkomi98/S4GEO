@@ -202,7 +202,7 @@ def get_realtime_data(city):
 
     return final_realtime_table_html
 
-def get_data_to_DataFrame(city):#, User):
+def get_data_to_DataFrame(city, User):
     data = get_json_API(city)
 
     # from JSON to Pandas DataFrame: creating the real time data table
@@ -469,7 +469,7 @@ def createProject():
                                  "table2": get_forecast_data(request.form['city']),
                                  "tableStat": Description_html,
                                  "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
-                                 "map": visualize_data(request.form['city'])}
+                                 "map": visualize_data(request.form['city'],user_id)}
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
@@ -502,7 +502,9 @@ def createProject():
                                  "table2": "",
                                  "tableStat": Description_html,
                                  "search": "",
-                                 "map": visualize_data(request.form['city'])}
+                                 "map": visualize_data(request.form['city'],user_id)
+                                 }
+                City.drop(columns=['geometry', 'x','y'], axis = 1, inplace = True)
                 profile = ProfileReport(City, title="Statistical tool", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 html_out = template.render(template_vars)
@@ -511,7 +513,7 @@ def createProject():
                 template_vars = {"table1": get_realtime_data(request.form['city']),
                                  "table2": get_forecast_data(request.form['city']),
                                  "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
-                                 "map": visualize_data(request.form['city'])}
+                                 "map": visualize_data(request.form['city'],user_id)}
                 html_out = template.render(template_vars)
     
             else:
@@ -537,8 +539,8 @@ def Analysis():
 
 
 
-def visualize_data(city):
-        df = get_data_to_DataFrame(city).drop(columns = ["geometry"])
+def visualize_data(city, User):
+        df = get_data_to_DataFrame(city, User).drop(columns = ["geometry"])
         psource = ColumnDataSource(df)
         TOOLTIPS = [    ("name", "@city"),
                         ("air quality", "@air_quality"),
