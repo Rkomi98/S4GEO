@@ -18,5 +18,21 @@ All the users can access to the homepage and to the "More Info" page. To create 
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
 * If the user tries to login with the wrong user or password, the page is automatically reloaded
+![immagine](https://user-images.githubusercontent.com/72648197/171901830-c62b520e-1a0d-4f18-80f1-4a843e73a182.png)
+![immagine](https://user-images.githubusercontent.com/72648197/171902834-46eb3940-d959-49f8-88e2-eeaf71c81ac6.png)
+
 
 ### Create Project page
+In the "Create project" page you can decide a city between:
+* Skopje
+* Belgrad
+* Krakow
+* Paris
+* London
+
+Furthermore you can choose if you want "Real data" (the frequence of update changes between city and city) or forecast data (so data of pollutants of the last 2 days, today and the next 5 days) or both. In this case the analysis will be performed only on forecast data.  
+![immagine](https://user-images.githubusercontent.com/72648197/171901684-77ec0fba-dedf-4bf3-8ee0-39233b058e52.png)
+We decided to incentivate the analysis on forecast data because, to have an analysis on real time data you need at least 5/6 observations. 
+
+:warning: **If you have performed only some requests it is normal if you receive error**: Tru the jupyter notebook if you want to see the problem. You need some observation to perform a pandas profiling analysis.
+
