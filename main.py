@@ -460,13 +460,14 @@ def createProject():
                 else:
                     CityForecast = get_forecast_data_to_DB('Krakow')
                 CityForecast.dropna()
+                CityForecast_html = CityForecast.to_html(index=True)
                 Description = CityForecast.describe()
                 print('\n'+request.form['city']+'\n')
                 Description_html = Description.to_html(index=True)
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": "",
-                                 "table2": get_forecast_data(request.form['city']),
+                                 "table2": CityForecast_html,
                                  "tableStat": Description_html,
                                  "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
                                  "map": visualize_data(request.form['city'],user_id)}
@@ -486,15 +487,16 @@ def createProject():
                     City = GDF.loc[DataDB['city']=='Paris']
                 elif request.form['city']=='skopje':
                     City = GDF.loc[DataDB['city']=='Centar, Skopje, Macedonia (Центар)']
-                    City.drop(columns=['nitrogen_dioxide']) # Because they are all NULL
+                    City.drop(columns=['nitrogen_dioxide'], axis = 1, inplace = True) # Because they are all NULL
                 elif request.form['city']=='london':#Kraków
                     City = GDF.loc[DataDB['city']=='London']
                 elif request.form['city']=='belgrad':
                     City = GDF.loc[DataDB['city']=='Beograd Vračar, Serbia']
-                    City.drop(columns=['carbon_monoxyde'])
+                    City.drop(columns=['carbon_monoxyde'], axis = 1, inplace = True)
                 else:
                     City = GDF.loc[DataDB['city']=='Kraków-ul. Dietla, Małopolska, Poland']
-                name = DataDB['city']
+                
+                City.drop(columns=['geometry', 'x','y'], axis = 1, inplace = True)
                 Description = City.describe()
                 print('\n'+request.form['city']+'\n')
                 Description_html = Description.to_html(index=True)
@@ -504,14 +506,33 @@ def createProject():
                                  "search": "",
                                  "map": visualize_data(request.form['city'],user_id)
                                  }
-                City.drop(columns=['geometry', 'x','y'], axis = 1, inplace = True)
                 profile = ProfileReport(City, title="Statistical tool", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'B':
+                C = get_data_to_DataFrame(request.form['city'],user_id)   
+                D = update_data_on_DB(C)
+                sendDFtoDB(D)
+                if request.form['city']=='paris':
+                    CityForecast = get_forecast_data_to_DB('Paris')
+                elif request.form['city']=='skopje':
+                    CityForecast = get_forecast_data_to_DB('Belgrad')
+                elif request.form['city']=='london':#Kraków
+                    CityForecast = get_forecast_data_to_DB('Skopje')
+                elif request.form['city']=='belgrad':
+                    CityForecast = get_forecast_data_to_DB('London')
+                else:
+                    CityForecast = get_forecast_data_to_DB('Krakow')
+                CityForecast.dropna()
+                CityForecast_html = CityForecast.to_html(index=True)
+                Description = CityForecast.describe()
+                Description_html = Description.to_html(index=True)
+                profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
+                profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": get_forecast_data(request.form['city']),
+                                 "table2": CityForecast_html,
+                                 "tableStat": Description_html,
                                  "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
                                  "map": visualize_data(request.form['city'],user_id)}
                 html_out = template.render(template_vars)
