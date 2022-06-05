@@ -85,11 +85,33 @@
 							</ul>
 						</form>
 					</div>
+					<div class="row gtr-uniform">
+						<a href="#map" data-online="true">
+							<button class="btn33">
+								Visualize
+							</button>
+						</a>
+						<a href="#stat" data-online="true">
+							<button class="btn34">
+								Analyze
+							</button>
+						</a>
+					</div>
+					
 					{{ table1 }}
 					{{ table2 }}
-					{{ map }}
-					{{ tableStat }}
+					<div class="align-center" id="map">
+						{{ map }}
+					</div>
+					<div class="table-wrapper" id="stat">
+						{{ tableStat }}
+					</div>
 				</section>
+				<a href="/Analysis">
+							<button class="btn35">
+								Export Analyze
+							</button>
+						</a>
 			</div>
 		</div>			
 
