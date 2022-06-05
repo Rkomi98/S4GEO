@@ -25,7 +25,7 @@ from pandas_profiling import ProfileReport
 import geopandas as gpd
 from jinja2 import Environment, FileSystemLoader
 from pyproj import Proj, transform
-from bokeh.plotting import Figure
+from bokeh.plotting import figure#, output_file
 from bokeh.resources import CDN
 from bokeh.embed import file_html
 from bokeh.models import ColumnDataSource, LabelSet
@@ -235,7 +235,7 @@ def get_data_to_DataFrame(city, User):
     final_realtime_table = gpd.GeoDataFrame(
         data_df_day, geometry=gpd.points_from_xy(data_df_day['x'], data_df_day['y']))
     
-    #final_realtime_table['ID']=User
+    final_realtime_table['ID']=User #if you don't use User, here you have to comment it
     return final_realtime_table
 
 def connStr():
@@ -252,7 +252,7 @@ def update_data_on_DB(db):
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return DataNew
-    
+
 def download_data():
     engine = create_engine(connStr()) 
     gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
@@ -594,6 +594,7 @@ def elements():
                                     
         k = k+1
     map.save('templates/Map/Map.html')
+    load_logged_in_user()
     return render_template('elements.html')
 
 @app.route('/Map')
@@ -727,7 +728,6 @@ def visualize_data(city, User):
                         ("PM10", "@PM10"),
                         ("PM25", "@PM25"),
                         ("local date","@date_and_time")]
-       
         p1 = Figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
            x_axis_type="mercator", y_axis_type="mercator", tooltips=TOOLTIPS)
         p1.add_tile(get_provider(CARTODBPOSITRON)) 
