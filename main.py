@@ -623,7 +623,7 @@ def createProject():
                 CityForecast_html = CityForecast.to_html(index=True).replace("class=\"dataframe\"","id=\"forecastTable\"")
                 Description = CityForecast.describe()
                 print('\n'+request.form['city']+'\n')
-                Description_html = Description.to_html(index=True)+"<a href=\"/Analysis\"><button class=\"btn35\">EXPORT ANALYSIS</button></a>"
+                Description_html = Description.to_html(index=True)+'<a href=\"/Analysis\" target="_blank"><button class=\"btn35\">EXPORT ANALYSIS</button></a>'
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": "",
@@ -658,7 +658,7 @@ def createProject():
                 City.drop(columns=['geometry', 'x','y'], axis = 1, inplace = True)
                 Description = City.describe()
                 print('\n'+request.form['city']+'\n')
-                Description_html = Description.to_html(index=True)
+                Description_html = Description.to_html(index=True)+'<a href=\"/Analysis\" target="_blank"><button class=\"btn35\">EXPORT ANALYSIS</button></a>'
                 template_vars = {"table1": project_html(get_realtime_data(request.form['city']),"table1"),
                                  "table2": "",
                                  "tableStat": project_html(Description_html,"tableStat"),
@@ -685,7 +685,7 @@ def createProject():
                 CityForecast.dropna()
                 CityForecast_html = CityForecast.to_html(index=True).replace("class=\"dataframe\"","id=\"forecastTable\"")
                 Description = CityForecast.describe()
-                Description_html = Description.to_html(index=True) +"<a href=\"/Analysis\"><button class=\"btn35\">EXPORT ANALYSIS</button></a>"
+                Description_html = Description.to_html(index=True) +'<a href=\"/Analysis\" target="_blank"><button class=\"btn35\">EXPORT ANALYSIS</button></a>'
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": project_html(get_realtime_data(request.form['city']),"table1"),
@@ -728,7 +728,7 @@ def visualize_data(city, User):
                         ("PM10", "@PM10"),
                         ("PM25", "@PM25"),
                         ("local date","@date_and_time")]
-        p1 = Figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
+        p1 = figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
            x_axis_type="mercator", y_axis_type="mercator", tooltips=TOOLTIPS)
         p1.add_tile(get_provider(CARTODBPOSITRON)) 
         p1.circle('x', 'y', source=psource, color='red', radius=50) #ICON(map-marker)
