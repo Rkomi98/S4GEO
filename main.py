@@ -5,7 +5,7 @@ Created on Mon Mar 25 06:43:11 2019
 
 @author: Mirko
 """
-
+from cv2 import split
 from flask import (
     Flask, render_template, request, redirect, flash, url_for, session, g
 )
@@ -19,7 +19,7 @@ from psycopg2 import (
 )
 import requests
 import json
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, null
 import pandas as pd
 from pandas_profiling import ProfileReport
 import geopandas as gpd
@@ -50,7 +50,7 @@ def get_dbConn():
         myFile = open('dbConfig.txt')
         connStr = myFile.readline()
         g.dbConn = connect(connStr)
-
+    print(g.dbConn)
     return g.dbConn
 
 
@@ -164,8 +164,6 @@ def get_forecast_data_to_DB(city):
     final_forecast_table = pd.merge(
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
 
-    #final_forecast_table_html = final_forecast_table.to_html()
-
     return final_forecast_table
 
 
@@ -240,17 +238,23 @@ def get_data_to_DataFrame(city, User):
     final_realtime_table['ID']=User #if you don't use User, here you have to comment it
     return final_realtime_table
 
+def connStr():
+    myFile = open('dbConfig.txt')
+    [dbname,user,password] = [x.split(sep="=")[1] for x in myFile.readline().split()]
+    return "postgresql://" + user + ":" + password + "@localhost:5432/" + dbname
+
 def sendDFtoDB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    engine = create_engine(connStr()) 
     db.to_postgis('cities', engine, if_exists = 'replace', index=False) #I can put some queries here
     
 def update_data_on_DB(db):
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G')
+    engine = create_engine(connStr()) 
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return DataNew
+
 def download_data():
-    engine = create_engine('postgresql://postgres:Gram2021@localhost:5432/S4G') 
+    engine = create_engine(connStr()) 
     gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     return gdf_sql
 
@@ -267,7 +271,162 @@ def translate_data(response):
     coordinate_list = [(x,y) for x,y in zip(G.geometry.x , G.geometry.y)]
     return coordinate_list, G.Station_Name, df_stations.aqi
     
+def project_html(data, html_type = null):
+    if html_type == "table1":					
+        return "                    <div class=\"box\">\
+						<header>\
+							<h2>Realtime data</h2>\
+						</header>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+					</div>"
 
+    if html_type == "table2":
+        return "<div class=\"box\">\
+						<h2>Forecast data</h2>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+						<p><em>To sort data click column header</em></p>\
+						<form method=\"post\" action=\"#\">\
+							<div class=\"col-12\">\
+                                <p><em>To filter, first select column, then filtering type and lastly, type filter value in \"Filter forecast...\" input.</em></p>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+                                <select name=\"fcolumn\" id=\"fcolumn\" onchange=\"check()\" required>\
+									<option value=\"\" disabled selected>Column name</option>\
+									<option value=\"day\">Day</option>\
+									<option value=\"avg_o3\">Average O3</option>\
+									<option value=\"max_o3\">Maximum O3</option>\
+									<option value=\"min_o3\">Minimum O3</option>\
+									<option value=\"avg_pm10\">Average pm10</option>\
+									<option value=\"max_pm10\">Maximum pm10</option>\
+									<option value=\"min_pm10\">Minimum pm10</option>\
+									<option value=\"avg_pm25\">Average pm25</option>\
+									<option value=\"max_pm25\">Maximum pm25</option>\
+									<option value=\"min_pm25\">Minimum pm25</option>\
+									<option value=\"avg_uvi\">Average UVI</option>\
+									<option value=\"max_uvi\">Maximum UVI</option>\
+									<option value=\"min_uvi\">Minimum UVI</option>\
+								</select>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Column</b></p>\
+                                </div>\
+                                </div>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+								<select name=\"ftype\" id=\"ftype\" onchange=\"check()\" required>\
+									<option value=\"\" disabled selected>Filter type</option>\
+									<option value=\"equal\">==</option>\
+									<option value=\"gt\">&gt;</option>\
+									<option value=\"lt\">&lt;</option>\
+									<option value=\"egt\">&gt;=</option>\
+									<option value=\"elt\">&lt;=</option>\
+								</select>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Type</b></p>\
+                                </div>\
+                                </div>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+										<input type=\"text\" id=\"filterInput\" placeholder=\"Filter forecast...\" disabled>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Value</b></p>\
+                                </div>\
+                                </div>\
+							</div>\
+						</form>\
+					 </div>"
+    if html_type == "tableStat":
+        return "			<div class=\"box\">\
+						<h2>Analysis</h2>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+					</div>"
+    if html_type == "map":
+    	return "				<div class=\"box\">\
+						<h2>Map</h2>\
+						<div>" + data + "</div>\
+					</div>"
+
+def project_html(data, html_type = null):
+    if html_type == "table1":					
+        return "                    <div class=\"box\">\
+						<header>\
+							<h2>Realtime data</h2>\
+						</header>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+					</div>"
+
+    if html_type == "table2":
+        return "<div class=\"box\">\
+						<h2>Forecast data</h2>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+						<p><em>To sort data click column header</em></p>\
+						<form method=\"post\" action=\"#\">\
+							<div class=\"col-12\">\
+                                <p><em>To filter, first select column, then filtering type and lastly, type filter value in \"Filter forecast...\" input.</em></p>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+                                <select name=\"fcolumn\" id=\"fcolumn\" onchange=\"check()\" required>\
+									<option value=\"\" disabled selected>Column name</option>\
+									<option value=\"day\">Day</option>\
+									<option value=\"avg_o3\">Average O3</option>\
+									<option value=\"max_o3\">Maximum O3</option>\
+									<option value=\"min_o3\">Minimum O3</option>\
+									<option value=\"avg_pm10\">Average pm10</option>\
+									<option value=\"max_pm10\">Maximum pm10</option>\
+									<option value=\"min_pm10\">Minimum pm10</option>\
+									<option value=\"avg_pm25\">Average pm25</option>\
+									<option value=\"max_pm25\">Maximum pm25</option>\
+									<option value=\"min_pm25\">Minimum pm25</option>\
+									<option value=\"avg_uvi\">Average UVI</option>\
+									<option value=\"max_uvi\">Maximum UVI</option>\
+									<option value=\"min_uvi\">Minimum UVI</option>\
+								</select>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Column</b></p>\
+                                </div>\
+                                </div>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+								<select name=\"ftype\" id=\"ftype\" onchange=\"check()\" required>\
+									<option value=\"\" disabled selected>Filter type</option>\
+									<option value=\"equal\">==</option>\
+									<option value=\"gt\">&gt;</option>\
+									<option value=\"lt\">&lt;</option>\
+									<option value=\"egt\">&gt;=</option>\
+									<option value=\"elt\">&lt;=</option>\
+								</select>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Type</b></p>\
+                                </div>\
+                                </div>\
+                                <div class=\"row gtr-uniform\">\
+								<div class=\"col-6 col-12-xsmall\">\
+										<input type=\"text\" id=\"filterInput\" placeholder=\"Filter forecast...\" disabled>\
+                                </div>\
+                                <div class=\"col-6 col-12-xsmall\">\
+                                <p><b>Value</b></p>\
+                                </div>\
+                                </div>\
+							</div>\
+						</form>\
+					 </div>"
+    if html_type == "tableStat":
+        return "			<div class=\"box\">\
+						<h2>Analysis</h2>\
+						<div class=\"table-wrapper\">" + data + "</div>\
+					</div>"
+    if html_type == "map":
+    	return "				<div class=\"box\">\
+						<h2>Map</h2>\
+						<div>" + data + "</div>\
+					</div>"
+
+
+    
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -461,17 +620,16 @@ def createProject():
                 else:
                     CityForecast = get_forecast_data_to_DB('Krakow')
                 CityForecast.dropna()
-                CityForecast_html = CityForecast.to_html(index=True)
+                CityForecast_html = CityForecast.to_html(index=True).replace("class=\"dataframe\"","id=\"forecastTable\"")
                 Description = CityForecast.describe()
                 print('\n'+request.form['city']+'\n')
-                Description_html = Description.to_html(index=True)
+                Description_html = Description.to_html(index=True)+"<a href=\"/Analysis\"><button class=\"btn35\">EXPORT ANALYSIS</button></a>"
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
                 template_vars = {"table1": "",
-                                 "table2": CityForecast_html,
-                                 "tableStat": Description_html,
-                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
-                                 "map": visualize_data(request.form['city'],user_id)}
+                                 "table2": project_html(CityForecast_html,"table2"),
+                                 "tableStat": project_html(Description_html,"tableStat"),
+                                 "map": project_html(visualize_data(request.form['city'],user_id),"map")}
                 html_out = template.render(template_vars)
     
             elif request.form['dtype'] == 'RT':
@@ -501,11 +659,10 @@ def createProject():
                 Description = City.describe()
                 print('\n'+request.form['city']+'\n')
                 Description_html = Description.to_html(index=True)
-                template_vars = {"table1": get_realtime_data(request.form['city']),
+                template_vars = {"table1": project_html(get_realtime_data(request.form['city']),"table1"),
                                  "table2": "",
-                                 "tableStat": Description_html,
-                                 "search": "",
-                                 "map": visualize_data(request.form['city'],user_id)
+                                 "tableStat": project_html(Description_html,"tableStat"),
+                                "map": project_html(visualize_data(request.form['city'],user_id),"map")
                                  }
                 profile = ProfileReport(City, title="Statistical tool", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
@@ -526,22 +683,21 @@ def createProject():
                 else:
                     CityForecast = get_forecast_data_to_DB('Krakow')
                 CityForecast.dropna()
-                CityForecast_html = CityForecast.to_html(index=True)
+                CityForecast_html = CityForecast.to_html(index=True).replace("class=\"dataframe\"","id=\"forecastTable\"")
                 Description = CityForecast.describe()
-                Description_html = Description.to_html(index=True)
+                Description_html = Description.to_html(index=True) +"<a href=\"/Analysis\"><button class=\"btn35\">EXPORT ANALYSIS</button></a>"
                 profile = ProfileReport(CityForecast, title="Forecast statistics", explorative=True)
                 profile.to_file("templates/Analysis/Analysis.html")
-                template_vars = {"table1": get_realtime_data(request.form['city']),
-                                 "table2": CityForecast_html,
-                                 "tableStat": Description_html,
-                                 "search": "<li><input type=\"text\" id=\"filterInput\" onkeyup=\"filter()\" placeholder=\"Filter forecast...\"></li>",
-                                 "map": visualize_data(request.form['city'],user_id)}
+                template_vars = {"table1": project_html(get_realtime_data(request.form['city']),"table1"),
+                                 "table2": project_html(CityForecast_html,"table2"),
+                                 "tableStat": project_html(Description_html,"tableStat"),
+                                 "map": project_html(visualize_data(request.form['city'],user_id),"map")}
                 html_out = template.render(template_vars)
     
             else:
                 template_vars = {"table1": '\nInvalid data type! Inputs can be: "F", "RT" or "B"!',
                                  "table2": "",
-                                 "search": "",
+                                 "tableStat":"",
                                  "map": ""}
                 html_out = template.render(template_vars)
     
@@ -572,8 +728,7 @@ def visualize_data(city, User):
                         ("PM10", "@PM10"),
                         ("PM25", "@PM25"),
                         ("local date","@date_and_time")]
-       
-        p1 = figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
+        p1 = Figure(x_range=(int(df['x']) - 4000, int(df['x']) + 4000), y_range=(int(df['y']) - 4000, int(df['y']) + 4000),
            x_axis_type="mercator", y_axis_type="mercator", tooltips=TOOLTIPS)
         p1.add_tile(get_provider(CARTODBPOSITRON)) 
         p1.circle('x', 'y', source=psource, color='red', radius=50) #ICON(map-marker)

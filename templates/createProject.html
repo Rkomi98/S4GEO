@@ -20,122 +20,110 @@
 			</div>
 			<div class="fill"></div>
 			<div class="links2">
-			  <div class="l11"><a href="/index">Home</a></div>
-			  <div class="l21"><a href="/createProject">Project</a></div>
-			  <div class="l41"><a href="/generic">More Info</a></div>
-			<div class="logout">
-                 <a class = "logout" href="/logout">Log Out</a>
-            </div>
+				<div class="l11">
+					<a href="/index">Home</a>
+				</div>
+				<div class="l21">
+					<a href="/createProject">Project</a>
+				</div>
+				<div class="l41">
+					<a href="/generic">More Info</a>
+				</div>
+				<div class="logout">
+					<a class = "logout" href="/logout">Log Out</a>
+				</div>
 			</div>
-			</div>
-		  </div>
+		</div>
 		  
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<!--<a href="../templates/index.html" class="logo">Massively</a>-->
+			<!-- Header -->
+			<header id="header"></header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li class="active"><a href="/generic">New Project</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+			<!-- Post -->
+				<section class="post">
+					<header class="major">
+						<h1 class="diff text">NEW PROJECT</h1>
+						<div class="parg3">In this section you can choose you data and create your own project. Try now!</div>
 					</header>
+					<div class="box">
+						<form method="post" action="#">
+							<p><b>Select city and type of data</b></p>
+							<div class="row gtr-uniform">
+								<div class="col-6 col-12-xsmall">
+									<select name="city" id="city" onchange="checkCity()" required>
+										<option value="" disabled selected>City</option>
+										<option value="skopje">Skopje</option>
+										<option value="krakow">Kraków</option>
+										<option value="belgrad">Belgrad</option>
+										<option value="paris">Paris</option>
+										<option value="london">London</option>
+									</select>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<select name="dtype" id="dtype" onchange="checkCity()" disabled required>
+										<option value="" disabled selected>Data Type</option>
+										<option value="RT">Real Time</option>
+										<option value="F">Forecast</option>
+										<option value="B">Both</option>
+									</select>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Search" class="primary" /></li>
+							</ul>
+						</form>
+					</div>
+					<div class="row gtr-uniform">
+						<a href="#map" data-online="true">
+							<button class="btn33">
+								Visualize
+							</button>
+						</a>
+						<a href="#stat" data-online="true">
+							<button class="btn34">
+								Analyze
+							</button>
+						</a>
+					</div>
+					
+					{{ table1 }}
+					{{ table2 }}
+					<div class="align-center" id="map">
+						{{ map }}
+					</div>
+					<div class="table-wrapper" id="stat">
+						{{ tableStat }}
+					</div>
+				</section>
+				<a href="/Analysis">
+							<button class="btn35">
+								Export Analyze
+							</button>
+						</a>
+			</div>
+		</div>			
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="/generic">New Project</a></li>
-							
-						</ul>
-						<ul class="icons">
-							
-							<li><a href="https://github.com/Rkomi98/S4GEO" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<!--<span class="date">June 16, 2022</span>-->
-									<h1 class="diff text">NEW PROJECT</h1>
-									<div class="parg3">In this section you can choose you data and create your own project. Try now!
-									</div>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-12">
-												<select name="city" id="city" required>
-													<option value="" disabled selected>City</option>
-													<option value="skopje">Skopje</option>
-													<option value="krakow">Kraków</option>
-													<option value="belgrad">Belgrad</option>
-													<option value="paris">Paris</option>
-													<option value="london">London</option>
-												</select>
-											</div>
-											<div class="col-12">
-												<select name="dtype" id="dtype" required>
-													<option value="" disabled selected>Data Type</option>
-													<option value="RT">Real Time</option>
-													<option value="F">Forecast</option>
-													<option value="B">Both</option>
-												</select>
-											</div>
-											<!--<div class="col-6 col-12-xsmall">
-												<input  type="text" name="dtype" id="dtype" value="" placeholder="Real Time (RT) // Forecast (F) // Both (B)" required />
-											</div>-->
-											<div class="col-12">
-											<button class="btn33"><a href="#map" data-inline="true" >VISUALIZE</a></button>
-                    						<button class="btn34"><a href="#row1" data-inline="true">ANALYZE</a></button>
-												<ul class="actions">
-												
-													<li><input type="submit" value="Search" class="primary" /></li>
-												</ul>
-											</div>
-											<div class="table-wrapper">
-												{{ table1 }}
-											</div>
-											<div class="col-12">
-    											<ul>
-												<ul onclick="myFunction()" class="actions">
-													{{ search }}
-												</ul>
-												<div id="myDIV">
-                                                      <p class="parg311">Click on the column headers for sorting the data!</p>
-                                                 </div> 
-                                                 </ul>
-											</div>
-											
-											<div class="table-wrapper">
-    											{{ table2 }}
-    										</div>
-
-										</div>
-									</form> 
-
-                            <div class="align-center" id="map">
-                            	<div>{{ map }}></div>    
-                            </div>
-        					<body>
-        					<div class="container3">	
-                            <div id="row1" class="parg31">
-                            <div class="table-wrapper">
-                                {{ tableStat }}
-                                <a href="/Analysis"><button class="btn35">EXPORT ANALYSIS</button></a>
-                            </div>
-                            </div>
-                            </div> 
-                            </div> 
-
-                            
 				
 		<!-- Scripts -->
-			<script src="../static/js/jquery.min.js"></script>
-			<script src="../static/js/jquery.scrollex.min.js"></script>
-			<script src="../static/js/jquery.scrolly.min.js"></script>
-			<script src="../static/js/browser.min.js"></script>
-			<script src="../static/js/breakpoints.min.js"></script>
-			<script src="../static/js/util.js"></script>
-			<script src="../static/js/main.js"></script>
-			<script src="../static/js/table.js"></script>
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/jquery.scrollex.min.js"></script>
+		<script src="../static/js/jquery.scrolly.min.js"></script>
+		<script src="../static/js/browser.min.js"></script>
+		<script src="../static/js/breakpoints.min.js"></script>
+		<script src="../static/js/util.js"></script>
+		<script src="../static/js/main.js"></script>
+		<script src="../static/js/table.js"></script>
 	</body>
 </html>
