@@ -237,7 +237,7 @@ def get_data_to_DataFrame(city, User):
     final_realtime_table = gpd.GeoDataFrame(
         data_df_day, geometry=gpd.points_from_xy(data_df_day['x'], data_df_day['y']))
     
-    #final_realtime_table['ID']=User
+    final_realtime_table['ID']=User #if you don't use User, here you have to comment it
     return final_realtime_table
 
 def sendDFtoDB(db):
@@ -435,6 +435,7 @@ def elements():
                                     
         k = k+1
     map.save('templates/Map/Map.html')
+    load_logged_in_user()
     return render_template('elements.html')
 
 @app.route('/Map')
