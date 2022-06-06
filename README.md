@@ -9,7 +9,15 @@ We are including here a short description on what our software provides to users
 Our webiste is an Open-Source Web Application, created to give to all users the possibility to get informed about air pollution and pollutants, on 5 cities: it is possible thanks to visualization of air quality data from sensors and through further analysis provided by the application.
 
 ## What do I need to run the application on my device? 
-To run the application on your device it is mandatory to have installed all the libraries you can find at the beginning of the python script available in the main.py file. Then:
+Firstly, download all the folders and files that are inside the repository:
+*static (all folder)
+*templates (all folder)
+*main.py (crucial for making the application run)
+*createSchema.py
+*dbConfig.txt
+*Database Creation.ipynb (explanation of this file is provided below)
+
+To run the application on your device it is mandatory to have installed all the libraries you can find at the beginning of the python script written in the main.py file. Then:
 1. Configure the database in the PGADMIN application (the installation of PGADMIN and the extention of Postgis is mandatory to run the application). If you haven't installed PGADMIN and PostgresSQL we suggest you to use the username and password we used in the dbconfig.txt file. Otherwise you will have to change in the application the password ('Gram2021'), the name of user and of the database according to the one used in your device. 
 2. Before running the application for the first time you the "createschema.py" file and then to use jupyter notebook "DatabaseCreation.ipynb"
 3. Check if the databases exist in your local database.
@@ -17,7 +25,7 @@ To run the application on your device it is mandatory to have installed all the 
 5. Run the app from main.py file.
 ## Sections of the web application
 After running the main.py file the users can access the homepage. On the top menu bar the users can access only the "More Info" page without logging in. Inside this page they can view general information about our application and about the air quality data we use. 
-To create a project the users need to be registered, so it is important that the database is correctly configured.
+To be able to open the "Project" page the users need to be registered, so it is important that the database is correctly configured. There they can find all possible steps for creating their new project with the functionalities provided by the application.
 #### How to register and login
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
