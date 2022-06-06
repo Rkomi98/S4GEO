@@ -10,12 +10,12 @@ Our webiste is an Open-Source Web Application, created to give to all users the 
 
 ## What do I need to run the application on my device? 
 Firstly, download all the folders and files that are inside the repository:
-*static (all folder)
-*templates (all folder)
-*main.py (crucial for making the application run)
-*createSchema.py
-*dbConfig.txt
-*Database Creation.ipynb (explanation of this file is provided below)
+* static (all folder)
+* templates (all folder)
+* main.py (crucial for making the application run)
+* createSchema.py
+* dbConfig.txt
+* Database Creation.ipynb (explanation of this file is provided below)
 
 To run the application on your device it is mandatory to have installed all the libraries you can find at the beginning of the python script written in the main.py file. Then:
 1. Configure the database in the PGADMIN application (the installation of PGADMIN and the extention of Postgis is mandatory to run the application). If you haven't installed PGADMIN and PostgresSQL we suggest you to use the username and password we used in the dbconfig.txt file. Otherwise you will have to change in the application the password ('Gram2021'), the name of user and of the database according to the one used in your device. 
