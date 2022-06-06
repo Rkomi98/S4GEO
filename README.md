@@ -24,8 +24,10 @@ To run the application on your device it is mandatory to have installed all the 
 4. Be careful to open your Python editor and have in the path the main, the dbconfig.txt file exactly as you can find it in the repository.
 5. Run the app from main.py file.
 ## Sections of the web application
-After running the main.py file the users can access the homepage. On the top menu bar the users can access only the "More Info" page without logging in. Inside this page they can view general information about our application and about the air quality data we use. 
-To be able to open the "Project" section the users need to be registered, so it is important that the database is correctly configured. There they can find all possible steps for creating their new project with the functionalities provided by the application.
+After running the main.py file the users can access the homepage. On the top menu bar the users can access only the:
+- "More Info" page without logging in. Inside this page they can view general information about our application (inside the "General Idea" section) and about the air quality data we use (inside the "Data" section).In this last one it is possible to view a dynamic popup map with all the stations, from which we retrieve the data, in all 5 cities.
+![openmap](https://user-images.githubusercontent.com/94118751/172138506-ed8aa833-d8e4-40c2-99e3-484f147fd6f2.jpg)
+- To be able to open the "Project" section the users need to be registered, so it is important that the database is correctly configured. There they can find all possible steps for creating their new project with the functionalities provided by the application.
 #### How to register and login
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
@@ -35,6 +37,7 @@ To register the user has to go in the login page and then in register. Once regi
 
 
 ### Create Project page
+![projpage](https://user-images.githubusercontent.com/94118751/172116201-b3346263-2c45-48de-bc41-a53e06fd3e90.jpg)
 In the "Create project" follow these steps:
 ![steps](https://user-images.githubusercontent.com/94118751/172134922-b9b48362-f064-45e1-ad88-63d6e9b22f53.jpg)
 1. Select a city of which you want to retrieve data. You can decide a city between:
@@ -53,7 +56,7 @@ Attention: You cannot choose the data type before choosing the city!
 5. Click on Analyze button to view the table of the simple statistic analysis of the queried data.
 6. Click on Export Analysis to access a new page with more advanced analysis performed on these data. (This button appears at the end of the analysis table.)
 ![export button](https://user-images.githubusercontent.com/94118751/172136716-9df0647e-8024-4f62-85a7-66d5440fea1a.jpg)
-![projpage](https://user-images.githubusercontent.com/94118751/172116201-b3346263-2c45-48de-bc41-a53e06fd3e90.jpg)
+
 
 :warning: **If you have performed only some requests it is normal if you receive error**: Try the jupyter notebook if you want to see the problem. You need some observations to perform a pandas profiling analysis.
 
