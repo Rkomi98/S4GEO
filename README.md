@@ -32,7 +32,7 @@ After running the main.py file the users can access the homepage. On the top men
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
 * If the user tries to login with the wrong user or password, the page is automatically reloaded
-!<img src="https://user-images.githubusercontent.com/72648197/171901830-c62b520e-1a0d-4f18-80f1-4a843e73a182.png" width="100" height="80">
+!<img src="https://user-images.githubusercontent.com/72648197/171901830-c62b520e-1a0d-4f18-80f1-4a843e73a182.png" width="60%" height="40%">
 ![immagine](https://user-images.githubusercontent.com/72648197/171902834-46eb3940-d959-49f8-88e2-eeaf71c81ac6.png)
 
 
