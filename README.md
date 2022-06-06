@@ -3,7 +3,7 @@
 
 This is the repository of the project developed for the course "Software Engineering for Geoinformatics" by [@Se4GEO/contributors](https://github.com/Rkomi98/S4GEO/graphs/contributors). 
 ```diff
-@@Read it before downloading the files@@
+!Read it before downloading the files!
 ```
 We are including here a short description on what our software provides to users and how they can use it.
 Our webiste is an Open-Source Web Application, created to give to all users the possibility to get informed about air pollution and pollutants, on 5 cities: it is possible thanks to visualization of air quality data from sensors and through further analysis provided by the application.
