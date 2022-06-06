@@ -3,7 +3,7 @@
 """
 Created on Sun Mar 24 23:54:08 2019
 
-@author: elisabettadinitto
+@author: Mirko
 """
 
 from psycopg2 import (
