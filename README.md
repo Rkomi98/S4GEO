@@ -54,7 +54,7 @@ Attention: You cannot choose the data type before choosing the city!
 3. Click on Search button to retrieve the table with the queried data.
     
     3.1 In case you choose forecast option or both (in step 2), you have the possibility to sort and filter your data.
-<p align="center"><img src="https://user-images.githubusercontent.com/94118751/172141262-b0fc901c-cd34-4330-92e0-b7acb13e5d4a.jpg" width="50%" height="30%">
+<p align="center"><img src="https://user-images.githubusercontent.com/94118751/172141262-b0fc901c-cd34-4330-92e0-b7acb13e5d4a.jpg" width="70%" height="30%">
 4. Click on Visualize button to view the interactive map of the station from which the data was queried.
 5. Click on Analyze button to view the table of the simple statistic analysis of the queried data.
 6. Click on Export Analysis to access a new page with more advanced analysis performed on these data. (This button appears at the end of the analysis table.)
