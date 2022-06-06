@@ -52,10 +52,10 @@ In the "Create project" follow these steps:
 * Both (In the last case the analysis will be performed only on forecast data.)
 Attention: You cannot choose the data type before choosing the city!
 3. Click on Search button to retrieve the table with the queried data.
-    
-    3.1 In case you choose forecast option or both (in step 2), you have the possibility to sort and filter your data.
-<p align="center"><img src="https://user-images.githubusercontent.com/94118751/172141262-b0fc901c-cd34-4330-92e0-b7acb13e5d4a.jpg" width="70%" height="50%">
-4. Click on Visualize button to view the interactive map of the station from which the data was queried.
+ 
+3.1 In case you choose forecast option or both (in step 2), you have the possibility to sort and filter your data.
+<p align="center"><img src="https://user-images.githubusercontent.com/94118751/172141262-b0fc901c-cd34-4330-92e0-b7acb13e5d4a.jpg" width="70%" height="60%">
+4. Click on Visualize button to view the interactive map of the station from which the data was queried.   
 5. Click on Analyze button to view the table of the simple statistic analysis of the queried data.
 6. Click on Export Analysis to access a new page with more advanced analysis performed on these data. (This button appears at the end of the analysis table.)
 <p align="center"><img src="https://user-images.githubusercontent.com/94118751/172136716-9df0647e-8024-4f62-85a7-66d5440fea1a.jpg">
