@@ -31,8 +31,8 @@ In the "Create project" page you can decide a city between:
 * London
 
 Furthermore you can choose if you want "Real data" (the frequence of update changes between city and city) or forecast data (so data of pollutants of the last 2 days, today and the next 5 days) or both. In the last case the analysis will be performed only on forecast data.  
-(![new project page](https://user-images.githubusercontent.com/94118751/172115078-27af8ba7-b73f-4b31-887e-458c9f76a0f9.jpg)
-We decided to incentivate the analysis on forecast data because, to have an analysis on real time data you need at least 5/6 observations. 
 
-:warning: **If you have performed only some requests it is normal if you receive error**: Tru the jupyter notebook if you want to see the problem. You need some observation to perform a pandas profiling analysis.
+We decided to incentivate the analysis on forecast data because, to have an analysis on real time data you need at least 5/6 observations. 
+![projpage](https://user-images.githubusercontent.com/94118751/172116201-b3346263-2c45-48de-bc41-a53e06fd3e90.jpg)
+:warning: **If you have performed only some requests it is normal if you receive error**: Try the jupyter notebook if you want to see the problem. You need some observations to perform a pandas profiling analysis.
 
