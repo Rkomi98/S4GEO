@@ -73,57 +73,6 @@ def get_json_API(city):
     data = json.loads(raw_data)
     return data
 
-
-def get_forecast_data(city):
-    data = get_json_API(city)
-
-    # from JSON to Pandas DataFrame: creating the forecast table
-
-    # extracting all the factors seperately:
-    data_df_forecast_o3 = pd.json_normalize(
-        data['data']['forecast']['daily']['o3'])
-    data_df_forecast_pm10 = pd.json_normalize(
-        data['data']['forecast']['daily']['pm10'])
-    data_df_forecast_pm25 = pd.json_normalize(
-        data['data']['forecast']['daily']['pm25'])
-    data_df_forecast_uvi = pd.json_normalize(
-        data['data']['forecast']['daily']['uvi'])
-
-    # preparing each of them to be merged later:
-    data_df_forecast_o3 = data_df_forecast_o3.rename(
-        columns={'avg': 'avg_o3', 'max': 'max_o3', 'min': 'min_o3'})
-    data_df_forecast_o3.insert(0, 'day', data_df_forecast_o3.pop('day'))
-
-    data_df_forecast_pm10 = data_df_forecast_pm10.rename(
-        columns={'avg': 'avg_pm10', 'max': 'max_pm10', 'min': 'min_pm10'})
-    data_df_forecast_pm10.insert(0, 'day', data_df_forecast_pm10.pop('day'))
-
-    data_df_forecast_pm25 = data_df_forecast_pm25.rename(
-        columns={'avg': 'avg_pm25', 'max': 'max_pm25', 'min': 'min_pm25'})
-    data_df_forecast_pm25.insert(0, 'day', data_df_forecast_pm25.pop('day'))
-
-    data_df_forecast_uvi = data_df_forecast_uvi.rename(
-        columns={'avg': 'avg_uvi', 'max': 'max_uvi', 'min': 'min_uvi'})
-    data_df_forecast_uvi.insert(0, 'day', data_df_forecast_uvi.pop('day'))
-
-    # merging all the factors in one prediction table:
-    o3_pm10 = pd.merge(data_df_forecast_o3,
-                       data_df_forecast_pm10, how="outer", on=["day"])
-    o3_pm10_pm25 = pd.merge(
-        o3_pm10, data_df_forecast_pm25, how="outer", on=["day"])
-    final_forecast_table = pd.merge(
-        o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
-    
-    #extracting lon and lat:
-    data_df = pd.json_normalize(data['data'])
-    
-    final_forecast_table['lat'] = data_df['city.geo'][0][0]
-    final_forecast_table['lon'] = data_df['city.geo'][0][1]
-
-    final_forecast_table_html = final_forecast_table.dropna(thresh=6).to_html(index=False)
-    final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
-    return final_forecast_table_html
-
 def get_forecast_data_to_DB(city):
     data = get_json_API(city)
 
@@ -165,6 +114,20 @@ def get_forecast_data_to_DB(city):
         o3_pm10_pm25, data_df_forecast_uvi, how="outer", on=["day"])
 
     return final_forecast_table
+
+def get_forecast_data(city):
+    data = get_json_API(city)
+    final_forecast_table = get_forecast_data_to_DB(city)
+    
+    #extracting lon and lat:
+    data_df = pd.json_normalize(data['data'])
+    
+    final_forecast_table['lat'] = data_df['city.geo'][0][0]
+    final_forecast_table['lon'] = data_df['city.geo'][0][1]
+
+    final_forecast_table_html = final_forecast_table.dropna(thresh=6).to_html(index=False)
+    final_forecast_table_html = final_forecast_table_html.replace("class=\"dataframe\"","id=\"forecastTable\"")
+    return final_forecast_table_html
 
 
 def get_realtime_data(city):
@@ -252,11 +215,6 @@ def update_data_on_DB(db):
     Data = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
     DataNew = Data.append(db)
     return DataNew
-
-def download_data():
-    engine = create_engine(connStr()) 
-    gdf_sql = gpd.GeoDataFrame.from_postgis('cities', engine, geom_col='geometry')
-    return gdf_sql
 
 
 # Function to retrieve station coordinates and names in the more info section
@@ -347,87 +305,7 @@ def project_html(data, html_type = null):
 						<h2>Map</h2>\
 						<div>" + data + "</div>\
 					</div>"
-
-def project_html(data, html_type = null):
-    if html_type == "table1":					
-        return "                    <div class=\"box\">\
-						<header>\
-							<h2>Realtime data</h2>\
-						</header>\
-						<div class=\"table-wrapper\">" + data + "</div>\
-					</div>"
-
-    if html_type == "table2":
-        return "<div class=\"box\">\
-						<h2>Forecast data</h2>\
-						<div class=\"table-wrapper\">" + data + "</div>\
-						<p><em>To sort data click column header</em></p>\
-						<form method=\"post\" action=\"#\">\
-							<div class=\"col-12\">\
-                                <p><em>To filter, first select column, then filtering type and lastly, type filter value in \"Filter forecast...\" input.</em></p>\
-                                <div class=\"row gtr-uniform\">\
-								<div class=\"col-6 col-12-xsmall\">\
-                                <select name=\"fcolumn\" id=\"fcolumn\" onchange=\"check()\" required>\
-									<option value=\"\" disabled selected>Column name</option>\
-									<option value=\"day\">Day</option>\
-									<option value=\"avg_o3\">Average O3</option>\
-									<option value=\"max_o3\">Maximum O3</option>\
-									<option value=\"min_o3\">Minimum O3</option>\
-									<option value=\"avg_pm10\">Average pm10</option>\
-									<option value=\"max_pm10\">Maximum pm10</option>\
-									<option value=\"min_pm10\">Minimum pm10</option>\
-									<option value=\"avg_pm25\">Average pm25</option>\
-									<option value=\"max_pm25\">Maximum pm25</option>\
-									<option value=\"min_pm25\">Minimum pm25</option>\
-									<option value=\"avg_uvi\">Average UVI</option>\
-									<option value=\"max_uvi\">Maximum UVI</option>\
-									<option value=\"min_uvi\">Minimum UVI</option>\
-								</select>\
-                                </div>\
-                                <div class=\"col-6 col-12-xsmall\">\
-                                <p><b>Column</b></p>\
-                                </div>\
-                                </div>\
-                                <div class=\"row gtr-uniform\">\
-								<div class=\"col-6 col-12-xsmall\">\
-								<select name=\"ftype\" id=\"ftype\" onchange=\"check()\" required>\
-									<option value=\"\" disabled selected>Filter type</option>\
-									<option value=\"equal\">==</option>\
-									<option value=\"gt\">&gt;</option>\
-									<option value=\"lt\">&lt;</option>\
-									<option value=\"egt\">&gt;=</option>\
-									<option value=\"elt\">&lt;=</option>\
-								</select>\
-                                </div>\
-                                <div class=\"col-6 col-12-xsmall\">\
-                                <p><b>Type</b></p>\
-                                </div>\
-                                </div>\
-                                <div class=\"row gtr-uniform\">\
-								<div class=\"col-6 col-12-xsmall\">\
-										<input type=\"text\" id=\"filterInput\" placeholder=\"Filter forecast...\" disabled>\
-                                </div>\
-                                <div class=\"col-6 col-12-xsmall\">\
-                                <p><b>Value</b></p>\
-                                </div>\
-                                </div>\
-							</div>\
-						</form>\
-					 </div>"
-    if html_type == "tableStat":
-        return "			<div class=\"box\">\
-						<h2>Analysis</h2>\
-						<div class=\"table-wrapper\">" + data + "</div>\
-					</div>"
-    if html_type == "map":
-    	return "				<div class=\"box\">\
-						<h2>Map</h2>\
-						<div>" + data + "</div>\
-					</div>"
-
-
     
-
 @app.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
@@ -526,36 +404,15 @@ def load_logged_in_user():
 @app.route('/')
 @app.route('/index')
 def index():
-    conn = get_dbConn()
-    cur = conn.cursor()
-    cur.execute(
-        """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
-               FROM blog_user, post WHERE  
-                    blog_user.user_id = post.author_id"""
-    )
-    posts = cur.fetchall()
-    cur.close()
-    conn.commit()
     load_logged_in_user()
 
-    return render_template('index.html', posts=posts)
+    return render_template('index.html')
 
 
 @app.route('/generic')
 def generic():
-    conn = get_dbConn()
-    cur = conn.cursor()
-    cur.execute(
-        """SELECT blog_user.user_name, post.post_id, post.created, post.title, post.body 
-               FROM blog_user, post WHERE  
-                    blog_user.user_id = post.author_id"""
-    )
-    posts = cur.fetchall()
-    cur.close()
-    conn.commit()
     load_logged_in_user()
-
-    return render_template('generic.html', posts=posts)
+    return render_template('generic.html')
 
 
 @app.route('/elements', methods=['GET', 'POST'])
@@ -634,10 +491,8 @@ def createProject():
     
             elif request.form['dtype'] == 'RT':
                 C = get_data_to_DataFrame(request.form['city'],user_id)   
-                D = update_data_on_DB(C)
-                sendDFtoDB(D)
-                                
-                DataDB = download_data()
+                DataDB = update_data_on_DB(C)
+                sendDFtoDB(DataDB)
                 if ('iaqi.dew.v' in DataDB.columns):
                     GDF = DataDB.drop(columns=['iaqi.dew.v','iaqi.wg.v','date_and_time','date','lat','lon','ID'])
                 else:
@@ -740,118 +595,7 @@ def visualize_data(city, User):
         return html
         
 
-def get_post(id):
-    conn = get_dbConn()
-    cur = conn.cursor()
-    cur.execute(
-        """SELECT *
-           FROM post
-           WHERE post.post_id = %s""",
-        (id,)
-    )
-    post = cur.fetchone()
-    cur.close()
-    if post is None:
-        abort(404, "Post id {0} doesn't exist.".format(id))
-
-    if post[1] != g.user[0]:
-        abort(403)
-
-    return post
-
-
-@app.route('/<int:id>/update', methods=('GET', 'POST'))
-def update(id):
-    if load_logged_in_user():
-        post = get_post(id)
-        if request.method == 'POST':
-            title = request.form['title']
-            body = request.form['body']
-            error = None
-
-            if not title:
-                error = 'Title is required!'
-            if error is not None:
-                flash(error)
-                return redirect(url_for('index'))
-            else:
-                conn = get_dbConn()
-                cur = conn.cursor()
-                cur.execute('UPDATE post SET title = %s, body = %s'
-                            'WHERE post_id = %s',
-                            (title, body, id)
-                            )
-                cur.close()
-                conn.commit()
-                return redirect(url_for('index'))
-        else:
-            return render_template('blog/update.html', post=post)
-    else:
-        error = 'Only loggedin users can insert posts!'
-        flash(error)
-        return redirect(url_for('login'))
-
-
-@app.route('/<int:id>/delete', methods=('POST',))
-def delete(id):
-    conn = get_dbConn()
-    cur = conn.cursor()
-    cur.execute('DELETE FROM post WHERE post_id = %s', (id,))
-    conn.commit()
-    return redirect(url_for('index'))
-
-
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)
 
-@app.route('/comment/<int:data_id>')
-def comment(data_id):
-    data_id = data_id
-
-    conn = get_dbConn()
-    cur = conn.cursor()  # create a cursor
-    cur.execute(
-        'SELECT * FROM TComment WHERE data_id = %s', (data_id,)
-    )
-
-    tComment = cur.fetchall()
-    cur.close()
-    conn.commit()
-
-    return render_template('comment.html', page_title=data_id, tComment=tComment, data_id=data_id)
-
-
-@app.route('/addComment/<int:data_id>', methods=['GET', 'POST'])
-def addComment(data_id):
-    data_id = data_id
-    author_id = session['user_id']
-    body = request.form.get('comment_body')
-
-    conn = get_dbConn()
-    cur = conn.cursor()  # create a cursor
-    cur.execute(
-        'INSERT INTO TComment (author_id, data_id, body) VALUES (%s, %s, %s)', (
-            author_id, data_id, body)
-    )
-
-    cur.close()
-    conn.commit()
-
-    return redirect(url_for('comment', data_id=data_id))
-
-
-@app.route('/deleteComment/<int:comment_id>/<int:data_id>')
-def deleteComment(comment_id, data_id):
-    comment_id = comment_id
-    data_id = data_id
-
-    conn = get_dbConn()
-    cur = conn.cursor()  # create a cursor
-    cur.execute(
-        'delete FROM TComment WHERE comment_id = %s', (comment_id,)
-    )
-    cur.close()
-    conn.commit()
-
-    return redirect(url_for('comment', data_id=data_id))
