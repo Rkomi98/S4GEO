@@ -1,5 +1,5 @@
 
-![logo](https://user-images.githubusercontent.com/72648197/170985612-5f4d9e43-4dd0-4541-89a7-63c116f66eda.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/72648197/170985612-5f4d9e43-4dd0-4541-89a7-63c116f66eda.png">
 
 This is the repository of the project developed for the course "Software Engineering for Geoinformatics" by [@Se4GEO/contributors](https://github.com/Rkomi98/S4GEO/graphs/contributors). 
 ```diff
@@ -32,7 +32,7 @@ After running the main.py file the users can access the homepage. On the top men
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
 * If the user tries to login with the wrong user or password, the page is automatically reloaded
-<p align="center"><img src="https://user-images.githubusercontent.com/72648197/171901830-c62b520e-1a0d-4f18-80f1-4a843e73a182.png" width="50%" height="30%">p>
+<p align="center"><img src="https://user-images.githubusercontent.com/72648197/171901830-c62b520e-1a0d-4f18-80f1-4a843e73a182.png" width="50%" height="30%">
 <p align="center"><img src="https://user-images.githubusercontent.com/72648197/171902834-46eb3940-d959-49f8-88e2-eeaf71c81ac6.png" width="50%" height="30%">p>
 
 
