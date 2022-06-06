@@ -25,7 +25,7 @@ To run the application on your device it is mandatory to have installed all the 
 5. Run the app from main.py file.
 ## Sections of the web application
 After running the main.py file the users can access the homepage. On the top menu bar the users can access only the "More Info" page without logging in. Inside this page they can view general information about our application and about the air quality data we use. 
-To be able to open the "Project" page the users need to be registered, so it is important that the database is correctly configured. There they can find all possible steps for creating their new project with the functionalities provided by the application.
+To be able to open the "Project" section the users need to be registered, so it is important that the database is correctly configured. There they can find all possible steps for creating their new project with the functionalities provided by the application.
 #### How to register and login
 To register the user has to go in the login page and then in register. Once registered, the user can login.
 * If the user is already registered and tries to register with the same user, the page is automatically reloaded
@@ -44,5 +44,6 @@ In the "Create project" page you can decide a city between:
 
 Furthermore you can choose if you want "Real data" (the frequence of update changes between city and city) or forecast data (so data of pollutants of the last 2 days, today and the next 5 days) or both. In the last case the analysis will be performed only on forecast data.  
 ![projpage](https://user-images.githubusercontent.com/94118751/172116201-b3346263-2c45-48de-bc41-a53e06fd3e90.jpg)
+The users can manipulate data by sorting, filtering. They can access to data analysis and visualization and at the end export their analysis. Each of these processes can be performed by clicking on the corresponding button found on the page.
 :warning: **If you have performed only some requests it is normal if you receive error**: Try the jupyter notebook if you want to see the problem. You need some observations to perform a pandas profiling analysis.
 
