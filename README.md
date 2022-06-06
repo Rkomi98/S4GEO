@@ -35,15 +35,25 @@ To register the user has to go in the login page and then in register. Once regi
 
 
 ### Create Project page
-In the "Create project" page you can decide a city between:
+In the "Create project" follow these steps:
+![steps](https://user-images.githubusercontent.com/94118751/172134922-b9b48362-f064-45e1-ad88-63d6e9b22f53.jpg)
+1. Select a city of which you want to retrieve data. You can decide a city between:
 * Skopje
 * Belgrad
 * Krakow
 * Paris
 * London
-
-Furthermore you can choose if you want "Real data" (the frequence of update changes between city and city) or forecast data (so data of pollutants of the last 2 days, today and the next 5 days) or both. In the last case the analysis will be performed only on forecast data.  
+2. Select the type of data. You can decide between:
+* Real Time (the frequence of data update changes between city and city)
+* Forecast (so data of pollutants of the last 2 days, today and the next 5 days)
+* Both (In the last case the analysis will be performed only on forecast data.)
+Attention: You cannot choose the data type before choosing the city!
+3. Click on Search button to retrieve the table with the queried data.
+4. Click on Visualize button to view the interactive map of the station from which the data was queried.
+5. Click on Analyze button to view the table of the simple statistic analysis of the queried data.
+6. Click on Export Analysis to access a new page with more advanced analysis performed on these data. (This button appears at the end of the analysis table.)
+![export button](https://user-images.githubusercontent.com/94118751/172136716-9df0647e-8024-4f62-85a7-66d5440fea1a.jpg)
 ![projpage](https://user-images.githubusercontent.com/94118751/172116201-b3346263-2c45-48de-bc41-a53e06fd3e90.jpg)
-The users can manipulate data by sorting, filtering. They can access to data analysis and visualization and at the end export their analysis. Each of these processes can be performed by clicking on the corresponding button found on the page.
+
 :warning: **If you have performed only some requests it is normal if you receive error**: Try the jupyter notebook if you want to see the problem. You need some observations to perform a pandas profiling analysis.
 
